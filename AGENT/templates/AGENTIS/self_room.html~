@@ -34,13 +34,16 @@
 		<input type="submit" class="change" value="изменить" onclick="Change_initial()">
 		</span>
 	</h3>
-	<h3 id="new_initials" style="display: none;">ФИО:  
+	<h3 id="new_initials" style="display: none;">
+		<form action="/ch_initial/" method="post">{% csrf_token %}
+		ФИО:  
 		<input type="text" name="surname" class="change" id="init" placeholder="Фамилия" value="{{p.surname}}"size="40" >
 		<input type="text"  name="forename" class="change" id="init" placeholder="Имя" value="{{p.forename}}"size="40" >
-		<input type="text" name="patronyname" class="change" id="init" placeholder="Отчество" value="{{p.partronyname}}" size="40" >
+		<input type="text" name="patronyname" class="change" id="init" placeholder="Отчество" value="{{p.partronyname}}" >
 		<span>
 		<input type="submit" class="change" value="сохранить">
 		</span>
+		</form>
 	</h3>
 	
 	<h3 id="email">
@@ -50,11 +53,13 @@
 		</span>
 	</h3>
 	<h3 id="new_email" style="display: none;">
-		e-mail:
+			<form action="/ch_email/" method="post">{% csrf_token %}
+			e-mail:
 			<input type="text" value="{{p.email}}" class="secret_change" name="email" placeholder="e-mail" >
 			<span>
-				<input type="submit" class="change" value="сохранить" onclick="Change_email()">
+				<input type="submit" class="change" value="сохранить">
 			</span>
+			</form>
 		</h3>
 	<h3 id="phone">
 		Телефон: {{p.number}}
@@ -63,21 +68,33 @@
 		</span>
 	</h3>
 	<h3 id="new_phone" style="display: none;">
+		<form action="/ch_number/" method="post">{% csrf_token %}
 		Телефон:
 		<input type="text" value="{{p.number}}" class="secret_change" name="number" placeholder="телефон" >
 		<span>
-			<input type="submit" class="change" value="сохранить" onclick="Change_number()">
+			<input type="submit" class="change" value="сохранить" >
 		</span>
+		</form>
 	</h3>
 	<h3 id="prof">Должность: {% if p.who == 1 %} Риелтор {% else %} Страховщик {% endif %}<span><input type="submit" class="change" value="изменить" onclick="Change_prof()"></span></h3>
 	<h3 id="new_prof" style="display: none;">
+	<form action="/ch_prof/" method="post">{% csrf_token %}
 	Должность:
 		<select name="who" class="secret_change" value="{% if p.who == 1 %} Риелтор {% else %} Страховщик {% endif %}">
 			<option selected value="1">Заказчик</option>
 			<option value="2">Исполнитель</option>
 		</select>
-	<span><input type="submit" class="change" value="сохранить" onclick="Change_prof()"></span></h3>
+	<span><input type="submit" class="change" value="сохранить" ></span>
+	</form>
+	</h3>
 	<h3></h3>
 </div>
+<div class="new_err">
+		{% if errors %}
+		<h3>
+			{{errors}}
+		</h3>
+    {% endif %}
+	</div>
 </div>
 {% endblock %}

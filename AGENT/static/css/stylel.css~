@@ -2,7 +2,7 @@
 
 body
 {
-	background-color:#F0FFF0;
+	background: linear-gradient(to bottom right, #F0FFF0, #CAFF70);
 }
 a 
 {
@@ -246,7 +246,7 @@ a
  	width: 75px;
  }
  .secret_change {
-    width: 300px; /* Ширина поля с учетом padding */
+    width: 250px; /* Ширина поля с учетом padding */
     height: 30px; /* Высота */
     background: #000000;
     padding: 0 10px; /* Поля */
@@ -284,6 +284,14 @@ a
 .err
 {
 	top: 190px;
+	left: 40vw;
+	position: inherit;
+	color: red; 
+	text-align:  center;
+}
+.new_err
+{
+	top: 310px;
 	left: 40vw;
 	position: inherit;
 	color: red; 
