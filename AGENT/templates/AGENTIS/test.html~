@@ -1,0 +1,55 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="RU">
+<body>
+<input id=»bet» type=»text» OnChange=»check_it();» name=»target_arg6″ value=»» size=»1″/>Баллов             <br/><div id=»message» style=»display: none;»>У вас недостаточно баллов.</div>
+
+ 
+
+<script>
+
+var message = document.getElementById(«message»);
+
+var bet = document.getElementById(«bet»);
+
+ 
+
+function check_it ()
+
+{
+
+if (bet.value > <?php echo $score ?>) {
+
+showAlert();
+
+}
+
+if (bet.value < <?php echo $score ?>) {
+
+hideAlert();
+
+}
+
+}
+
+function showAlert ()
+
+{
+
+message.style.display = «block»;
+
+}
+
+ 
+
+function hideAlert ()
+
+{
+
+message.style.display = «none»;
+
+}
+
+</script>
+</body>
+</html>

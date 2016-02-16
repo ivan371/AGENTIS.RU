@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+	{% block title %} 
+	<h2>
+	 Добро пожаловать в личный кабинет!
+	 </h2>
+	 <script src='{% static 'js/change_data.js' %}'></script>
+	{% endblock %}
+{% block content %}
+<div class="oppotunity">
+		<div id="orders" ><a href="orders">
+			<p>
+				Заказы
+			</p>
+		</a></div>
+		<div id="self"><a href="self_room">
+			<p>
+				Личный кабинет 
+			</p>
+		</a></div>
+		<div id="messegers"><a href="messagers">
+			<p>
+				Сообщения 
+			</p>
+		</a></div>
+	
+</div>
+<div class="enters">
+<div class="self_text">
+	<h3>Здравствуйте, {{user.username}}</h3>
+	<h3>Ваши контактные данные:</h3>
+	<h3 id="initials">ФИО: {{p.surname}} {{p.forename}} {{p.partronyname}}
+		<span>
+		<input type="submit" class="change" value="изменить" onclick="Change_initial()">
+		</span>
+	</h3>
+	<h3 id="new_initials" style="display: none;">ФИО:  
+		<input type="text" name="surname" class="change" id="init" placeholder="Фамилия" value="{{p.surname}}"size="40" >
+		<input type="text"  name="forename" class="change" id="init" placeholder="Имя" value="{{p.forename}}"size="40" >
+		<input type="text" name="patronyname" class="change" id="init" placeholder="Отчество" value="{{p.partronyname}}" size="40" >
+		<span>
+		<input type="submit" class="change" value="сохранить">
+		</span>
+	</h3>
+	
+	<h3 id="email">
+		e-mail: {{p.email}}
+		<span>
+			<input type="submit" class="change" value="изменить" onclick="Change_email()">
+		</span>
+	</h3>
+	<h3 id="new_email" style="display: none;">
+		e-mail:
+			<input type="text" value="{{p.email}}" class="secret_change" name="email" placeholder="e-mail" >
+			<span>
+				<input type="submit" class="change" value="сохранить">
+			</span>
+		</h3>
+	<h3 id="phone">
+		Телефон: {{p.number}}
+		<span>
+			<input type="submit" class="change" value="изменить" onclick="Change_number()">
+		</span>
+	</h3>
+	<h3 id="new_phone" style="display: none;">
+		Телефон:
+		<input type="text" value="{{p.number}}" class="secret_change" name="number" placeholder="телефон" >
+		<span>
+			<input type="submit" class="change" value="сохранить" >
+		</span>
+	</h3>
+	<h3 id="prof">Должность: {% if p.who == 1 %} Риелтор {% else %} Страховщик {% endif %}<span><input type="submit" class="change" value="изменить" onclick="Change_prof()"></span></h3>
+	<h3 id="new_prof" style="display: none;">
+	Должность:
+		<select name="who" class="secret_change" value="{% if p.who == 1 %} Риелтор {% else %} Страховщик {% endif %}">
+			<option selected value="1">Заказчик</option>
+			<option value="2">Исполнитель</option>
+		</select>
+	<span><input type="submit" class="change" value="сохранить" ></span></h3>
+	<h3></h3>
+</div>
+</div>
+{% endblock %}

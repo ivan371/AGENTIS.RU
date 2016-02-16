@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+	{% block title %} 
+	<h2>
+	 Agentis.ru - ваш выбор
+	</h2>
+	{% endblock %}
+{% block content %}
+	<div class="rieltors">
+		<h1>
+			Риелторам
+		</h1>
+		<img src="{%static "img/e1.png" %}" width="150px"> 
+		<h3><a href="how_rieltors.html">
+			Узнать подробнее
+		</a></h3>
+	</div>
+	<div class="insurance">
+		<h1>
+			Стаховым агентам
+		</h1>
+		<img src="{%static "img/e1.png" %}" width="150px"> 
+		<h3><a href="how_insurance.html">
+			Узнать подробнее
+		</a></h3>
+	</div>
+{% endblock %}

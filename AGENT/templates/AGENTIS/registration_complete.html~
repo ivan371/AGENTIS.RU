@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+	{% block title %} 
+	<h2>
+	 Регистрация
+	 </h2>
+	{% endblock %}
+	{% block content %}
+	<div class="complete">
+	<h2>Поздравляем! Вы успешно зарегестрированы на нашем сайте!</h2>
+	<h2><a name="На главную" href="index">На главную</a></h2>
+	 </div>
+	 {% endblock %}

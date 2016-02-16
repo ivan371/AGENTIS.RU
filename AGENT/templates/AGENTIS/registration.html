@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+	{% block title %} 
+	<h2>
+	 Регистрация
+	 </h2>
+	{% endblock %}
+	{% block content %}
+	<div class="registration">
+		<h2>
+			Регистрация
+		</h2>
+		<form action="/registration_result/" method="post">
+		<p>{% csrf_token %}</p>
+		<p><select name="who" class="user" >
+			<option selected value="1">Заказчик</option>
+			<option value="2">Исполнитель</option>
+		</select></p>
+		<p><input type="text" class="user" name="login" placeholder="Логин" size="40" ></p> 			
+		<p><input type="password" class="user" name="password" placeholder="Пароль" size="40" ></p> 
+		<p><input type="password" class="user" name="password_repiate" placeholder="Повторите пароль" size="40" ></p> 
+		<p><input type="text" class="user" name="surname" placeholder="Фамилия" size="40" ></p> 
+		<p><input type="text" class="user" name="forename" placeholder="Имя" size="40" ></p> 
+		<p><input type="text" class="user" name="patronyname" placeholder="Отчество" size="40" ></p> 
+		<p><select name="region" class="user" placeholder="Регион" >
+			<option value="1">Выберите регион</option>
+			<option value="2">Москва</option>
+			<option value="3">Санкт-Петербург</option>
+		</select></p>		
+		<p><input type="text" class="user" name="email" placeholder="e-mail" size="40" ></p> 
+		<p><input type="text" class="user" name="number" placeholder="Телефон" size="40" ></p> 
+		<p><textarea name="message" rows="4" cols="55" wrap="virtual" class="user" placeholder="О себе"> </textarea> </p>
+		<p><input type="submit" class="user" value="Регистрация"></p>
+		</form>
+	</div>
+	<div class="err">
+		{% if errors %}
+		<h3>
+			{{errors}}
+		</h3>
+    {% endif %}
+	</div>
+ {% endblock %}

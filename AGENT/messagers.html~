@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+	{% block title %} 
+	<h2>
+	 Добро пожаловать в личный кабинет!
+	 </h2>
+	{% endblock %}
+{% block content %}
+<div class="oppotunity">
+		<div id="messagers" ><a href="messagers">
+			<p>
+				Сообщения
+			</p>
+		</a></div>
+		<div id="self"><a href="self_room">
+			<p>
+				Личный кабинет 
+			</p>
+		</a></div>
+	
+</div>
+<div class="right_enters">
+	<h3>Здравствуйте, {{user.username}}</h3>
+	<h3>Ваши контактные данные:</h3>
+	<h3>ФИО: {{p.surname}} {{p.forename}} {{p.partronyname}}</h3>
+	<h3>e-mail: {{p.email}}</h3>
+	<h3>Телефон: {{p.number}}</h3>
+	<h3>Должность: {% if p.who == 1 %} Риелтор {% else %} Страховщик {% endif %}</h3>
+	<h3></h3>
+</div>
+{% endblock %}

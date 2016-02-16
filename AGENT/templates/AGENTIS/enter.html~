@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+	{% block title %} 
+	<h2>
+	 Войти
+	 </h2>
+	{% endblock %}
+{% block content %}
+<div class="enters">
+	<h2>
+		Войти
+	</h2>
+	<form action="/enter_result/" method="post">
+	<p>{% csrf_token %}</p>
+	<p><input type="text" class="user" name="login" placeholder="Имя пользователя" size="40"></p>		
+	<p><input type="password" class="user" name="password" placeholder="Пароль" size="40" ></p> 
+	<p><input type="submit" class="user" value="Вход"></p>
+	</a></h3>
+	</form>
+	<h2><a href="registration.html">
+		Еще не зарегестрированы?
+	</a></h2>
+	</div>
+{% endblock %}

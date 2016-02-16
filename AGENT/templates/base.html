@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="RU">
+<head>
+	<link rel="stylesheet" href="{% static "css/stylel.css" %}" type="text/css" />
+</head>
+<body>
+	<div class="title"> 
+		<h1>
+		"AGENTIS.RU" Первый в России портал по подбору агентов 
+		</h1>
+		<h2>
+			{% block title %}{% endblock %}
+		</h2>
+	</div>
+	<div class="slogan"><a href="index">
+		<img src="{% static "img/slogan.jpg" %}" width="100px">
+	</a></div>
+	<div class ="links">
+		<div id="about" ><a href="about">
+			<p>
+				О нас
+			</p>
+		</a></div>
+		<div id="how_work"><a href="how_work">
+			<p>
+				Как это работает 
+			</p>
+		</a></div>
+		<div id="connection"><a href="connection">
+			<p>
+				Обратная связь
+			</p>
+		</a></div>
+		{% if user.is_authenticated %}
+		<div id="enter"><a href="exit">
+			<p>
+				Выйти
+			</p>
+		</a></div>
+		<div id="registration"><a href="self_room">
+			<p>
+				Личный кабинет
+			</p>
+		</a></div>
+		{% else %}
+		<div id="enter"><a href="enter">
+			<p>
+				Войти
+			</p>
+		</a></div>
+		<div id="registration"><a href="registration">
+			<p>
+				Регистрация
+			</p>
+		</a></div>
+		{% endif %}
+		{% block content %} {% endblock %}
+</body>
+</html>

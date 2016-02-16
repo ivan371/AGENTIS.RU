@@ -1,0 +1,308 @@
+@charset "utf-8";
+
+body
+{
+	background: linear-gradient(to bottom right, #F0FFF0, #CAFF70);
+}
+a 
+{
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+.title
+{
+	position:absolute;
+	width:100vw;
+	height:120px;
+	background: linear-gradient(to right, black, gray);
+	text-align:  center;
+	border-radius: 10px;
+}
+.slogan
+{
+	position: absolute;
+	z-index: 2;
+	top: 20px;
+	left: 20px;
+}
+
+.oppotunity
+{
+	position:absolute;
+	width:100vw;
+	top: 67px;
+	height:70px;
+	background: linear-gradient(to right, black, gray);
+	text-align:  center;
+	border-radius: 10px;
+}
+.title h1
+{
+	color: #FFFFFF
+}
+.title h2
+{
+	color: #FFFFFF;
+}
+.links
+{
+	position:absolute;
+	top: 120px;
+	width:100vw;
+	height:70px;
+	background: linear-gradient(to right, black, gray);
+	text-align:  center;
+	font-size: 20px;
+	border-radius: 10px;
+	z-index: 1;
+}
+.links p
+{
+	color: #FFFFFF;
+}
+#orders
+{
+	border: 2px solid #00BFFF;
+	position: inherit;
+	left: 1vw;
+	width:39vw;
+	border-radius: 10px
+}
+#messegers
+{
+	border: 2px solid #00BFFF;
+	position: inherit;
+	left: 60vw;
+	width:39vw;
+	border-radius: 10px
+}
+#about
+{
+	border: 2px solid #00BFFF;
+	position: inherit;
+	left: 1vw;
+	width:15vw;
+	border-radius: 10px
+}
+#how_work
+{
+	border: 2px solid #00BFFF;
+	position: inherit;
+	left: 25vw;
+	width:15vw;
+	border-radius: 10px
+}
+#connection
+{
+	position: fixed;
+	top: 70vw;
+	left: 82vw;
+	width:15vw;
+	z-index: 1;
+}
+#connection p
+{
+	color: black;
+}
+#self
+{
+	border: 2px solid #00BFFF;
+	position: inherit;
+	left: 40vw;
+	width:20vw;
+	border-radius: 10px
+}
+#enter
+{
+	border: 2px solid #00BFFF;
+	position: inherit;
+	left: 60vw;
+	width:15vw;
+	border-radius: 10px
+}
+#registration
+{
+	border: 2px solid #00BFFF;
+	position: inherit;
+	left: 84vw;
+	width:15vw;
+	border-radius: 10px
+}
+.rieltors
+{
+	position:fixed;
+	top: 250px;
+	left: 2vw;
+	width:40vw;
+	height:400px;
+	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
+	border: 5px solid #000000;
+	border-radius: 10px;
+	text-align:  center;
+	color: #FFFFFF;
+}
+.insurance
+{
+	position:fixed;
+	top: 250px;
+	left: 57vw;
+	width:40vw;
+	height:400px;
+	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
+	border: 5px solid #000000;
+	border-radius: 10px;
+	text-align:  center;
+	color: #FFFFFF;
+}
+.enters
+{
+	position:fixed;
+	top: 360px;
+	left: 25vw;
+	width:50vw;
+	height:350px;
+	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
+	border: 5px solid #000000;
+	border-radius: 10px;
+	text-align:  center;
+	color: #FFFFFF;
+}
+.order
+{
+	position: absolute;
+	left: 1vw;
+	top: 67px;
+	width: 39vw;
+	height: 90vh;
+	border-radius: 10px;
+	border: 2px solid #00BFFF;
+	background: linear-gradient(to right, black, #363636);
+}
+.self_text
+{
+	text-align: left;
+	margin-left:20px;
+}
+.message
+{
+	position: absolute;
+	left: 60vw;
+	top: 67px;
+	width: 39vw;
+	height: 90vh;
+	border-radius: 10px;
+	border: 2px solid #00BFFF;
+	background: linear-gradient(to right, #4F4F4F, gray);
+}
+.left_enters
+{
+	position:fixed;
+	top: 360px;
+	left: 45vw;
+	width:50vw;
+	height:350px;
+	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
+	border: 5px solid #000000;
+	border-radius: 10px;
+	text-align:  center;
+	color: #FFFFFF;
+}
+.right_enters
+{
+	position:fixed;
+	top: 360px;
+	left: 5vw;
+	width:50vw;
+	height:350px;
+	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
+	border: 5px solid #000000;
+	border-radius: 10px;
+	text-align:  center;
+	color: #FFFFFF;
+}
+.user {
+    width: 300px; /* Ширина поля с учетом padding */
+    height: 46px; /* Высота */
+    background: #000000;
+    padding: 0 10px; /* Поля */
+    border: 2px solid #FFFFFF;
+    font-size: 1em; /* Размер текста */
+	border-radius: 10px;
+	color: #FFFFFF;
+ }
+ .change {
+    width: 150px; /* Ширина поля с учетом padding */
+    height: 30px; /* Высота */
+    background: #000000;
+    padding: 0 10px; /* Поля */
+    border: 2px solid #FFFFFF;
+    font-size: 0.8em; /* Размер текста */
+	border-radius: 10px;
+	color: #FFFFFF;
+ }
+ #init
+ {
+ 	width: 75px;
+ }
+ .secret_change {
+    width: 300px; /* Ширина поля с учетом padding */
+    height: 30px; /* Высота */
+    background: #000000;
+    padding: 0 10px; /* Поля */
+    border: 2px solid #FFFFFF;
+    font-size: 0.8em; /* Размер текста */
+	border-radius: 10px;
+	color: #FFFFFF;
+ }
+ .self_text span
+ {
+ 	float:right;
+ }
+ .registration
+{
+	position:absolute;
+	top: 250px;
+	left: 25vw;
+	width:50vw;
+	height:900px;
+	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
+	border: 5px solid #000000;
+	border-radius: 10px;
+	text-align:  center;
+	color: #FFFFFF;
+}
+.self_room
+{
+	position:fixed;
+	top: 250px;
+	left: 25vw;
+	width:50vw;
+	height:300px;
+	color: #FFFFFF;
+}
+.err
+{
+	top: 190px;
+	left: 40vw;
+	position: inherit;
+	color: red; 
+	text-align:  center;
+}
+.complete
+{
+	top: 190px;
+	left: 20vw;
+	position: inherit; 
+	text-align:  center;
+}
+
+.complete a
+{
+	color: #000000;
+}
+}
+option
+{
+	text-align:  center;	
+}
