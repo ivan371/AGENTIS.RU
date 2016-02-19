@@ -168,6 +168,42 @@ a
 	text-align:  center;
 	color: #FFFFFF;
 }
+.offers
+{
+	position: absolute;
+	top: 150px;
+	left: 25vw;
+	width:50vw;
+	height:850px;
+	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
+	border: 5px solid #000000;
+	border-radius: 10px;
+	text-align:  center;
+	color: #FFFFFF;
+}
+.new_offers
+{
+	top: 150px;
+	left: 25vw;
+	width:50vw;
+	border: 2px solid #000000;
+	border-radius: 10px;
+	text-align:  center;
+	color: #FFFFFF;
+}
+#new_offerz
+{
+	position: absolute;
+	top: 200px;
+	left: 25vw;
+	width:50vw;
+	height:850px;
+	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
+	border: 5px solid #000000;
+	border-radius: 10px;
+	text-align:  center;
+	color: #FFFFFF;
+}
 .order
 {
 	position: absolute;
@@ -231,6 +267,20 @@ a
 	border-radius: 10px;
 	color: #FFFFFF;
  }
+ .offer {
+    width: 500px; /* Ширина поля с учетом padding */
+    height: 40px; /* Высота */
+    background: #000000;
+    padding: 0 10px; /* Поля */
+    border: 2px solid #FFFFFF;
+    font-size: 1em; /* Размер текста */
+	border-radius: 10px;
+	color: #FFFFFF;
+ }
+ #textarea
+ {
+ 	height: 400px;
+ }
  .change {
     width: 150px; /* Ширина поля с учетом padding */
     height: 30px; /* Высота */
@@ -287,6 +337,18 @@ a
 	left: 40vw;
 	position: inherit;
 	color: red; 
+	text-align:  center;
+}
+#ri
+{
+	top: 100px;
+	left: 33vw;
+}
+.add_offer
+{
+	position:absolute;
+	left: 38vw;
+	top: 100px;
 	text-align:  center;
 }
 .new_err

@@ -8,7 +8,7 @@
 	{% endblock %}
 {% block content %}
 <div class="oppotunity">
-		<div id="orders" ><a href="orders">
+		<div id="big_orders" ><a href="orders">
 			<p>
 				Заказы
 			</p>
@@ -39,7 +39,7 @@
 		ФИО:  
 		<input type="text" name="surname" class="change" id="init" placeholder="Фамилия" value="{{p.surname}}"size="40" >
 		<input type="text"  name="forename" class="change" id="init" placeholder="Имя" value="{{p.forename}}"size="40" >
-		<input type="text" name="patronyname" class="change" id="init" placeholder="Отчество" value="{{p.partronyname}}" >
+		<input type="text" name="partronyname" class="change" id="init" placeholder="Отчество" value="{{p.partronyname}}" >
 		<span>
 		<input type="submit" class="change" value="сохранить">
 		</span>

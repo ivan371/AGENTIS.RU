@@ -24,6 +24,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 from .models import User_AGENTIS
+from .models import orders_data
 
 def index(request):
 	return render(request, 'AGENTIS/index.html')
@@ -108,6 +109,13 @@ def self_room(request):
 
 def registration(request):
 	return render(request, 'AGENTIS/registration.html')
+
+def list_rieltors(request):
+	offers_list = {'name_mess', 'sum_mess'}
+	p = User_AGENTIS.objects.get(login = request.session['member_id'])
+	offs = orders_data.objects.filter(user_m = p)
+	return render_to_response('AGENTIS/list_rieltors.html',{'offs': offs}, RequestContext(request))
+
 
 def about(request):
 	return render(request, 'AGENTIS/about.html')
@@ -199,3 +207,25 @@ def registration_result(request):
 			return HttpResponseRedirect('/registration_complete/')
 	return render_to_response('AGENTIS/registration.html',{'errors': errors[0]}, RequestContext(request))
 
+def order_result(request):
+	c = {}
+	c.update(csrf(request))
+	errors = []
+	if request.method == 'POST':
+		if not request.POST.get('name', ''):
+			errors.append('Введите название вашего предложения')
+			print('name')
+		if not request.POST.get('sum', ''):
+			errors.append('Введите сумму вашего предложения')
+			print('sum')
+		if not errors:
+			u = User_AGENTIS.objects.get(login = request.session['member_id'])
+			p = orders_data(user_m = u,
+				name_mess = request.POST['name'],
+				sum_mess = request.POST['sum'],
+				message = request.POST['description'])
+			p.save()
+		#	user = User.objects.create_user(username=request.POST['login'], email=request.POST['email'], password=request.POST['password'])
+		#	user.save()
+			return HttpResponseRedirect('/list_rieltors/')
+	return render_to_response('AGENTIS/list_again.html',{'errors': errors[0]}, RequestContext(request))

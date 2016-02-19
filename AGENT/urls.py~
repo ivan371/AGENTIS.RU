@@ -25,4 +25,9 @@ urlpatterns = [
 	url(r'self_room/$', self_room),
 	url(r'orders/$', orders),
 	url(r'messagers/$', messagers),
+	url(r'ch_email/$', ch_email),
+	url(r'ch_number/$', ch_number),
+	url(r'ch_prof/$', ch_prof),
+	url(r'ch_initial/$', ch_initial),
+	url(r'list_rieltors/$', list_rieltors),
 	]

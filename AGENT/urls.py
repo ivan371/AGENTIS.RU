@@ -29,4 +29,6 @@ urlpatterns = [
 	url(r'ch_number/$', ch_number),
 	url(r'ch_prof/$', ch_prof),
 	url(r'ch_initial/$', ch_initial),
+	url(r'list_rieltors/$', list_rieltors),
+	url(r'order_result/$', order_result),
 	]

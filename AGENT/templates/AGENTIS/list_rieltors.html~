@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+	{% block title %} 
+	<h2>
+	 Риелторам
+	 </h2>
+	 <script src='{% static 'js/change_data.js' %}'></script>
+	{% endblock %}
+{% block content %}
+	<div id="new_offerz">
+	{% for offers in offs %}
+	<div class="new_offers">
+		<h2>
+			Ваше предложение: {{offers.name_mess}}
+		</h2>
+		<h3>
+			<p><input type="submit" class="change" value="изменить"></p>
+			Сумма вашего предложения {{offers.sum_mess}}
+			<p><input type="submit" class="change" value="изменить"></p>
+			<input id='{{offers.name_mess}}'  style="  margin: 0 auto;" type="submit" class="user" value="узнать подробнее" onclick="deploy_offer('{{offers.name_mess}}', '{{offers.message}}')">
+		</h3>
+		<h3 id='{{offers.message}}' style="display: none;">
+			<input style=" margin: 0 auto;" type="submit" class="user" value="свернуть описание" onclick="collapce_offer('{{offers.name_mess}}', '{{offers.message}}')">
+			<p>Описание вашего предожения<p> 
+			<p>{{offers.message}}<p>
+			<p><input type="submit" class="change" value="изменить"></p>
+		</h3>
+	</div>
+	{% endfor %}
+	</div>
+	<div class="add_offer">
+	<h4 id="offer">
+		<input type="submit" class="user" value="Добавить предложение" onclick="Add_offer()">
+	</h4>
+	</div>
+	<div id="new_offer" class="offers" style="display: none;">
+		<form action="/order_result/" method="post">{% csrf_token %}
+		<h4>
+		Введите называние вашего предложения
+		</h4>
+		<input type="text" name="name" class="offer" placeholder="Название" >
+		<h4>
+		Введите сумму, которую вы хотите получить за ваше предложение
+		</h4>
+		<input type="text"  name="sum" class="offer" placeholder="Сумма">
+		<h4>
+		Введите описание вашего предложения
+		<textarea name="description" rows="4" cols="55" wrap="virtual" class="offer" id="textarea" placeholder="Описание"> </textarea>
+		</h4>
+		<input type="submit" class="user" value="сохранить">
+		</form>
+	</div>
+{% endblock %}
