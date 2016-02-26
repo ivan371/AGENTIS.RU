@@ -19,15 +19,18 @@
 		</h3>
 		</div>
 		<div id="yournew_offer{{forloop.counter}}" style="display: none;">
+		<form action="/ch_off_name/" method="post">{% csrf_token %}
 		<h2>
 			Ваше предложение:
 			<input type="text" value="{{offers.name_mess}}" class="secret_change" name="off_name" placeholder="Введите ваше предложение" >
+			<input type="hidden" value="{{offers.name_mess}}" name="off_name_old" >
 		</h2>
 		<h3>
 			<span>
 				<input type="submit" class="change" value="сохранить">
 			</span>
 		</h3>
+		</form>
 		</div>
 		<div id="your_sum{{forloop.counter}}">
 		<h3>
@@ -38,10 +41,13 @@
 		<div id="yournew_sum{{forloop.counter}}" style="display: none;">
 		<h3>
 			Сумма вашего предложения
+			<form action="/ch_off_sum/" method="post">{% csrf_token %}
 			<input type="text" value="{{offers.sum_mess}}" class="secret_change" name="off_sum" placeholder="Введите сумму вашего предложения" >
+			<input type="hidden" value="{{offers.sum_mess}}" name="off_sum_old" >
 			<span>
 				<input type="submit" class="change" value="сохранить">
 			</span>
+			</form>
 		</h3>
 		</div>
 		
@@ -59,10 +65,13 @@
 		<div id='newcollapce{{forloop.counter}}' style="display: none;">
 		<h3>
 		<p>Описание вашего предожения<p>
-		<textarea name="description" rows="4" cols="55" wrap="virtual" value="{{offers.message}}" class="offer" id="textarea" placeholder="Описание"> </textarea>
+		<form action="/ch_off_mess/" method="post">{% csrf_token %}
+		<textarea name="description" rows="4" cols="55" wrap="virtual" name="off_mess" class="offer" id="textarea" placeholder="Описание">{{offers.message}} </textarea>
+		<input type="hidden" value="{{offers.message}}" name="off_mess_old" >
 		<span>
 				<input type="submit" class="change" value="сохранить">
 			</span>
+		</form>
 		</h3>
 		</div>
 	</div>

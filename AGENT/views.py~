@@ -25,9 +25,12 @@ from django.contrib.auth.models import User
 
 from .models import User_AGENTIS
 from .models import orders_data
+from .models import message
+from .models import order
 
 def index(request):
-	return render(request, 'AGENTIS/index.html')
+	p = User_AGENTIS.objects.get(login = request.session['member_id'])
+	return render_to_response('AGENTIS/index.html',{'p': p}, RequestContext(request))
 	
 def enter(request):
 	return render(request, 'AGENTIS/enter.html')
@@ -38,7 +41,10 @@ def orders(request):
 
 def messagers(request):
 	p = User_AGENTIS.objects.get(login = request.session['member_id'])
-	return render_to_response('AGENTIS/messager.html',{'p': p}, RequestContext(request))
+	m = message.objects.filter(mess_from.login = p)
+	m1 = message.objects.filter(mess_to.login = p)
+	print(p.login)
+	return render_to_response('AGENTIS/messager.html',{'p': p, 'm': m, 'm1': m}, RequestContext(request))
 
 def exit(request):
 	auth.logout(request)
@@ -51,10 +57,13 @@ def ch_off_name(request):
 	if request.method == 'POST':
 		POST = request.POST
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
-		offs = orders_data.objects.get(user_m = p, POST['name_mess'])
-		p.who	= POST['who']
-		p.save()
-	return render_to_response('AGENTIS/self_room.html',{'p': p}, RequestContext(request))
+		offs = orders_data.objects.filter(user_m = p, name_mess = POST['off_name_old'])
+		for offers in offs:
+			offers.name_mess = POST['off_name']
+			offers.save()
+		p = User_AGENTIS.objects.get(login = request.session['member_id'])
+		offs = orders_data.objects.filter(user_m = p)
+		return render_to_response('AGENTIS/list_rieltors.html',{'offs': offs}, RequestContext(request))
 	
 def ch_off_sum(request):
 	c = {}
@@ -63,10 +72,14 @@ def ch_off_sum(request):
 	if request.method == 'POST':
 		POST = request.POST
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
+		offs = orders_data.objects.filter(user_m = p, sum_mess = POST['off_sum_old'])
+		for offers in offs:
+			offers.sum_mess = POST['off_sum']
+			print('off_sum')
+			offers.save()
+		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		offs = orders_data.objects.filter(user_m = p)
-		p.who	= POST['who']
-		p.save()
-	return render_to_response('AGENTIS/self_room.html',{'p': p}, RequestContext(request))
+		return render_to_response('AGENTIS/list_rieltors.html',{'offs': offs}, RequestContext(request))
 
 def ch_off_mess(request):
 	c = {}
@@ -75,10 +88,13 @@ def ch_off_mess(request):
 	if request.method == 'POST':
 		POST = request.POST
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
-		p.who	= POST['who']
-		p.save()
-	return render_to_response('AGENTIS/self_room.html',{'p': p}, RequestContext(request))
-
+		offs = orders_data.objects.filter(user_m = p, message = POST['off_mess_old'])
+		for offers in offs:
+			offers.message = POST['off_mess']
+			offers.save()
+		p = User_AGENTIS.objects.get(login = request.session['member_id'])
+		offs = orders_data.objects.filter(user_m = p)
+		return render_to_response('AGENTIS/list_rieltors.html',{'offs': offs}, RequestContext(request))
 
 def ch_email(request):
 	c = {}
@@ -147,7 +163,45 @@ def list_rieltors(request):
 	p = User_AGENTIS.objects.get(login = request.session['member_id'])
 	offs = orders_data.objects.filter(user_m = p)
 	return render_to_response('AGENTIS/list_rieltors.html',{'offs': offs}, RequestContext(request))
+	
+def list_rieltors_order(request):
+	offs = orders_data.objects.all()
+	return render_to_response('AGENTIS/list_rieltors_order.html',{'offs': offs}, RequestContext(request))
 
+def mess_success(request):
+	return render_to_response('AGENTIS/mess_success.html', RequestContext(request))
+
+def make_offer(request):
+	c = {}
+	c.update(csrf(request))
+	if request.method == 'POST':
+		POST = request.POST
+		p = User_AGENTIS.objects.get(login = request.session['member_id'])
+		return render_to_response('AGENTIS/make_offer.html', {'p': p, 'name': POST['name']},  RequestContext(request))
+
+def send_mess(request):
+	c = {}
+	c.update(csrf(request))
+	if request.method == 'POST':
+		POST = request.POST
+		print(POST['name'])
+		print(request.session['member_id'])
+		return render_to_response('AGENTIS/send_mess.html', {'name': POST['name']},  RequestContext(request))
+
+def save_mess(request):
+	c = {}
+	c.update(csrf(request))
+	if request.method == 'POST':
+		POST = request.POST
+		print(POST['name'])
+		print(request.session['member_id'])
+		m = message(mess_from = User_AGENTIS.objects.get(login = request.session['member_id']),
+					mess_to = User_AGENTIS.objects.get(login = POST['name']),
+					status = 0,
+					message = POST['message']
+					) 
+		m.save()
+		return render(request, 'AGENTIS/mess_success.html')
 
 def about(request):
 	return render(request, 'AGENTIS/about.html')

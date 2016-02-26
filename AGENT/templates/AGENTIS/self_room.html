@@ -76,7 +76,7 @@
 		</span>
 		</form>
 	</h3>
-	<h3 id="prof">Должность: {% if p.who == 1 %} Риелтор {% else %} Страховщик {% endif %}<span><input type="submit" class="change" value="изменить" onclick="Change_prof()"></span></h3>
+	<h3 id="prof">Должность: {% if p.who == 2 %} Закачик {% else %} Исполнитель {% endif %}<span><input type="submit" class="change" value="изменить" onclick="Change_prof()"></span></h3>
 	<h3 id="new_prof" style="display: none;">
 	<form action="/ch_prof/" method="post">{% csrf_token %}
 	Должность:

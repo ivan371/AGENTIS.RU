@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+	{% block title %} 
+	<h2>
+	 Сделать заказ
+	 </h2>
+	 <script src='{% static 'js/change_data.js' %}'></script>
+	{% endblock %}
+{% block content %}
+<div class="complete">
+	<h2>Поздравляем! Вы сделали заказ! Отменить заказ и посмотреть его статус вы можете в личном кабинете</h2>
+	<h2><a href="self_room">В личный кабинет</a></h2>
+	 </div>
+{% endblock %}

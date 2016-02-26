@@ -7,19 +7,27 @@
 	{% endblock %}
 {% block content %}
 	<div class="rieltors">
-		{% if user.is_authenticated %}
-		<h1><a href="how_rieltors">
-			Риелторам
-		</a></h1>	
-		{% else %}
 		<h1>
+		{% if user.is_authenticated %}
+		{% if p.who == 0 %}
+		<a href="list_rieltors">
 			Риелторам
-		</h1>
+		</a>
+		{% else %}
+		<a href="list_rieltors_order">
+			Риелторам
+		</a>
 		{% endif %}
+		{% else %}
+		Риелторам
+		{% endif %}
+		</h1>	
 		<img src="{%static "img/e1.png" %}" width="150px"> 
-		<h3><a href="how_rieltors">
+		<h3>
+		<a href="how_rieltors">
 			Узнать подробнее
-		</a></h3>
+		</a>
+		</h3>
 	</div>
 	<div class="insurance">
 		<h1>

@@ -83,7 +83,7 @@ a
 	position: inherit;
 	left: 1vw;
 	width:15vw;
-	border-radius: 10px
+	c
 }
 #how_work
 {
@@ -267,6 +267,14 @@ a
 	border-radius: 10px;
 	color: #FFFFFF;
  }
+ .mess {
+    background: #000000;
+    padding: 0 10px; /* Поля */
+    border: 2px solid #FFFFFF;
+    font-size: 1em; /* Размер текста */
+	border-radius: 10px;
+	color: #FFFFFF;
+ }
  .offer {
     width: 500px; /* Ширина поля с учетом padding */
     height: 40px; /* Высота */
@@ -375,4 +383,17 @@ a
 option
 {
 	text-align:  center;	
+}
+
+.messeger_name
+{
+	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
+	border: 5px solid #000000;
+	border-radius: 10px;
+}
+.messeger_name1
+{
+	background: linear-gradient(to bottom right, #AABAFF, #FF7F24);
+	border: 5px solid #000000;
+	border-radius: 10px;
 }

@@ -23,6 +23,14 @@
 	<p>
 		Сообщения 
 	</p>
+	{% for mess in m%}
+	<div class="messeger_name"> <p>{{mess.mess_to.login}}</p></div>
+	<p> {{mess.message}} </p>
+	{% endfor %}
+	{% for mess in m1%}
+	<div class="messeger_name1"> <p>{{mess.mess_from.login}}</p></div>
+	<p> {{mess.message}} </p>
+	{% endfor %}
 </div>
 <div class="right_enters">
 <div class="self_text">

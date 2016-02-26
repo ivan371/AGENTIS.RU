@@ -17,3 +17,14 @@ class orders_data(models.Model):
 	name_mess = models.CharField(max_length=100)
 	sum_mess = models.IntegerField(default=0)
 	message = models.CharField(max_length=3000)
+
+class order(models.Model):
+	order_from = models.ForeignKey(User_AGENTIS, related_name='order_from')
+	order_to = models.ForeignKey(User_AGENTIS, related_name='order_to')
+	status = models.IntegerField(default=0)
+
+class message(models.Model):
+	mess_from = models.ForeignKey(User_AGENTIS, related_name='mess_from')
+	mess_to = models.ForeignKey(User_AGENTIS, related_name='mess_to')
+	status = models.IntegerField(default=0)
+	message = models.CharField(max_length=3000)

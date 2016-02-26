@@ -30,5 +30,13 @@ urlpatterns = [
 	url(r'ch_prof/$', ch_prof),
 	url(r'ch_initial/$', ch_initial),
 	url(r'list_rieltors/$', list_rieltors),
+	url(r'list_rieltors_order/$', list_rieltors_order),
 	url(r'order_result/$', order_result),
+	url(r'ch_off_name/$', ch_off_name),
+	url(r'ch_off_sum/$', ch_off_sum),
+	url(r'ch_off_mess/$', ch_off_mess),
+	url(r'send_mess/$', send_mess),
+	url(r'save_mess/$', save_mess),
+	url(r'make_offer/$', make_offer),	
+	url(r'mess_success/$', mess_success),	
 	]
