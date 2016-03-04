@@ -23,6 +23,17 @@
 	<p>
 		Заказы 
 	</p>
+	{% for order in o %}
+	{% if p.who == 2 %}
+	<div class="self_mess">
+	<p> Имя исполнителя:  {{order.order_from.login}}</p>
+	{% else %}
+	<div class="alien_mess">
+	<p> Имя заказчика: {{order.order_to.login}}</p>
+	{% endif %}
+	<p> Предложение: {{order.href_order}}</p>
+	</div>
+	{% endfor %}
 </div>
 <div class="left_enters">
 <div class="self_text">

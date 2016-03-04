@@ -4,6 +4,7 @@
 	<h2>
 	 Добро пожаловать в личный кабинет!
 	 </h2>
+	  <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
 <div class="oppotunity">
@@ -24,12 +25,21 @@
 		Сообщения 
 	</p>
 	{% for mess in m%}
-	<div class="messeger_name"> <p>{{mess.mess_to.login}}</p></div>
-	<p> {{mess.message}} </p>
+	<div class="messeger_name" onclick="deploy_mess({{forloop.counter}})"> <p>{{mess.name}}</p></div>
+	<div id="sleep{{forloop.counter}}" class="messs" style="display: none">
+	{% for messages in mess.mess %}
+	{% if not messages.author %}
+	<div class="self_mess"><p>{{messages.message}}</p></div>
+	{% else %}
+	<div class="alien_mess"><p>{{messages.message}}</p></div>
+	{% endif %}			
 	{% endfor %}
-	{% for mess in m1%}
-	<div class="messeger_name"> <p>{{mess.mess_from.login}}</p></div>
-	<p> {{mess.message}} </p>
+	<form action="/chat/" method="post">{% csrf_token %}
+	<textarea name="message" autofocus rows="4" cols="55" wrap="virtual" class="mess_request" placeholder="Введите сообщение"></textarea>
+	<input type="hidden" name="name" value="{{mess.name}}">
+	<input type="submit" class="mess_submit" value="Отправить">	
+	</form>
+	</div>
 	{% endfor %}
 </div>
 <div class="right_enters">

@@ -34,3 +34,24 @@ function collapce_offer(a, b)
 	document.getElementById(a).style.display="block";
 	document.getElementById(b).style.display="none";
 }
+deploy_mess(0, 0);
+function deploy_mess(res, what)
+{
+	if(what == 0)
+	{
+		this.arr = new Array();
+	}
+	else
+	{
+		if(this.arr[res] == 0)
+		{
+			document.getElementById("sleep" + res).style.display = "none"
+			this.arr[res] = 1;
+		}
+		else
+		{
+			document.getElementById("sleep" +res).style.display = "block"
+			this.arr[res] = 0;
+		}
+	}
+}

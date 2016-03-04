@@ -83,7 +83,7 @@ a
 	position: inherit;
 	left: 1vw;
 	width:15vw;
-	c
+	border-radius: 10px
 }
 #how_work
 {
@@ -97,7 +97,7 @@ a
 {
 	position: fixed;
 	top: 70vw;
-	left: 82vw;
+	left: 43vw;
 	width:15vw;
 	z-index: 1;
 }
@@ -131,11 +131,11 @@ a
 }
 .rieltors
 {
-	position:fixed;
-	top: 250px;
-	left: 2vw;
+	position:absolute;
+	top: 100px;
+	left: 2vh;
 	width:40vw;
-	height:400px;
+	height:300px;
 	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
 	border: 5px solid #000000;
 	border-radius: 10px;
@@ -144,11 +144,37 @@ a
 }
 .insurance
 {
-	position:fixed;
-	top: 250px;
+	position:absolute;
+	top: 100px;
 	left: 57vw;
 	width:40vw;
-	height:400px;
+	height:300px;
+	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
+	border: 5px solid #000000;
+	border-radius: 10px;
+	text-align:  center;
+	color: #FFFFFF;
+}
+.ritual
+{
+	position:absolute;
+	top: 450px;
+	left: 2vh;
+	width:40vw;
+	height:300px;
+	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
+	border: 5px solid #000000;
+	border-radius: 10px;
+	text-align:  center;
+	color: #FFFFFF;
+}
+.other
+{
+	position:absolute;
+	top: 450px;
+	left: 57vw;
+	width:40vw;
+	height:300px;
 	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
 	border: 5px solid #000000;
 	border-radius: 10px;
@@ -188,6 +214,8 @@ a
 	width:50vw;
 	border: 2px solid #000000;
 	border-radius: 10px;
+	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
+	border: 5px solid #000000;
 	text-align:  center;
 	color: #FFFFFF;
 }
@@ -198,8 +226,6 @@ a
 	left: 25vw;
 	width:50vw;
 	height:1250px;
-	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 5px solid #000000;
 	border-radius: 10px;
 	text-align:  center;
 	color: #FFFFFF;
@@ -303,6 +329,13 @@ a
  {
  	width: 75px;
  }
+ 
+ #switch_region
+ {
+ 	top: 100px;
+ 	position: absolute;
+	left: 38vw;
+ }
  .secret_change {
     width: 250px; /* Ширина поля с учетом padding */
     height: 30px; /* Высота */
@@ -323,7 +356,7 @@ a
 	top: 250px;
 	left: 25vw;
 	width:50vw;
-	height:900px;
+	height:1100px;
 	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
 	border: 5px solid #000000;
 	border-radius: 10px;
@@ -343,6 +376,14 @@ a
 {
 	top: 190px;
 	left: 40vw;
+	position: inherit;
+	color: red; 
+	text-align:  center;
+}
+.errz
+{
+	top: 50px;
+	left: 42vw;
 	position: inherit;
 	color: red; 
 	text-align:  center;
@@ -390,4 +431,86 @@ option
 	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
 	border: 5px solid #000000;
 	border-radius: 10px;
+	cursor: pointer;
+}
+.alien_mess
+{
+	background: linear-gradient(to bottom right, #CAB44F, #EE7FAA);
+	border: 1px solid #000000;
+	margin-left: 10%;
+}
+.self_mess
+{
+	background: linear-gradient(to bottom right, #2AB77F, #187FAA);
+	border: 1px solid #000000;
+	margin-right: 10%;
+}
+.messs
+{
+	background: linear-gradient(to bottom right, #AABAFF, #FF7F24);
+	border: 5px solid #000000;
+	border-radius: 10px;
+}
+.mess_request {
+	width: 33.5vw;
+    height: 200px; /* Высота */
+    background: #000000;
+    border: 2px solid #FFFFFF;
+    font-size: 1em; /* Размер текста */
+	color: #FFFFFF;
+	margin-right: 10%;
+}
+.mess_submit {
+	width: 34vw;
+    height: 50px; /* Высота */
+    background: #000000;
+    border: 2px solid #FFFFFF;
+    font-size: 1em; /* Размер текста */
+	color: #FFFFFF;
+	margin-right: 10%;
+}
+
+.file_upload{
+	left: 150px;
+	width: 300px; /* Ширина поля с учетом padding */
+    height: 46px;
+    position: relative;
+    overflow: hidden;
+    background: #000000;
+    padding: 0 10px; /* Поля */
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+	color: #FFFFFF;
+    font-size: 1em;        /* example */
+    height: 2em;           /* example */
+    line-height: 2em       /* the same as height */
+}
+.file_upload > button{
+    float: right;
+    width: 8em;            /* example */
+    height: 100%;
+    border-radius: 10px;
+}
+.file_upload > div{
+    padding-left: 1em      /* example */
+}
+@media only screen and ( max-width: 500px ){  /* example */
+    .file_upload > div{
+        display: none
+    }
+    .file_upload > button{
+        width: 100%
+    }
+}
+.file_upload input[type=file]{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(20);
+    letter-spacing: 10em;     /* IE 9 fix */
+    -ms-transform: scale(20); /* IE 9 fix */
+    opacity: 0;
+    cursor: pointer
 }

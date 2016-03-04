@@ -28,27 +28,109 @@ from .models import orders_data
 from .models import message
 from .models import order
 
+from .message import messages
+from .message import mes
+
 def index(request):
-	p = User_AGENTIS.objects.get(login = request.session['member_id'])
-	return render_to_response('AGENTIS/index.html',{'p': p}, RequestContext(request))
+	if user.is_authenticated:
+		p = User_AGENTIS.objects.get(login = request.session['member_id'])
+		return render_to_response('AGENTIS/index.html',{'p': p}, RequestContext(request))
+	else:
+		return render_to_response('AGENTIS/index.html', RequestContext(request))
 	
 def enter(request):
 	return render(request, 'AGENTIS/enter.html')
 
 def orders(request):
 	p = User_AGENTIS.objects.get(login = request.session['member_id'])
-	return render_to_response('AGENTIS/orders.html',{'p': p}, RequestContext(request))
+	if p.who == 2:
+		o = order.objects.filter(order_to = p)
+	else:
+		o = order.objects.filter(order_from = p)
+	return render_to_response('AGENTIS/orders.html',{'p': p, 'o': o}, RequestContext(request))
+
+def chat(request):
+	c = {}
+	c.update(csrf(request))
+	p = User_AGENTIS.objects.get(login = request.session['member_id'])
+	errors = []
+	if request.method == 'POST':
+		POST = request.POST
+		if p.who == 2:
+			ms = message(mess_to = User_AGENTIS.objects.get(login = request.session['member_id']),
+					mess_from = User_AGENTIS.objects.get(login = POST['name']),
+					status = 0,
+					message = POST['message'],
+					author = 1,
+					) 
+			ms.save()
+		else:
+			ms = message(mess_from = User_AGENTIS.objects.get(login = request.session['member_id']),
+					mess_to = User_AGENTIS.objects.get(login = POST['name']),
+					status = 0,
+					message = POST['message'],
+					author = 0,
+					) 
+			ms.save()
+		return redirect('messagers/')
 
 def messagers(request):
 	p = User_AGENTIS.objects.get(login = request.session['member_id'])
-	m = message.objects.filter(mess_from.login = p)
-	m1 = message.objects.filter(mess_to.login = p)
-	print(p.login)
-	return render_to_response('AGENTIS/messager.html',{'p': p, 'm': m, 'm1': m}, RequestContext(request))
+	if(p.who == 1):
+		m = message.objects.filter(mess_from = p)
+		nm = []
+		for mess in m:
+			flag = 0
+			for messagez in nm:
+				if messagez.name == mess.mess_to.login:
+					flag = 1
+					messagez.add_data(mess.status, mess.author, mess.message)
+			if flag == 0:
+				newmess = messages(mess.mess_to.login)
+				nm.append(newmess)
+				nm[-1].add_data(mess.status, mess.author, mess.message)
+	
+	else:
+		m = message.objects.filter(mess_to = p)
+		nm = []
+		for mess in m:
+			flag = 0
+			for messagez in nm:
+				if messagez.name == mess.mess_from.login:
+					flag = 1
+					messagez.add_data(mess.status, mess.author, mess.message)
+			if flag == 0:
+				newmess = messages(mess.mess_from.login)
+				nm.append(newmess)
+				nm[-1].add_data(mess.status, mess.author, mess.message)
+	
+	
+	for messs in nm:
+		print(messs.name)
+		for messagez in messs.mess:
+			print(messagez.message)
+			print(messagez.status)
+			print(messagez.author)
+	return render_to_response('AGENTIS/messager.html',{'p': p, 'm': nm, 'who': p.who}, RequestContext(request))
 
 def exit(request):
 	auth.logout(request)
 	return render(request, 'AGENTIS/index.html')
+
+def filter_region(request):
+	c = {}
+	c.update(csrf(request))
+	errors = []
+	if request.method == 'POST':
+		POST = request.POST
+		print(POST['region'])
+		if POST['region'] == '1':
+			errors.append('Выберите регион')
+			offs = orders_data.objects.all()
+			return render_to_response('AGENTIS/list_rieltors_order.html',{'errors': errors[0], 'offs': offs}, RequestContext(request))
+		p = User_AGENTIS.objects.filter(region = POST['region'])
+		offs = orders_data.objects.filter(user_m = p)
+		return render_to_response('AGENTIS/list_rieltors_order.html',{'offs': offs}, RequestContext(request))
 	
 def ch_off_name(request):
 	c = {}
@@ -177,6 +259,12 @@ def make_offer(request):
 	if request.method == 'POST':
 		POST = request.POST
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
+		o = order(order_from = User_AGENTIS.objects.get(login = request.session['member_id']),
+					order_to = User_AGENTIS.objects.get(login = POST['name']),
+					status = 0,
+					href_order = POST['name_mess']
+				)
+		o.save()
 		return render_to_response('AGENTIS/make_offer.html', {'p': p, 'name': POST['name']},  RequestContext(request))
 
 def send_mess(request):
@@ -198,7 +286,8 @@ def save_mess(request):
 		m = message(mess_from = User_AGENTIS.objects.get(login = request.session['member_id']),
 					mess_to = User_AGENTIS.objects.get(login = POST['name']),
 					status = 0,
-					message = POST['message']
+					message = POST['message'],
+					author = 0,
 					) 
 		m.save()
 		return render(request, 'AGENTIS/mess_success.html')

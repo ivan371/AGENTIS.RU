@@ -21,7 +21,12 @@
 		<p><input type="password" class="user" name="password_repiate" placeholder="Повторите пароль" size="40" ></p> 
 		<p><input type="text" class="user" name="surname" placeholder="Фамилия" size="40" ></p> 
 		<p><input type="text" class="user" name="forename" placeholder="Имя" size="40" ></p> 
-		<p><input type="text" class="user" name="patronyname" placeholder="Отчество" size="40" ></p> 
+		<p><input type="text" class="user" name="patronyname" placeholder="Отчество" size="40" ></p>
+		<p><div class="file_upload">
+        	<button type="button">Загрузить</button>
+        		<div>Выберитеизображение</div>
+        	<input type="file">
+    	</div></p>
 		<p><select name="region" class="user" placeholder="Регион" >
 			<option value="1">Выберите регион</option>
 			<option value="2">Москва</option>
@@ -29,10 +34,9 @@
 		</select></p>		
 		<p><input type="text" class="user" name="email" placeholder="e-mail" size="40" ></p> 
 		<p><input type="text" class="user" name="number" placeholder="Телефон" size="40" ></p> 
-		<p><textarea name="message" rows="4" cols="55" wrap="virtual" class="user" placeholder="О себе"> </textarea> </p>
+		<p><textarea name="message" rows="4" cols="55" wrap="virtual" class="user" placeholder="О себе"></textarea> </p>
 		<p><input type="submit" class="user" value="Регистрация"></p>
 		</form>
-		</a></h3>
 	</div>
 	<div class="err">
 		{% if errors %}

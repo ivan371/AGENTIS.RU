@@ -66,7 +66,7 @@
 		<h3>
 		<p>Описание вашего предожения<p>
 		<form action="/ch_off_mess/" method="post">{% csrf_token %}
-		<textarea  rows="4" cols="55" wrap="virtual" name="off_mess" class="offer" id="textarea" placeholder="Описание">{{offers.message}} </textarea>
+		<textarea  rows="4" cols="55" wrap="virtual" name="off_mess" class="offer" id="textarea" placeholder="Описание">{{offers.message}}</textarea>
 		<input type="hidden" value="{{offers.message}}" name="off_mess_old" >
 		<span>
 				<input type="submit" class="change" value="сохранить">
@@ -94,7 +94,7 @@
 		<input type="text"  name="sum" class="offer" placeholder="Сумма">
 		<h4>
 		Введите описание вашего предложения
-		<textarea name="description" rows="4" cols="55" wrap="virtual" class="offer" id="textarea" placeholder="Описание"> </textarea>
+		<textarea name="description" rows="4" cols="55" wrap="virtual" class="offer" id="textarea" placeholder="Описание"></textarea>
 		</h4>
 		<input type="submit" class="user" value="сохранить">
 		</form>

@@ -7,6 +7,17 @@
 	 <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
+	<div id="switch_region">
+	<form action="/filter/" method="post">{% csrf_token %}
+	<select name="region" class="user" placeholder="Регион" >
+			<option value="1">Выберите регион</option>
+			<option value="2">Москва</option>
+			<option value="3">Санкт-Петербург</option>
+		</select>
+	<br>
+	<input type="submit" class="user" value="Отфильтровать"> 
+	</form>
+	</div>
 	<div id="new_offerz">
 	{% for offers in offs %}
 	<div class="new_offers">
@@ -32,14 +43,22 @@
 		</div>
 		<form action="/send_mess/" method="post">{% csrf_token %}
 		<input style=" margin: 0 auto;" type="submit" class="user" value="Написать сообщение">
-		<input type="hidden" name="name" value="{{offers.user_m}}">
+		<input type="hidden" name="name" value="{{offers.user_m.login}}">
 		</form>
 		<form action="/make_offer/" method="post">{% csrf_token %}
 		<input style=" margin: 0 auto;" type="submit" class="user" value="Сделать заказ">
-		<input type="hidden" name="name" value="{{offers.user_m}}">
+		<input type="hidden" name="name" value="{{offers.user_m.login}}">
+		<input type="hidden" name="name" value="{{offers.name_mess}}">
 		</form>
 		</div>
 	</div>
 	{% endfor %}
+	</div>
+	<div class="errz">
+		{% if errors %}
+		<h3>
+			{{errors}}
+		</h3>
+    {% endif %}
 	</div>
 {% endblock %}

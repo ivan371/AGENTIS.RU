@@ -21,6 +21,7 @@ class orders_data(models.Model):
 class order(models.Model):
 	order_from = models.ForeignKey(User_AGENTIS, related_name='order_from')
 	order_to = models.ForeignKey(User_AGENTIS, related_name='order_to')
+	href_order = models.CharField(default=0, max_length=100)
 	status = models.IntegerField(default=0)
 
 class message(models.Model):
@@ -28,3 +29,5 @@ class message(models.Model):
 	mess_to = models.ForeignKey(User_AGENTIS, related_name='mess_to')
 	status = models.IntegerField(default=0)
 	message = models.CharField(max_length=3000)
+	author = models.IntegerField(default=0)
+	
