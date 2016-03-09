@@ -22,11 +22,13 @@ from django.contrib import auth
 from django.views.generic.edit import FormView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.forms.models import modelform_factory
 
 from .models import User_AGENTIS
 from .models import orders_data
 from .models import message
 from .models import order
+from .forms import MediaModel
 
 from .message import messages
 from .message import mes
@@ -366,6 +368,15 @@ def registration_result(request):
 			errors.append('Некорректно введен телефонный номер')
 		if request.POST.get('email') and '@' not in request.POST['email']:
 			errors.append('Ваш e-mail не корректен.')
+		form = MediaModel(request.FILES)
+        
+		if form.is_valid():
+			isimg = request.FILES['img']
+		else:
+			print("AAAA")
+			isimg = 0
+		
+		print(isimg)	
 		if not errors:
 			p = User_AGENTIS(who = int(request.POST['who']),
 				login = request.POST['login'],
@@ -375,7 +386,8 @@ def registration_result(request):
 				region = int(request.POST['region']),
 				email = request.POST['email'],
 				number = int(request.POST['number']),
-				message = request.POST['message'])
+				message = request.POST['message'],
+				img = isimg)
 			p.save()
 			user = User.objects.create_user(username=request.POST['login'], email=request.POST['email'], password=request.POST['password'])
 			user.save()

@@ -45,13 +45,15 @@ function deploy_mess(res, what)
 	{
 		if(this.arr[res] == 0)
 		{
-			document.getElementById("sleep" + res).style.display = "none"
-			this.arr[res] = 1;
+			animation("sleep" +res, "bounceOut");
+			setTimeout(function(){document.getElementById("sleep" + res).style.display = "none"
+			this.arr[res] = 1;}, 1000)
 		}
 		else
 		{
 			document.getElementById("sleep" +res).style.display = "block"
 			this.arr[res] = 0;
+			animation("sleep" +res, "fadeInDown");
 		}
 	}
 }

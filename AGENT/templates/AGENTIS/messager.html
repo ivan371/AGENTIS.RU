@@ -26,7 +26,7 @@
 	</p>
 	{% for mess in m%}
 	<div class="messeger_name" onclick="deploy_mess({{forloop.counter}}, 1)"> <p>{{mess.name}}</p></div>
-	<div id="sleep{{forloop.counter}}" class="messs" style="display: none">
+	<div id="sleep{{forloop.counter}}" class="messs animated" style="display: none">
 	{% for messages in mess.mess %}
 	{% if not messages.author %}
 	<div class="self_mess"><p>{{messages.message}}</p></div>

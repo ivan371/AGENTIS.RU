@@ -22,7 +22,7 @@
 		Риелторам
 		{% endif %}
 		</h2>	
-		<img src="{%static "img/e1.png" %}" width="150px"> 
+		<img src="{%static "img/e1.png" %}" id="p1" width="150px" onmouseover="animation('p1', 'pulse')" class="animated"> 
 		<h3>
 		<a href="how_rieltors">
 			Узнать подробнее
@@ -33,7 +33,7 @@
 		<h2>
 			Страховым агентам
 		</h2>
-		<img src="{%static "img/e1.png" %}" width="150px"> 
+		<img src="{%static "img/e1.png" %}" id="p2" width="150px" onmouseover="animation('p2', 'pulse')"> 
 		<h3><a href="how_insurance">
 			Узнать подробнее
 		</a></h3>
@@ -47,7 +47,7 @@
 	</div>
 	<div class="other">
 		<h2>
-			Свободным агентам
+			Прочим агентам
 		</h2>
 		<img src="{%static "img/e1.png" %}" width="150px"> 
 		<h3>Узнать подробнее</h3>

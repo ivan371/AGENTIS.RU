@@ -11,6 +11,7 @@ class User_AGENTIS(models.Model):
 	number = models.IntegerField(default=0)
 	message = models.CharField(max_length=3000)
 	prof = models.CharField(max_length=30)
+	img = models.ImageField(default=0, upload_to='user_media')
 	
 class orders_data(models.Model):
 	user_m = models.ForeignKey(User_AGENTIS)
@@ -21,7 +22,7 @@ class orders_data(models.Model):
 class order(models.Model):
 	order_from = models.ForeignKey(User_AGENTIS, related_name='order_from')
 	order_to = models.ForeignKey(User_AGENTIS, related_name='order_to')
-	href_order = models.CharField(max_length=100)
+	href_order = models.CharField(default=0, max_length=100)
 	status = models.IntegerField(default=0)
 
 class message(models.Model):
@@ -30,4 +31,10 @@ class message(models.Model):
 	status = models.IntegerField(default=0)
 	message = models.CharField(max_length=3000)
 	author = models.IntegerField(default=0)
+
+from django.forms.models import modelform_factory
+	
+class MediaModel(models.Model):
+ 	title = forms.CharField(default = 0, max_length=50)
+    media_file = models.FileField(upload_to='user_media')
 	

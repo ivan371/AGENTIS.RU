@@ -24,7 +24,7 @@
 		<p><input type="text" class="user" name="patronyname" placeholder="Отчество" size="40" ></p>
 		<p><div class="file_upload">
         	<button type="button">Загрузить</button>
-        		<div>Выберитеизображение</div>
+        		<div>Файл не выбран</div>
         	<input type="file">
     	</div></p>
 		<p><select name="region" class="user" placeholder="Регион" >

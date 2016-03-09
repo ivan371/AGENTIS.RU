@@ -3,8 +3,11 @@
 <html lang="RU">
 <head>
 	<link rel="stylesheet" href="{% static "css/stylel.css" %}" type="text/css" />
+	<link rel="stylesheet" href="{% static "css/animate.css" %}" type="text/css" />
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src='{% static 'js/img.js' %}'></script>
 </head>
-<body>
+<body id="all">
 	<div class="title"> 
 		<h1>
 		"AGENTIS.RU" Первый в России портал по подбору агентов 
@@ -33,12 +36,12 @@
 			</p>
 		</a></div>
 		{% if user.is_authenticated %}
-		<div id="exit"><a href="exit">
+		<div id="enter"><a href="exit">
 			<p>
 				Выйти
 			</p>
 		</a></div>
-		<div id="self_room"><a href="self_room">
+		<div id="registration"><a href="self_room">
 			<p>
 				Личный кабинет
 			</p>

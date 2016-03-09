@@ -11,6 +11,7 @@ class User_AGENTIS(models.Model):
 	number = models.IntegerField(default=0)
 	message = models.CharField(max_length=3000)
 	prof = models.CharField(max_length=30)
+	img = models.ImageField(default=0, upload_to='user_media')
 	
 class orders_data(models.Model):
 	user_m = models.ForeignKey(User_AGENTIS)
@@ -30,4 +31,6 @@ class message(models.Model):
 	status = models.IntegerField(default=0)
 	message = models.CharField(max_length=3000)
 	author = models.IntegerField(default=0)
+
+
 	
