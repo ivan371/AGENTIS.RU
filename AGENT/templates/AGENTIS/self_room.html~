@@ -27,7 +27,10 @@
 </div>
 <div class="enters">
 <div class="self_text">
-	<h3>Здравствуйте, {{user.username}}</h3>
+	<div> <img src="/media{{p.img.img}}/" id="img">
+	 <script src='{% static 'js/ch_image.js' %}'></script></div>
+	 <h3>Здравствуйте, {{user.username}} 
+	</h3>
 	<h3>Ваши контактные данные:</h3>
 	<h3 id="initials">ФИО: {{p.surname}} {{p.forename}} {{p.partronyname}}
 		<span>
@@ -76,7 +79,7 @@
 		</span>
 		</form>
 	</h3>
-	<h3 id="prof">Должность: {% if p.who == 0 %} Закачик {% else %} Исполнитель {% endif %}<span><input type="submit" class="change" value="изменить" onclick="Change_prof()"></span></h3>
+	<h3 id="prof">Должность: {% if p.who == 2 %} Закачик {% else %} Исполнитель {% endif %}<span><input type="submit" class="change" value="изменить" onclick="Change_prof()"></span></h3>
 	<h3 id="new_prof" style="display: none;">
 	<form action="/ch_prof/" method="post">{% csrf_token %}
 	Должность:

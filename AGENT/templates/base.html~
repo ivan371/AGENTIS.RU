@@ -6,8 +6,9 @@
 	<link rel="stylesheet" href="{% static "css/animate.css" %}" type="text/css" />
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src='{% static 'js/img.js' %}'></script>
+	<script src='{% static 'js/change_data.js' %}'></script>
 </head>
-<body id="all">
+<body id="all" class="animated">
 	<div class="title"> 
 		<h1>
 		"AGENTIS.RU" Первый в России портал по подбору агентов 
@@ -25,11 +26,11 @@
 				О нас
 			</p>
 		</a></div>
-		<div id="how_work"><a href="how_work">
+		<div id="how_work" onclick="animation_delay('all', 'flip', 'how_work')">
 			<p>
 				Как это работает 
 			</p>
-		</a></div>
+		</div>
 		<div id="connection"><a href="connection">
 			<p>
 				Обратная связь

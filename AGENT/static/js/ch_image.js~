@@ -1,0 +1,2 @@
+document.getElementById("img").src = "/media/" + document.getElementById("img").src.slice(28,-1);
+//alert(document.getElementById("img").src.slice(28,-1));

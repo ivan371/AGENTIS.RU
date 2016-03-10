@@ -23,11 +23,13 @@ from django.views.generic.edit import FormView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms.models import modelform_factory
+from django.core.files import File
 
 from .models import User_AGENTIS
 from .models import orders_data
 from .models import message
 from .models import order
+from .models import image
 from .forms import MediaModel
 
 from .message import messages
@@ -368,13 +370,24 @@ def registration_result(request):
 			errors.append('Некорректно введен телефонный номер')
 		if request.POST.get('email') and '@' not in request.POST['email']:
 			errors.append('Ваш e-mail не корректен.')
-		form = MediaModel(request.FILES)
+		tmp_str ="tmp/"+ str(request.FILES['img'])
+		print(tmp_str)
+		with open(tmp_str, 'wb+') as f:
+			for chunk in request.FILES['img'].chunks():
+				f.write(chunk)
+    		#f.write(request.FILES['img'].read())
+		reopen = open(tmp_str, "rb")
+		django_file = File(reopen)
+		newim = image()
+		newim.name_mess = str(request.FILES['img'])
+		newim.img.save(str(request.FILES['img']), django_file, save=True)
+		#form = MediaModel(request.FILES)
         
-		if form.is_valid():
-			isimg = request.FILES['img']
-		else:
-			print("AAAA")
-			isimg = 0
+		#if form.is_valid():
+		#	isimg = request.FILES['img']
+		#else:
+		#	print("AAAA")
+		isimg = 0
 		
 		print(isimg)	
 		if not errors:
@@ -387,7 +400,8 @@ def registration_result(request):
 				email = request.POST['email'],
 				number = int(request.POST['number']),
 				message = request.POST['message'],
-				img = isimg)
+				)
+			p.img.save(str(request.FILES['img']), django_file, save=True)
 			p.save()
 			user = User.objects.create_user(username=request.POST['login'], email=request.POST['email'], password=request.POST['password'])
 			user.save()

@@ -6,8 +6,9 @@
 	<link rel="stylesheet" href="{% static "css/animate.css" %}" type="text/css" />
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src='{% static 'js/img.js' %}'></script>
+	<script src='{% static 'js/change_data.js' %}'></script>
 </head>
-<body id="all">
+<body id="all" class="animated">
 	<div class="title"> 
 		<h1>
 		"AGENTIS.RU" Первый в России портал по подбору агентов 
@@ -20,43 +21,43 @@
 		<img src="{% static "img/slogan.jpg" %}" width="100px">
 	</a></div>
 	<div class ="links">
-		<div id="about" ><a href="about">
+		<div id="about" onclick="animation_delay('all', 'flip', 'about')">
 			<p>
 				О нас
 			</p>
-		</a></div>
-		<div id="how_work"><a href="how_work">
+		</div>
+		<div id="how_work" onclick="animation_delay('all', 'flip', 'how_work')">
 			<p>
 				Как это работает 
 			</p>
-		</a></div>
-		<div id="connection"><a href="connection">
+		</div>
+		<div id="connection" onclick="animation_delay('all', 'flip', 'connection')">
 			<p>
 				Обратная связь
 			</p>
-		</a></div>
+		</div>
 		{% if user.is_authenticated %}
-		<div id="enter"><a href="exit">
+		<div id="enter" onclick="animation_delay('all', 'flip', 'exit')">
 			<p>
 				Выйти
 			</p>
-		</a></div>
-		<div id="registration"><a href="self_room">
+		</div>
+		<div id="registration" onclick="animation_delay('all', 'flip', 'self_room')">
 			<p>
 				Личный кабинет
 			</p>
-		</a></div>
+		</div>
 		{% else %}
-		<div id="enter"><a href="enter">
+		<div id="enter" onclick="animation_delay('all', 'flip', 'enter')">
 			<p>
 				Войти
 			</p>
-		</a></div>
-		<div id="registration"><a href="registration">
+		</div>
+		<div id="registration" onclick="animation_delay('all', 'flip', 'registration')">
 			<p>
 				Регистрация
 			</p>
-		</a></div>
+		</div>
 		{% endif %}
 		{% block content %} {% endblock %}
 </body>

@@ -1,5 +1,10 @@
 from django.db import models
 
+class image(models.Model):
+	name_mess = models.CharField(default=0, max_length=3000)
+	img = models.ImageField()
+	
+
 class User_AGENTIS(models.Model):
 	who = models.IntegerField(default=0)
 	login = models.CharField(max_length=30)
@@ -11,7 +16,7 @@ class User_AGENTIS(models.Model):
 	number = models.IntegerField(default=0)
 	message = models.CharField(max_length=3000)
 	prof = models.CharField(max_length=30)
-	img = models.ImageField(default=0, upload_to='user_media')
+	img = models.ForeignKey(image)
 	
 class orders_data(models.Model):
 	user_m = models.ForeignKey(User_AGENTIS)
@@ -25,6 +30,7 @@ class order(models.Model):
 	href_order = models.CharField(default=0, max_length=100)
 	status = models.IntegerField(default=0)
 
+
 class message(models.Model):
 	mess_from = models.ForeignKey(User_AGENTIS, related_name='mess_from')
 	mess_to = models.ForeignKey(User_AGENTIS, related_name='mess_to')
@@ -32,5 +38,3 @@ class message(models.Model):
 	message = models.CharField(max_length=3000)
 	author = models.IntegerField(default=0)
 
-
-	

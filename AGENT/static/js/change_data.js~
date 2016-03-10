@@ -45,7 +45,7 @@ function deploy_mess(res, what)
 	{
 		if(this.arr[res] == 0)
 		{
-			animation("sleep" +res, "fadeInDown");
+			animation("sleep" +res, "bounceOut");
 			setTimeout(function(){document.getElementById("sleep" + res).style.display = "none"
 			this.arr[res] = 1;}, 1000)
 		}
@@ -53,7 +53,22 @@ function deploy_mess(res, what)
 		{
 			document.getElementById("sleep" +res).style.display = "block"
 			this.arr[res] = 0;
-			animation("sleep" +res, "bounceInDown");
+			animation("sleep" +res, "fadeInDown");
 		}
 	}
+}
+
+function animation_delay(id, effect, href)
+{
+	animation(id, effect);
+	document.getElementById(id).classList.add(effect);
+    setTimeout( function(){
+        document.getElementById(id).classList.remove(effect);
+        location.href = href;
+    }, 1000);
+}
+
+function ch_image()
+{
+	alert(0);
 }

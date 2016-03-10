@@ -57,3 +57,14 @@ function deploy_mess(res, what)
 		}
 	}
 }
+
+function animation_delay(id, effect, href)
+{
+	animation(id, effect);
+	document.getElementById(id).classList.add(effect);
+    setTimeout( function(){
+        document.getElementById(id).classList.remove(effect);
+        location.href = href;
+    }, 1000);
+}
+

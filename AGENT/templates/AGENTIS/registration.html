@@ -10,7 +10,7 @@
 		<h2>
 			Регистрация
 		</h2>
-		<form action="/registration_result/" method="post">
+		<form action="/registration_result/" method="post" enctype="multipart/form-data">
 		<p>{% csrf_token %}</p>
 		<p><select name="who" class="user" >
 			<option selected value="1">Заказчик</option>
@@ -23,9 +23,9 @@
 		<p><input type="text" class="user" name="forename" placeholder="Имя" size="40" ></p> 
 		<p><input type="text" class="user" name="patronyname" placeholder="Отчество" size="40" ></p>
 		<p><div class="file_upload">
-        	<button type="button" name="img">Загрузить</button>
+        	<button type="button" >Загрузить</button>
         		<div>Файл не выбран</div>
-        	<input type="file">
+        	<input type="file" name="img" multiple="true">
     	</div></p>
 		<p><select name="region" class="user" placeholder="Регион" >
 			<option value="1">Выберите регион</option>

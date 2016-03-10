@@ -75,7 +75,7 @@ a
 	position: inherit;
 	left: 60vw;
 	width:39vw;
-	border-radius: 10px
+	border-radius: 10px;
 }
 #about
 {
@@ -83,7 +83,8 @@ a
 	position: inherit;
 	left: 1vw;
 	width:15vw;
-	border-radius: 10px
+	border-radius: 10px;
+	cursor: pointer;
 }
 #how_work
 {
@@ -91,7 +92,8 @@ a
 	position: inherit;
 	left: 25vw;
 	width:15vw;
-	border-radius: 10px
+	border-radius: 10px;
+	cursor: pointer;
 }
 #connection
 {
@@ -100,6 +102,7 @@ a
 	left: 43vw;
 	width:15vw;
 	z-index: 1;
+	cursor: pointer;
 }
 #connection p
 {
@@ -111,7 +114,7 @@ a
 	position: inherit;
 	left: 40vw;
 	width:20vw;
-	border-radius: 10px
+	border-radius: 10px;
 }
 #enter
 {
@@ -119,7 +122,8 @@ a
 	position: inherit;
 	left: 60vw;
 	width:15vw;
-	border-radius: 10px
+	border-radius: 10px;
+	cursor: pointer;
 }
 #registration
 {
@@ -127,7 +131,19 @@ a
 	position: inherit;
 	left: 84vw;
 	width:15vw;
-	border-radius: 10px
+	border-radius: 10px;
+	cursor: pointer;
+}
+#img
+{
+	width: 10vw;
+	height:10vwж
+}
+#photo
+{
+	position: absolute;
+	left: 39vw;
+	top: 1vh;
 }
 .rieltors
 {
@@ -471,7 +487,7 @@ option
 }
 
 .file_upload{
-	left: 150px;
+	left: 145px;
 	width: 300px; /* Ширина поля с учетом padding */
     height: 46px;
     position: relative;
