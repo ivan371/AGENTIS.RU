@@ -21,12 +21,12 @@
 		<img src="{% static "img/slogan.jpg" %}" width="100px">
 	</a></div>
 	<div class ="links">
-		<div id="about" onclick="animation_delay('all', 'flip', 'about')">
+		<div id="about" onmouseover="animation('about', 'jello')" onclick="animation_delay('all', 'flip', 'about')" class="animated">
 			<p>
 				О нас
 			</p>
 		</div>
-		<div id="how_work" onclick="animation_delay('all', 'flip', 'how_work')">
+		<div id="how_work" onclick="animation_delay('all', 'flip', 'how_work')" onmouseover="animation('how_work', 'jello')" class="animated">
 			<p>
 				Как это работает 
 			</p>
@@ -37,23 +37,23 @@
 			</p>
 		</div>
 		{% if user.is_authenticated %}
-		<div id="enter" onclick="animation_delay('all', 'flip', 'exit')">
+		<div id="enter" onclick="animation_delay('all', 'flip', 'exit')" onmouseover="animation('enter', 'jello')" class="animated">
 			<p>
 				Выйти
 			</p>
 		</div>
-		<div id="registration" onclick="animation_delay('all', 'flip', 'self_room')">
+		<div id="registration" onclick="animation_delay('all', 'flip', 'self_room')" onmouseover="animation('registration', 'jello')" class="animated">
 			<p>
 				Личный кабинет
 			</p>
 		</div>
 		{% else %}
-		<div id="enter" onclick="animation_delay('all', 'flip', 'enter')">
+		<div id="enter" onclick="animation_delay('all', 'flip', 'enter')" onmouseover="animation('enter', 'jello')" class="animated">
 			<p>
 				Войти
 			</p>
 		</div>
-		<div id="registration" onclick="animation_delay('all', 'flip', 'registration')">
+		<div id="registration" onclick="animation_delay('all', 'flip', 'registration')" onmouseover="animation('registration', 'jello')" class="animated">
 			<p>
 				Регистрация
 			</p>

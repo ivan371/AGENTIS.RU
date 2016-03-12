@@ -400,8 +400,9 @@ def registration_result(request):
 				email = request.POST['email'],
 				number = int(request.POST['number']),
 				message = request.POST['message'],
+				img = newim
 				)
-			p.img.save(str(request.FILES['img']), django_file, save=True)
+			#p.img.save(str(request.FILES['img']), django_file, save=True)
 			p.save()
 			user = User.objects.create_user(username=request.POST['login'], email=request.POST['email'], password=request.POST['password'])
 			user.save()

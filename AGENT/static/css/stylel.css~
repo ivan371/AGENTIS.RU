@@ -3,6 +3,7 @@
 body
 {
 	background: linear-gradient(to bottom right, #F0FFF0, #CAFF70);
+	margin: 0.2vw;
 }
 a 
 {
@@ -14,52 +15,66 @@ a
 {
 	position:absolute;
 	width:100vw;
-	height:120px;
+	height:9vw;
 	background: linear-gradient(to right, black, gray);
 	text-align:  center;
-	border-radius: 10px;
+	border-radius: 1vw;
 }
 .slogan
 {
 	position: absolute;
 	z-index: 2;
-	top: 20px;
-	left: 20px;
+	top: 2vh;
+	left: 2vw;
 }
-
+.slogan img
+{
+	height: 7vw;
+	width: 9vw;
+}
 .oppotunity
 {
 	position:absolute;
 	width:100vw;
-	top: 67px;
-	height:70px;
+	top: 6vw;
+	height:5vw;
 	background: linear-gradient(to right, black, gray);
 	text-align:  center;
 	border-radius: 10px;
 }
 .title h1
 {
-	color: #FFFFFF
+	color: #FFFFFF;
+	font-size: 2.5vw;
 }
 .title h2
 {
 	color: #FFFFFF;
+	font-size: 1.5vw;
+}
+h2
+{
+	font-size: 2vw;
+}
+a
+{
+	font-size: 2vw;
 }
 .links
 {
 	position:absolute;
-	top: 120px;
+	top: 9vw;
 	width:100vw;
-	height:70px;
+	height:6vw;
 	background: linear-gradient(to right, black, gray);
 	text-align:  center;
-	font-size: 20px;
-	border-radius: 10px;
+	border-radius: 1vw;
 	z-index: 1;
 }
 .links p
 {
 	color: #FFFFFF;
+	font-size: 1.7vw;
 }
 #orders
 {
@@ -79,21 +94,22 @@ a
 }
 #about
 {
-	border: 2px solid #00BFFF;
+	border: 0.2vw solid #00BFFF;
 	position: inherit;
 	left: 1vw;
 	width:15vw;
-	border-radius: 10px;
+	border-radius: 1vw;
 	cursor: pointer;
 }
 #how_work
 {
-	border: 2px solid #00BFFF;
+	border: 0.2vw solid #00BFFF;
 	position: inherit;
 	left: 25vw;
 	width:15vw;
 	border-radius: 10px;
 	cursor: pointer;
+	border-radius: 1vw;
 }
 #connection
 {
@@ -118,95 +134,120 @@ a
 }
 #enter
 {
-	border: 2px solid #00BFFF;
+	border: 0.2vw solid #00BFFF;
 	position: inherit;
 	left: 60vw;
 	width:15vw;
-	border-radius: 10px;
+	border-radius: 1vw;
 	cursor: pointer;
 }
 #registration
 {
-	border: 2px solid #00BFFF;
+	border: 0.2vw solid #00BFFF;
 	position: inherit;
 	left: 84vw;
 	width:15vw;
-	border-radius: 10px;
+	border-radius: 1vw;
 	cursor: pointer;
 }
 #img
 {
-	width: 10vw;
-	height:10vwж
+	width: 9vw;
+	height:9vw;
 }
 #photo
 {
 	position: absolute;
-	left: 39vw;
-	top: 1vh;
+	right: 1vw;
+	top: 1vw;
+}
+#photo img
+{
+	height: 6vw;
+	width: 7vw;
 }
 .rieltors
 {
 	position:absolute;
-	top: 100px;
-	left: 2vh;
+	top: 8vw;
+	left: 1vw;
 	width:40vw;
-	height:300px;
+	height:24vw;
 	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 5px solid #000000;
-	border-radius: 10px;
+	border: 0.3vw solid #000000;
+	border-radius: 1vw;
 	text-align:  center;
 	color: #FFFFFF;
+}
+.rieltors img
+{
+	height: 11vw;
+	width: 11vw;
 }
 .insurance
 {
 	position:absolute;
-	top: 100px;
-	left: 57vw;
+	top: 8vw;
+	left: 59vw;
 	width:40vw;
-	height:300px;
+	height:24vw;
 	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 5px solid #000000;
-	border-radius: 10px;
+	border: 0.3vw solid #000000;
+	border-radius: 1vw;
 	text-align:  center;
 	color: #FFFFFF;
+}
+.insurance img
+{
+	height: 11vw;
+	width: 11vw;
 }
 .ritual
 {
 	position:absolute;
-	top: 450px;
-	left: 2vh;
+	top: 35vw;
+	left: 1vw;
 	width:40vw;
-	height:300px;
+	height:24vw;
 	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 5px solid #000000;
-	border-radius: 10px;
+	border: 0.3vw solid #000000;
+	border-radius: 1vw;
 	text-align:  center;
 	color: #FFFFFF;
+}
+.ritual img
+{
+	height: 11vw;
+	width: 11vw;
 }
 .other
 {
 	position:absolute;
-	top: 450px;
-	left: 57vw;
+	top: 35vw;
+	left: 59vw;
 	width:40vw;
-	height:300px;
+	height:24vw;
 	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 5px solid #000000;
-	border-radius: 10px;
+	border: 0.3vw solid #000000;
+	border-radius: 1vw;
 	text-align:  center;
 	color: #FFFFFF;
+}
+.other img
+{
+	height: 11vw;
+	width: 11vw;
 }
 .enters
 {
 	position:fixed;
-	top: 360px;
+	top: 30vw;
 	left: 25vw;
 	width:50vw;
-	height:350px;
+	height:30vw;
 	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 5px solid #000000;
-	border-radius: 10px;
+	border: 0.5vw solid #000000;
+	border-radius: 1vw;
 	text-align:  center;
 	color: #FFFFFF;
 }
@@ -276,7 +317,7 @@ a
 .left_enters
 {
 	position:fixed;
-	top: 360px;
+	top: 30vw;
 	left: 45vw;
 	width:50vw;
 	height:350px;
@@ -289,7 +330,7 @@ a
 .right_enters
 {
 	position:fixed;
-	top: 360px;
+	top: 30vw;
 	left: 5vw;
 	width:50vw;
 	height:350px;

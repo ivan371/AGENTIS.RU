@@ -27,7 +27,7 @@
 </div>
 <div class="enters">
 <div class="self_text">
-	<div> <img src="/media{{p.img.img}}/" id="img">
+	<div id="photo"> <img src="/media{{p.img.img}}/" id="img">
 	 <script src='{% static 'js/ch_image.js' %}'></script></div>
 	 <h3>Здравствуйте, {{user.username}} 
 	</h3>

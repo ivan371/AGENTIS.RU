@@ -239,7 +239,6 @@ def ch_initial(request):
 
 def self_room(request):
 	p = User_AGENTIS.objects.get(login = request.session['member_id'])
-	p.img.img = p.img.img.replace(p.img.img[0], '')
 	return render_to_response('AGENTIS/self_room.html',{'p': p}, RequestContext(request))
 
 def registration(request):
@@ -401,8 +400,9 @@ def registration_result(request):
 				email = request.POST['email'],
 				number = int(request.POST['number']),
 				message = request.POST['message'],
+				img = mewim
 				)
-			p.img.save(str(request.FILES['img']), django_file, save=True)
+			#p.img.save(str(request.FILES['img']), django_file, save=True)
 			p.save()
 			user = User.objects.create_user(username=request.POST['login'], email=request.POST['email'], password=request.POST['password'])
 			user.save()
