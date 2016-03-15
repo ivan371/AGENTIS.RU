@@ -41,6 +41,10 @@ urlpatterns = [
 	url(r'mess_success/$', mess_success),	
 	url(r'chat/$', chat),	
 	url(r'filter/$', filter_region),
+	url(r'for_rieltors/$', for_rieltors),
+	url(r'list/$', lists),
+	url(r'profile/$', profile),
+	url(r'filter_profil/$', filter_profil),
 	]
 	
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns

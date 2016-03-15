@@ -13,8 +13,8 @@
 		<form action="/registration_result/" method="post" enctype="multipart/form-data">
 		<p>{% csrf_token %}</p>
 		<p><select name="who" class="user" >
-			<option selected value="1">Заказчик</option>
-			<option value="2">Исполнитель</option>
+			<option selected value="2">Заказчик</option>
+			<option value="1">Исполнитель</option>
 		</select></p>
 		<p><input type="text" class="user" name="login" placeholder="Логин" size="40" ></p> 			
 		<p><input type="password" class="user" name="password" placeholder="Пароль" size="40" ></p> 

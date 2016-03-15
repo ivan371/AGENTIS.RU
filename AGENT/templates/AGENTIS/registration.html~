@@ -25,7 +25,7 @@
 		<p><div class="file_upload">
         	<button type="button" >Загрузить</button>
         		<div>Файл не выбран</div>
-        	<input type="file" name="img">
+        	<input type="file" name="img" multiple="true">
     	</div></p>
 		<p><select name="region" class="user" placeholder="Регион" >
 			<option value="1">Выберите регион</option>

@@ -36,11 +36,14 @@ from .message import messages
 from .message import mes
 
 def index(request):
+	return render_to_response('AGENTIS/index.html', RequestContext(request))
+	
+def for_rieltors(request):
 	try:
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
-		return render_to_response('AGENTIS/index.html',{'p': p}, RequestContext(request))
+		return render_to_response('AGENTIS/for_rieltors.html',{'p': p}, RequestContext(request))
 	except:
-		return render_to_response('AGENTIS/index.html', RequestContext(request))
+		return render_to_response('AGENTIS/for_rieltors.html', RequestContext(request))
 	
 def enter(request):
 	return render(request, 'AGENTIS/enter.html')
@@ -135,6 +138,20 @@ def filter_region(request):
 		p = User_AGENTIS.objects.filter(region = POST['region'])
 		offs = orders_data.objects.filter(user_m = p)
 		return render_to_response('AGENTIS/list_rieltors_order.html',{'offs': offs}, RequestContext(request))
+
+def filter_profil(request):
+	c = {}
+	c.update(csrf(request))
+	errors = []
+	if request.method == 'POST':
+		POST = request.POST
+		print(POST['region'])
+		if POST['region'] == '1':
+			errors.append('Выберите регион')
+			p = User_AGENTIS.objects.filter(who = 1)
+			return render_to_response('AGENTIS/profile.html',{'errors': errors[0], 'ps': p}, RequestContext(request))
+		p = User_AGENTIS.objects.filter(region = POST['region'], who = 1)
+		return render_to_response('AGENTIS/profile.html',{'ps': p}, RequestContext(request))
 	
 def ch_off_name(request):
 	c = {}
@@ -253,6 +270,15 @@ def list_rieltors(request):
 def list_rieltors_order(request):
 	offs = orders_data.objects.all()
 	return render_to_response('AGENTIS/list_rieltors_order.html',{'offs': offs}, RequestContext(request))
+
+def lists(request):
+	offs = orders_data.objects.all()
+	return render_to_response('AGENTIS/list.html',{'offs': offs}, RequestContext(request))
+
+def profile(request):
+	ps = User_AGENTIS.objects.filter(who = 1)
+	return render_to_response('AGENTIS/profile.html',{'ps': ps}, RequestContext(request))
+
 
 def mess_success(request):
 	return render_to_response('AGENTIS/mess_success.html', RequestContext(request))

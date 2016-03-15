@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+	{% block title %} 
+	<h2>
+	 Список исполнителей
+	 </h2>
+	 <script src='{% static 'js/change_data.js' %}'></script>
+	{% endblock %}
+{% block content %}
+	<div id="switch_region">
+	<form action="/filter_profil/" method="post">{% csrf_token %}
+	<select name="region" class="user" placeholder="Регион" >
+			<option value="1">Выберите регион</option>
+			<option value="2">Москва</option>
+			<option value="3">Санкт-Петербург</option>
+		</select>
+	<br>
+	<input type="submit" class="user" value="Отфильтровать"> 
+	</form>
+	</div>
+	<div id="new_offerz">
+	{% for p in ps %}
+	<div class="new_offers">
+			<h3>Логин: {{p.login}}</h3>
+			<h3>ФИО: {{p.surname}} {{p.forename}} {{p.partronyname}}</h3>
+			<h3>e-mail: {{p.email}}</h3>
+			<h3>регион: {{p.region}}</h3>
+			<h3>Телефон: {{p.number}}</h3>
+			<h3></h3>
+	</div>
+	{% endfor %}
+	</div>
+	<div class="errz">
+		{% if errors %}
+		<h3>
+			{{errors}}
+		</h3>
+    {% endif %}
+	</div>
+{% endblock %}

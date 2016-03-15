@@ -8,15 +8,22 @@
 	{% endblock %}
 {% block content %}
 <div class="oppotunity">
-		<div id="orders" ><a href="orders">
+		<div id="orders" onmouseover="animation('orders', 'jello')" class="animated"><a href="orders">
 			<p>
-				Заказы
+				Предложения
 			</p>
 		</a></div>
-		<div id="self"><a href="self_room">
+		{% if p.who == 1%}
+		<div id="self" onmouseover="animation('self', 'jello')" class="animated" ><a href="self_room">
 			<p>
 				Личный кабинет 
 			</p>
+		{% else %}
+		<div id="self" onmouseover="animation('self', 'jello')" class="animated" ><a href="list_rieltors">
+			<p>
+				Мои заказы 
+			</p>	
+		{% endif %}
 		</a></div>
 	
 </div>

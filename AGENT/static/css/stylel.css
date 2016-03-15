@@ -2,12 +2,15 @@
 
 body
 {
-	background: linear-gradient(to bottom right, #F0FFF0, #CAFF70);
-	margin: 0.2vw;
+	margin: 0.1vw;
+	font-family: 'Roboto', sans-serif;
+	background: url(fon.jpg);
+	background-attachment:fixed;
+	background-repeat:cover;
 }
 a 
 {
-	color:#FFFFFF;
+	color: white;
 	text-decoration: none;
 }
 
@@ -33,6 +36,16 @@ a
 	width: 9vw;
 }
 .oppotunity
+{
+	position:absolute;
+	width:100vw;
+	top: 6vw;
+	height:6vw;
+	background: linear-gradient(to right, black, gray);
+	text-align:  center;
+	border-radius: 10px;
+}
+.for_rieltors
 {
 	position:absolute;
 	width:100vw;
@@ -78,44 +91,36 @@ a
 }
 #orders
 {
-	border: 2px solid #00BFFF;
 	position: inherit;
 	left: 1vw;
 	width:39vw;
-	border-radius: 10px
-}
+	}
 #messegers
 {
-	border: 2px solid #00BFFF;
 	position: inherit;
 	left: 60vw;
 	width:39vw;
-	border-radius: 10px;
 }
 #about
 {
-	border: 0.2vw solid #00BFFF;
 	position: inherit;
 	left: 1vw;
 	width:15vw;
-	border-radius: 1vw;
 	cursor: pointer;
 }
 #how_work
 {
-	border: 0.2vw solid #00BFFF;
 	position: inherit;
 	left: 25vw;
 	width:15vw;
 	border-radius: 10px;
 	cursor: pointer;
-	border-radius: 1vw;
 }
 #connection
 {
 	position: fixed;
 	top: 70vw;
-	left: 43vw;
+	left: 83vw;
 	width:15vw;
 	z-index: 1;
 	cursor: pointer;
@@ -126,28 +131,22 @@ a
 }
 #self
 {
-	border: 2px solid #00BFFF;
 	position: inherit;
 	left: 40vw;
 	width:20vw;
-	border-radius: 10px;
 }
 #enter
 {
-	border: 0.2vw solid #00BFFF;
 	position: inherit;
-	left: 60vw;
+	left: 84vw;
 	width:15vw;
-	border-radius: 1vw;
 	cursor: pointer;
 }
 #registration
 {
-	border: 0.2vw solid #00BFFF;
 	position: inherit;
-	left: 84vw;
+	left: 60vw;
 	width:15vw;
-	border-radius: 1vw;
 	cursor: pointer;
 }
 #img
@@ -169,15 +168,12 @@ a
 .rieltors
 {
 	position:absolute;
-	top: 8vw;
-	left: 1vw;
-	width:40vw;
-	height:24vw;
-	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 0.3vw solid #000000;
-	border-radius: 1vw;
+	top: 10vw;
+	left: 0vw;
+	width:25vw;
+	height:60vh;
 	text-align:  center;
-	color: #FFFFFF;
+	color: white;
 }
 .rieltors img
 {
@@ -187,15 +183,12 @@ a
 .insurance
 {
 	position:absolute;
-	top: 8vw;
-	left: 59vw;
-	width:40vw;
-	height:24vw;
-	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 0.3vw solid #000000;
-	border-radius: 1vw;
+	top: 10vw;
+	left: 25vw;
+	width:25vw;
+	height:60vh;
 	text-align:  center;
-	color: #FFFFFF;
+	color: white;
 }
 .insurance img
 {
@@ -205,15 +198,12 @@ a
 .ritual
 {
 	position:absolute;
-	top: 35vw;
-	left: 1vw;
-	width:40vw;
-	height:24vw;
-	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 0.3vw solid #000000;
-	border-radius: 1vw;
+	top: 10vw;
+	left: 50vw;
+	width:25vw;
+	height:60vh;
 	text-align:  center;
-	color: #FFFFFF;
+	color: white;
 }
 .ritual img
 {
@@ -223,15 +213,12 @@ a
 .other
 {
 	position:absolute;
-	top: 35vw;
-	left: 59vw;
-	width:40vw;
-	height:24vw;
-	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 0.3vw solid #000000;
-	border-radius: 1vw;
+	top: 10vw;
+	left: 75vw;
+	width:25vw;
+	height:60vh;
 	text-align:  center;
-	color: #FFFFFF;
+	color: white;
 }
 .other img
 {
@@ -245,11 +232,9 @@ a
 	left: 25vw;
 	width:50vw;
 	height:30vw;
-	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 0.5vw solid #000000;
-	border-radius: 1vw;
+	background: linear-gradient(to right, #CEECF5, #58D3F7, #CEECF5);
 	text-align:  center;
-	color: #FFFFFF;
+	color: black;
 }
 .offers
 {
@@ -258,34 +243,32 @@ a
 	left: 25vw;
 	width:50vw;
 	height:850px;
-	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 5px solid #000000;
-	border-radius: 10px;
+	background: linear-gradient(to right, #CEECF5, #58D3F7, #CEECF5);
 	text-align:  center;
-	color: #FFFFFF;
+	color: black;
 }
 .new_offers
 {
-	top: 150px;
-	left: 25vw;
-	width:50vw;
-	border: 2px solid #000000;
-	border-radius: 10px;
-	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 5px solid #000000;
+	width:49vw;
+	background: linear-gradient(to right, #CEECF5, #58D3F7, #CEECF5);
 	text-align:  center;
-	color: #FFFFFF;
+	color: black;
+	float:left;
 }
+.new_offers p
+{
+	color: black;
+}
+
 #new_offerz
 {
 	position: absolute;
-	top: 200px;
-	left: 25vw;
-	width:50vw;
+	top: 20vw;
+	width:100vw;
 	height:1250px;
 	border-radius: 10px;
 	text-align:  center;
-	color: #FFFFFF;
+	color: black;
 }
 .order
 {
@@ -321,11 +304,9 @@ a
 	left: 45vw;
 	width:50vw;
 	height:350px;
-	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 5px solid #000000;
-	border-radius: 10px;
+	background: linear-gradient(to right, #CEECF5, #58D3F7, #CEECF5);
 	text-align:  center;
-	color: #FFFFFF;
+	color: black;
 }
 .right_enters
 {
@@ -334,11 +315,9 @@ a
 	left: 5vw;
 	width:50vw;
 	height:350px;
-	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 5px solid #000000;
-	border-radius: 10px;
+	background: linear-gradient(to right, #CEECF5, #58D3F7, #CEECF5);
 	text-align:  center;
-	color: #FFFFFF;
+	color: black;
 }
 .user {
     width: 300px; /* Ширина поля с учетом padding */
@@ -414,11 +393,9 @@ a
 	left: 25vw;
 	width:50vw;
 	height:1100px;
-	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 5px solid #000000;
-	border-radius: 10px;
+	background: linear-gradient(to right, #CEECF5, #58D3F7, #CEECF5);
 	text-align:  center;
-	color: #FFFFFF;
+	color: black;
 }
 .self_room
 {
@@ -454,7 +431,7 @@ a
 {
 	position:absolute;
 	left: 38vw;
-	top: 100px;
+	top: 12vw;
 	text-align:  center;
 }
 .new_err
@@ -570,4 +547,16 @@ option
     -ms-transform: scale(20); /* IE 9 fix */
     opacity: 0;
     cursor: pointer
+}
+.ok
+{
+	height: 1vw;
+	left: 30vw;
+	position: absolute;
+}
+.off
+{
+	left: 32vw;
+	position: absolute;
+	width: 1vw;
 }

@@ -7,12 +7,19 @@
 	{% endblock %}
 {% block content %}
 <div class="oppotunity">
-		<div id="self"><a href="self_room">
+		{% if p.who == 1%}
+		<div id="self" onmouseover="animation('self', 'jello')" class="animated" ><a href="self_room">
 			<p>
 				Личный кабинет 
 			</p>
+		{% else %}
+		<div id="self" onmouseover="animation('self', 'jello')" class="animated" ><a href="list_rieltors">
+			<p>
+				Мои заказы 
+			</p>	
+		{% endif %}
 		</a></div>
-		<div id="messegers"><a href="messagers">
+		<div id="messegers" onmouseover="animation('messegers', 'jello')" class="animated" ><a href="messagers">
 			<p>
 				Сообщения 
 			</p>
@@ -21,17 +28,23 @@
 </div>
 <div class="order">
 	<p>
-		Заказы 
+		Предложения
 	</p>
 	{% for order in o %}
 	{% if p.who == 2 %}
 	<div class="self_mess">
-	<p> Имя исполнителя:  {{order.order_from.login}}</p>
+	<a><div class="ok">
+	<p></p>
+	</div></a>
+	<a><div class="off">
+	<img src="{%static "img/close.png" %}" id="p1" width="40vw" onmouseover="animation('p1', 'pulse')" class="animated"> 
+	</div></a>
+	<p> Имя заказчика:  {{order.order_from.login}}</p>
 	{% else %}
 	<div class="alien_mess">
-	<p> Имя заказчика: {{order.order_to.login}}</p>
+	<p> Имя исполнителя: {{order.order_to.login}}</p>
 	{% endif %}
-	<p> {{order.href_order}}</p>
+	<p> Предложение: {{order.href_order}}</p>
 	</div>
 	{% endfor %}
 </div>
@@ -42,7 +55,7 @@
 	<h3>ФИО: {{p.surname}} {{p.forename}} {{p.partronyname}}</h3>
 	<h3>e-mail: {{p.email}}</h3>
 	<h3>Телефон: {{p.number}}</h3>
-	<h3>Должность: {% if p.who == 1 %} Риелтор {% else %} Страховщик {% endif %}</h3>
+	<h3>Должность: {% if p.who == 2 %} Исполнитель {% else %} Заказчик {% endif %}</h3>
 	<h3></h3>
 </div>
 </div>

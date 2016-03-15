@@ -7,6 +7,31 @@
 	 <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
+	<div class="oppotunity">
+		<div id="orders" onmouseover="animation('orders', 'jello')" class="animated"><a href="orders">
+			<p>
+				Предложения
+			</p>
+		</a></div>
+		{% if p.who == 1%}
+		<div id="self" onmouseover="animation('self', 'jello')" class="animated" ><a href="self_room">
+			<p>
+				Личный кабинет 
+			</p>
+		{% else %}
+		<div id="self" onmouseover="animation('self', 'jello')" class="animated" ><a href="list_rieltors">
+			<p>
+				Мои заказы 
+			</p>	
+		{% endif %}
+		</a></div>
+		<div id="messegers" onmouseover="animation('messegers', 'jello')" class="animated" ><a href="messagers">
+			<p>
+				Сообщения 
+			</p>
+		</a></div>
+	
+</div>
 	<div id="new_offerz">
 	{% for offers in offs %}
 	<div class="new_offers">
