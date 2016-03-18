@@ -44,7 +44,7 @@ urlpatterns = [
 	url(r'for_rieltors/$', for_rieltors),
 	url(r'list/$', lists),
 	url(r'profile/$', profile),
-	url(r'filter_profile/$', filter_profil),
+	url(r'filter_profil/$', filter_profil),
 	]
 	
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns

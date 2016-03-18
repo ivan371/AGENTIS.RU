@@ -45,6 +45,7 @@ urlpatterns = [
 	url(r'list/$', lists),
 	url(r'profile/$', profile),
 	url(r'filter_profil/$', filter_profil),
+	url(r'change_self/$', change_self),
 	]
 	
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns

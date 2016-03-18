@@ -6,40 +6,69 @@
 	</h2>
 	{% endblock %}
 {% block content %}
-	<div class="rieltors animated" id="rie" onmouseover="animationz('rie', 'pulseto')" onmouseout="animationzr('rie', 'pulseout', 'pulceto')">
+	<a href="for_rieltors">
+	<div class="slides rieltors animated" id="rie" onmouseover="animationz('rie', 'pulseto')" onmouseout="animationzr('rie', 'pulseout', 'pulceto')">
+		<div class="hc">
+		<img src="{%static "img/r1.png" %}"></div>
+		<div class="rect">
 		<h2>
 			Риелторские услуги
 		</h2>	
-		<a href="for_rieltors">
+		</div>
+		<!--<a href="for_rieltors">
 		<img src="{%static "img/e1.png" %}" id="p1" width="150px" onmouseover="animation('p1', 'pulse')" class="animated"> 
 		</a>
 		<h3>
 		<a href="how_rieltors animated">
 			Узнать подробнее
 		</a>
-		</h3>
+		</h3>-->
 	</div>
-	<div class="insurance animated" id="ins" onmouseover="animationz('ins', 'pulseto')" onmouseout="animationzr('ins', 'pulseout', 'pulceto')">
+	</a>
+	<div class="slides insurance animated" id="ins" onmouseover="animationz('ins', 'pulseto')" onmouseout="animationzr('ins', 'pulseout', 'pulceto')">
+		<div class="hc"></div>
+		<img src="{%static "img/r2.png" %}">
+		<div class="rect">
 		<h2>
 			Страховые услуги
 		</h2>
-		<img src="{%static "img/e1.png" %}" id="p2" width="150px" onmouseover="animation('p2', 'pulse')" class="animated"> 
+		</div>
+		<!--<img src="{%static "img/e1.png" %}" id="p2" width="150px" onmouseover="animation('p2', 'pulse')" class="animated"> 
 		<h3><a href="how_insurance">
 			Узнать подробнее
-		</a></h3>
+		</a></h3>-->
 	</div>
-	<div class="ritual animated" id="rit" onmouseover="animationz('rit', 'pulseto')" onmouseout="animationzr('rit', 'pulseout', 'pulceto')">
+	<div class="slides ritual animated" id="rit" onmouseover="animationz('rit', 'pulseto')" onmouseout="animationzr('rit', 'pulseout', 'pulceto')">
+		<div class="hc"></div>
+		<img src="{%static "img/r3.png" %}">
+		<div class="rect">
 		<h2>
 			Ритуальные услуги
 		</h2>
-		<img src="{%static "img/e1.png" %}" width="150px"> 
-		<h3>Узнать подробнее</h3>
+		</div>
+		<!--<img src="{%static "img/e1.png" %}" width="150px"> 
+		<h3>Узнать подробнее</h3>-->
 	</div>
-	<div class="other animated" id="oth" onmouseover="animationz('oth', 'pulseto')" onmouseout="animationzr('rit', 'pulseout', 'pulceto')">
+	<div class="slides tourists animated" id="tour" onmouseover="animationz('tour', 'pulseto')" onmouseout="animationzr('tour', 'pulseout', 'pulceto')">
+		<div class="hc"></div>
+		<img src="{%static "img/r4.png" %}">
+		<div class="rect">
+		<h2>
+			Туристические услуги
+		</h2>
+		</div>
+		<!--<img src="{%static "img/e1.png" %}" width="150px"> 
+		<h3>Узнать подробнее</h3>-->
+	</div>
+	<div class="slides other animated" id="oth" onmouseover="animationz('oth', 'pulseto')" onmouseout="animationzr('oth', 'pulseout', 'pulceto')">
+		<div class="hc"></div>
+		<img src="{%static "img/r5.png" %}">
+		<div class="rect">
 		<h2>
 			Прочие услуги
 		</h2>
-		<img src="{%static "img/e1.png" %}" width="150px"> 
-		<h3>Узнать подробнее</h3>
+		</div>
+		<!--<img src="{%static "img/e1.png" %}" width="150px"> 
+		<h3>Узнать подробнее</h3>-->
 	</div>
 {% endblock %}

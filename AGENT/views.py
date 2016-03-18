@@ -256,7 +256,12 @@ def ch_initial(request):
 
 def self_room(request):
 	p = User_AGENTIS.objects.get(login = request.session['member_id'])
-	return render_to_response('AGENTIS/self_room.html',{'p': p}, RequestContext(request))
+	offs = orders_data.objects.filter(user_m = p)
+	return render_to_response('AGENTIS/self_room.html',{'p': p, 'offs': offs}, RequestContext(request))
+	
+def change_self(request):
+	p = User_AGENTIS.objects.get(login = request.session['member_id'])
+	return render_to_response('AGENTIS/change_self.html',{'p': p}, RequestContext(request))
 
 def registration(request):
 	return render(request, 'AGENTIS/registration.html')

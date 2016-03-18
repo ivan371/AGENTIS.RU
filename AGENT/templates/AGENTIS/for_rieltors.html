@@ -7,7 +7,33 @@
 	 <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
-<div class="oppotunity">
+{% if user.is_authenticated %}
+		{% if p.who == 2 %}
+		<a href="list">
+		{% else %}
+		<a href="list_rieltors_order">
+		{% endif %}
+		{% else %}
+		<a href="list">
+		{% endif %}
+<div class="switch left_ri animated" id="rie" onmouseover="animationz('rie', 'pulseto')" onmouseout="animationzr('rie', 'pulseout', 'pulceto')">
+<div class="ri_rect">
+<h2>
+		Вы исполнитель? Выбирайте самые выгодные предложения
+</h2>
+</div>
+</div>
+</a>
+<a href="profile">
+<div class="switch right_ri animated" id="ins" onmouseover="animationz('ins', 'pulseto')" onmouseout="animationzr('ins', 'pulseout', 'pulceto')">
+<div class="ri_rect">
+<h2>
+		Вы заказчик? Найдите лучшего исполнителя на нашем сайте
+</h2>
+</div>
+</div>
+</a>
+<!--<div class="oppotunity">
 		<div id="orders" onmouseover="animation('orders', 'jello')" class="animated">
 		{% if user.is_authenticated %}
 		{% if p.who == 2 %}
@@ -28,7 +54,7 @@
 			</p>
 		</a></div>
 	
-</div>
+</div>-->
 	</div>
 	<div class="errz">
 		{% if errors %}
