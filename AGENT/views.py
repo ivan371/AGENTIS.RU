@@ -85,6 +85,7 @@ def messagers(request):
 	p = User_AGENTIS.objects.get(login = request.session['member_id'])
 	if(p.who == 1):
 		m = message.objects.filter(mess_from = p)
+		print(m)
 		nm = []
 		for mess in m:
 			flag = 0

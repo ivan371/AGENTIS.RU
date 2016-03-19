@@ -7,7 +7,7 @@
 	 <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
-<a href="change_self"><div class="enters offs animated" id="offs" onmouseover="animationz('offs', 'pulseto')" onmouseout="animationzr('offs', 'pulseout', 'pulceto')">
+<a href="list_rieltors"><div class="enters offs animated" id="offs" onmouseover="animationz('offs', 'pulseto')" onmouseout="animationzr('offs', 'pulseout', 'pulceto')">
 <h2>
 Мои предложения
 </h2>
@@ -28,7 +28,7 @@
 </h2>
 <img src="{%static "img/sms.png" %}">
 </div></a>
-<a href="list_rieltors"><div class="enters ch_inf animated" id="inf" onmouseover="animationz('inf', 'pulseto')" onmouseout="animationzr('inf', 'pulseout', 'pulceto')">
+<a href="change_self"><div class="enters ch_inf animated" id="inf" onmouseover="animationz('inf', 'pulseto')" onmouseout="animationzr('inf', 'pulseout', 'pulceto')">
 	<h2>
 		Мои данные
 	</h2>
