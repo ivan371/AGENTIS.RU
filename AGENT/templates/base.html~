@@ -10,7 +10,6 @@
 	<script src='{% static 'js/change_data.js' %}'></script>
 </head>
 <body id="all" class="animated">
-	<div class="iml">
 	<div class="title"> 
 		<h1>
 		"AGENTIS.RU" Первый в России портал по подбору агентов 
@@ -61,7 +60,20 @@
 			</p>
 		</div>
 		{% endif %}
+		{% if is_mess == 0 %}
+		<div id="mymess" class="animated">
+		<a href="messagers">
+			<img src="{% static "img/message.png" %}" width="70vw">
+			<script src='{% static 'js/interval.js' %}'></script>
+		</a>
+		</div>
+		{% elif is_mess == 1 %}
+		<div id="mymess" class="animated">
+		<a href="messagers">
+			<img src="{% static "img/message.png" %}" width="70vw">
+		</a>
+		</div>
+		{% endif %}
 		{% block content %} {% endblock %}
-</imk>
 </body>
 </html>

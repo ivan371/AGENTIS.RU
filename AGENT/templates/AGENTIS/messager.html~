@@ -10,7 +10,7 @@
 <div class="oppotunity">
 		<div id="orders" onmouseover="animation('orders', 'jello')" class="animated"><a href="orders">
 			<p>
-				Заказы
+				Предложения
 			</p>
 		</a></div>
 		{% if p.who == 1%}
@@ -32,7 +32,7 @@
 		Сообщения 
 	</p>
 	{% for mess in m%}
-	<div class="messeger_name" onclick="deploy_mess({{forloop.counter}}, 1)"> <p>{{mess.name}}</p></div>
+	<div class="messeger_name" onclick="deploy_mess({{forloop.counter}}, 1)"> <p>{{mess.name}} {{mess.count}}</p></div>
 	<div id="sleep{{forloop.counter}}" class="messs animated" style="display: none">
 	{% for messages in mess.mess %}
 	{% if not messages.author %}

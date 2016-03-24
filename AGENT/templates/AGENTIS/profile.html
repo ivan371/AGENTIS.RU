@@ -7,7 +7,8 @@
 	 <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
-	<div id="switch_region">
+	<div class="switch_region">
+	<div class="button_switch">
 	<form action="/filter_profil/" method="post">{% csrf_token %}
 	<select name="region" class="user" placeholder="Регион" >
 			<option value="1">Выберите регион</option>
@@ -18,15 +19,18 @@
 	<input type="submit" class="user" value="Отфильтровать"> 
 	</form>
 	</div>
-	<div id="new_offerz">
+	</div>
+	<div id="list">
 	{% for p in ps %}
-	<div class="new_offers">
+	<div class="list">
+	<div class="text_align">
 			<h3>Логин: {{p.login}}</h3>
 			<h3>ФИО: {{p.surname}} {{p.forename}} {{p.partronyname}}</h3>
 			<h3>e-mail: {{p.email}}</h3>
 			<h3>регион: {{p.region}}</h3>
 			<h3>Телефон: {{p.number}}</h3>
 			<h3></h3>
+	</div>
 	</div>
 	{% endfor %}
 	</div>

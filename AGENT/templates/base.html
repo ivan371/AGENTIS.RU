@@ -60,6 +60,21 @@
 			</p>
 		</div>
 		{% endif %}
+		{% if is_mess == 0 %}
+		<div id="mymess" class="animated">
+		<a href="messagers">
+			<img src="{% static "img/message.png" %}" width="70vw">
+			<script src='{% static 'js/interval.js' %}'></script>
+		</a>
+		</div>
+		{% endif %}
+		{% if is_mess == 1 %}
+		<div id="mymess" class="animated">
+		<a href="messagers">
+			<img src="{% static "img/message.png" %}" width="70vw">
+		</a>
+		</div>
+		{% endif %}
 		{% block content %} {% endblock %}
 </body>
 </html>

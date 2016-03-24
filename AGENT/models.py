@@ -4,6 +4,11 @@ class image(models.Model):
 	name_mess = models.CharField(default=0, max_length=3000)
 	img = models.ImageField()
 	
+	def goodname(self):
+		return str(self.img)[1:]
+	
+	def __unicode__(self):  
+		return self.img
 
 class User_AGENTIS(models.Model):
 	who = models.IntegerField(default=0)
@@ -23,6 +28,7 @@ class orders_data(models.Model):
 	name_mess = models.CharField(max_length=100)
 	sum_mess = models.IntegerField(default=0)
 	message = models.CharField(max_length=3000)
+	img = models.ForeignKey(image)
 
 class order(models.Model):
 	order_from = models.ForeignKey(User_AGENTIS, related_name='order_from')

@@ -7,7 +7,7 @@
 	 <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
-	<div id="switch_region">
+	<div class="switch_region">
 	<form action="/filter/" method="post">{% csrf_token %}
 	<select name="region" class="user" placeholder="Регион" >
 			<option value="1">Выберите регион</option>
@@ -18,9 +18,10 @@
 	<input type="submit" class="user" value="Отфильтровать"> 
 	</form>
 	</div>
-	<div id="new_offerz">
+	<div id="list">
 	{% for offers in offs %}
-	<div class="new_offers">
+	<div class="list">
+		<div class="text_align">
 		<div id="your_offer{{forloop.counter}}" >
 		<h2>
 			Предложение: {{offers.name_mess}}
@@ -32,15 +33,18 @@
 			Имя исполнителя: {{offers.user_m.login}}
 		</h3>
 		<h3>
-			<input id='deploy{{forloop.counter}}'  style="  margin: 0 auto;" type="submit" class="user" value="узнать подробнее" onclick="deploy_offer('deploy{{forloop.counter}}', 'collapce{{forloop.counter}}')">
+			<input id='deploy{{forloop.counter}}'  type="submit" class="user" value="узнать подробнее" onclick="deploy_offer('deploy{{forloop.counter}}', 'collapce{{forloop.counter}}')">
 		</h3>
 		<div id='collapce{{forloop.counter}}' style="display: none;">
 		<h3>
-			<input style=" margin: 0 auto;" type="submit" class="user" value="свернуть описание" onclick="collapce_offer('deploy{{forloop.counter}}', 'collapce{{forloop.counter}}')">
+			<input type="submit" class="user" value="свернуть описание" onclick="collapce_offer('deploy{{forloop.counter}}', 'collapce{{forloop.counter}}')">
 			<p>Описание предожения<p> 
 			<p>{{offers.message}}<p>
 		</h3>
 		</div>
+		</form>
+		</div>
+	</div>
 	</div>
 	{% endfor %}
 	</div>

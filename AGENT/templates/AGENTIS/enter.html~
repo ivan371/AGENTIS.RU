@@ -21,4 +21,11 @@
 		Еще не зарегестрированы?
 	</a></h2>
 	</div>
+	<div class="err">
+		{% if errors %}
+		<h3>
+			{{errors}}
+		</h3>
+    {% endif %}
+	</div>
 {% endblock %}

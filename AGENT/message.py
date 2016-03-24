@@ -2,6 +2,7 @@ class messages:
 	def __init__(self, name):
 		self.mess = []
 		self.name = name
+		self.ammount = 0
 
 	def add_data(self, message, status, author):
 		newmess = mes() 

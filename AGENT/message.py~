@@ -11,7 +11,8 @@ class messages:
 class mes:
 	
 	
-	def add(self, author, status, message):
+	def add(self, status, author, message):
 		self.message = message
 		self.status = status
 		self.author = author
+		self.ammount = 0

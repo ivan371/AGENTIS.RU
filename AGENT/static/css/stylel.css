@@ -4,7 +4,8 @@ body
 {
 	margin: 0.1vw;
 	font-family: 'Roboto', sans-serif;
-	/*background: url(fon.jpg);*/
+	background: url(grey_wash_wall.png);
+	/*background: url(bg.jpg);*/
 	background-attachment:fixed;
 	background-repeat:cover;
 }
@@ -135,6 +136,14 @@ a
 	position: inherit;
 	left: 84vw;
 	width:15vw;
+	cursor: pointer;
+}
+#mymess
+{
+	position: inherit;
+	left: 90vw;
+	top: -8vw;
+	width:5vw;
 	cursor: pointer;
 }
 #registration
@@ -275,18 +284,27 @@ a
 	height: 11vw;
 	width: 11vw;
 }
+.main_enters
+{
+	top: 10vw;
+	position:absolute;
+	width:40vw;
+	left: 30vw;
+	height:27vw;
+	background: url(back.jpg);
+	background-size: cover;
+	text-align:  center;
+	color: black;
+}
 .enters
 {
 	position:absolute;
 	width:40vw;
 	height:23vw;
-	background: linear-gradient(to top, #CEECF5, #58D3F7, #CEECF5);
+	background: url(back.jpg);
+	background-size: cover;
 	text-align:  center;
 	color: black;
-}
-.enters h1
-{
-	font-size: 50px;
 }
 .ch
 {
@@ -340,16 +358,44 @@ a
 	left: 25vw;
 	width:50vw;
 	height:850px;
-	background: linear-gradient(to top, #CEECF5, #58D3F7, #CEECF5);
+	background: url(back.jpg);
+	background-size: cover;
 	text-align:  center;
 	color: black;
 }
-.new_offers
+.text_align
+{
+	margin-left: 5vw;
+	margin-right: 20vw;
+}
+#list
 {
 	margin: 3vw;
-	width:27vw;
-	background: linear-gradient(to top, #CEECF5, #58D3F7, #CEECF5);
-	text-align:  center;
+	position: absolute;
+	top: 4vw;
+	width:70vw;
+	border-radius: 10px;
+	color: black;
+}
+.list
+{
+	margin-top: 1vw;
+	margin-bottom: 0vw;
+	width:65vw;
+	/*background: linear-gradient(to top, #CEECF5, #58D3F7, #CEECF5);*/
+	background: url(back.jpg);
+	background-size: cover;
+	text-align:  left;
+	color: black;
+	float:left;
+}
+.new_offers
+{
+	margin-top: 1vw;
+	margin-bottom: 0vw;
+	width:90vw;
+	background: url(back.jpg);
+	text-align:  left;
 	color: black;
 	float:left;
 }
@@ -357,15 +403,24 @@ a
 {
 	color: black;
 }
-
+.photo
+{
+	margin: 0.5vw;
+	position: absolute;
+	left: 75vw;
+}
+.photo img
+{
+	max-width: 14vw;
+	max-height: 13vw;
+}
 #new_offerz
 {
+	margin: 3vw;
 	position: absolute;
-	top: 20vw;
+	top: 15vw;
 	width:100vw;
-	height:1250px;
 	border-radius: 10px;
-	text-align:  center;
 	color: black;
 }
 .order
@@ -402,7 +457,7 @@ a
 	left: 45vw;
 	width:50vw;
 	height:350px;
-	background: linear-gradient(to right, #CEECF5, #58D3F7, #CEECF5);
+	background: url(back.jpg);
 	text-align:  center;
 	color: black;
 }
@@ -413,7 +468,7 @@ a
 	left: 5vw;
 	width:50vw;
 	height:350px;
-	background: linear-gradient(to right, #CEECF5, #58D3F7, #CEECF5);
+	background: url(back.jpg);
 	text-align:  center;
 	color: black;
 }
@@ -450,7 +505,7 @@ a
  	height: 400px;
  }
  .change {
-    width: 150px; /* Ширина поля с учетом padding */
+    width: 100px; /* Ширина поля с учетом padding */
     height: 30px; /* Высота */
     background: #000000;
     padding: 0 10px; /* Поля */
@@ -463,13 +518,20 @@ a
  {
  	width: 75px;
  }
- 
- #switch_region
+ .button_switch
  {
- 	top: 100px;
- 	position: absolute;
-	left: 38vw;
+ 	margin: 2vw;
  }
+ .switch_region
+ {
+ 	position: absolute;
+	top: 8vw;
+	left: 70vw;
+	width: 28vw;
+	height: 36vw;
+	background: url(back.jpg);
+ }
+
  .secret_change {
     width: 250px; /* Ширина поля с учетом padding */
     height: 30px; /* Высота */
@@ -491,7 +553,7 @@ a
 	left: 25vw;
 	width:50vw;
 	height:1100px;
-	background: linear-gradient(to right, #CEECF5, #58D3F7, #CEECF5);
+	background: url(back.jpg);
 	text-align:  center;
 	color: black;
 }
@@ -528,8 +590,8 @@ a
 .add_offer
 {
 	position:absolute;
-	left: 38vw;
-	top: 12vw;
+	left: 3vw;
+	top: 8vw;
 	text-align:  center;
 }
 .new_err
