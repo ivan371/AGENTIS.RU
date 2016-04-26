@@ -6,9 +6,6 @@ class image(models.Model):
 	
 	def goodname(self):
 		return str(self.img)[1:]
-	
-	def __unicode__(self):  
-		return self.img
 
 class User_AGENTIS(models.Model):
 	who = models.IntegerField(default=0)

@@ -230,8 +230,6 @@ a
 }
 .rieltors
 {
-	background: url(i1.jpg) no-repeat;
-	background-size: 100%;
 	left: 0vw;
 }
 .rieltors img
@@ -241,7 +239,7 @@ a
 }
 .insurance
 {
-	background: url(i2.jpg);
+	background: url(back2.png)no-repeat;
 	background-size: 100%;
 	left: 20vw;
 }
@@ -252,7 +250,7 @@ a
 }
 .ritual
 {
-	background: url(i4.jpg);
+	background: url(back3.png) no-repeat;
 	background-size: 100%;
 	left: 60vw;
 }
@@ -264,7 +262,7 @@ a
 
 .tourists
 {
-	background: url(i3.jpg);
+	background: url(back4.png) no-repeat;
 	background-size: 100%;
 	left: 40vw;
 }
@@ -275,7 +273,7 @@ a
 }
 .other
 {
-	background: url(i5.jpg);
+	background: url(back5.png) no-repeat;
 	background-size: 100%;
 	left: 80vw;
 }
@@ -290,7 +288,7 @@ a
 	position:absolute;
 	width:40vw;
 	left: 30vw;
-	height:25vw;
+	height:27vw;
 	background: url(back.jpg);
 	background-size: cover;
 	text-align:  center;
@@ -368,6 +366,11 @@ a
 	margin-left: 5vw;
 	margin-right: 20vw;
 }
+.text_align_small
+{
+	margin-left: 3vw;
+	margin-right: 3vw;
+}
 #list
 {
 	margin: 3vw;
@@ -389,12 +392,25 @@ a
 	color: black;
 	float:left;
 }
+.list_small
+{
+	margin-top: 1vw;
+	margin-bottom: 0vw;
+	width:33vw;
+	/*background: linear-gradient(to top, #CEECF5, #58D3F7, #CEECF5);*/
+	background: url(back.jpg);
+	background-size: cover;
+	text-align:  left;
+	color: black;
+	float:left;
+}
 .new_offers
 {
 	margin-top: 1vw;
 	margin-bottom: 0vw;
 	width:90vw;
 	background: url(back.jpg);
+	background-size: cover;
 	text-align:  left;
 	color: black;
 	float:left;
@@ -458,6 +474,7 @@ a
 	width:50vw;
 	height:350px;
 	background: url(back.jpg);
+	background-size: cover;
 	text-align:  center;
 	color: black;
 }
@@ -469,9 +486,48 @@ a
 	width:50vw;
 	height:350px;
 	background: url(back.jpg);
+	background-size: cover;
 	text-align:  center;
 	color: black;
 }
+.user_switch {
+    width: 135px; /* Ширина поля с учетом padding */
+    height: 40px; /* Высота */
+    background: #000000;
+    border: 2px solid #FFFFFF;
+    font-size: 1em; /* Размер текста */
+	color: #FFFFFF;
+	padding:0 5px;
+	display: inline-block;
+ }
+ .user_switch a
+ {
+ 	color: #FFFFFF;
+ }
+ .valign
+ {
+ 	margin: 10px;
+ }
+ #left
+ {
+ 	border-radius: 0 10px 10px 0;
+ 	margin-left: -2px;;
+ }
+ #right
+ {
+ 	border-radius: 10px 0 0 10px;
+ 	margin-right: -2px;
+ }
+ .switched 
+ {
+ 	border: 2px solid #000000;
+ 	color: #000000;
+ 	background: #FFFFFF;
+ }
+  .switched a
+ {
+ 	color: #000000;
+ }
 .user {
     width: 300px; /* Ширина поля с учетом padding */
     height: 46px; /* Высота */
@@ -530,6 +586,7 @@ a
 	width: 28vw;
 	height: 36vw;
 	background: url(back.jpg);
+	background-size: cover;
  }
 
  .secret_change {
@@ -554,6 +611,7 @@ a
 	width:50vw;
 	height:1100px;
 	background: url(back.jpg);
+	background-size: cover;
 	text-align:  center;
 	color: black;
 }

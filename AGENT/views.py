@@ -94,9 +94,29 @@ def chat(request):
 def messagers(request):
 	p = User_AGENTIS.objects.get(login = request.session['member_id'])
 	mess = display_mess(p)
-	count = []
 	is_mess = mess.is_mes()
 	return render_to_response('AGENTIS/messager.html',{'p': p, 'm': mess.nm, 'who': p.who, 'is_mess': is_mess}, RequestContext(request))
+
+
+@csrf_exempt
+def change_status(request):
+	c = {}
+	c.update(csrf(request))
+	if request.method == 'POST':
+		POST = request.POST
+		print(POST['name'])
+		p = User_AGENTIS.objects.get(login = POST['name'])
+		if(p.who == 1):
+			m = message.objects.filter(mess_from = p)
+		else:
+			m = message.objects.filter(mess_to = p)
+		for mess in m:
+			mess.status = 1
+			mess.save()
+		#mess = display_mess(p)
+		#is_mess = mess.is_mes()
+		#mess.clear_status(POST['name'])
+	return HttpResponse (content_type="application/json")
 
 def exit(request):
 	auth.logout(request)
@@ -257,7 +277,7 @@ def self_room(request):
 	offs = orders_data.objects.filter(user_m = p)
 	mess = display_mess(p)
 	is_mess = mess.is_mes()
-	count = mess.count_mess()
+	count = mess.count_mess(p.who)
 	return render_to_response('AGENTIS/self_room.html',{'p': p, 'offs': offs,'is_mess': is_mess, 'count': count}, RequestContext(request))
 	
 def change_self(request):

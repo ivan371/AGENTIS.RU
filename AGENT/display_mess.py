@@ -44,11 +44,11 @@ class display_mess:
 					return 0
 					
 		return 1
-	def count_mess(self):
+	def count_mess(self, who):
 		num = 0
 		for messs in self.nm:
 			for messagez in messs.mess:
-				if(messagez.status == 0):
+				if(messagez.status == 0 and messagez.author == who % 2):
 					num = num + 1
 		return num
 	
@@ -60,3 +60,9 @@ class display_mess:
 					count = count + 1				
 		return count	
 			
+			
+	def clear_status(self, name):
+		for messs in self.nm:
+			if(messs.name == name):
+				for messagez in messs.mess:
+					messagez.status = 1

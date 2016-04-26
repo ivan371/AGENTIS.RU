@@ -5,7 +5,7 @@ class image(models.Model):
 	img = models.ImageField()
 	
 	def goodname(self):
-		return self.str(img[1:])
+		return str(self.img)[1:]
 	
 	def __unicode__(self):  
 		return self.img

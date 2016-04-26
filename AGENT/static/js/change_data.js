@@ -34,9 +34,22 @@ function collapce_offer(a, b)
 	document.getElementById(a).style.display="block";
 	document.getElementById(b).style.display="none";
 }
-deploy_mess(0, 0);
-function deploy_mess(res, what)
+deploy_mess(0, 0, 0, 0);
+function deploy_mess(res, what, num, name)
 {
+	if(num != 0)
+	{
+	$.ajax({
+	  		type: 'POST',
+	  		url: "/change_status/",
+			data: {'name': name,},
+			dataType: 'json',
+  			error: function(xhr, errmsg, err){
+						alert(xhr.status + ": " + xhr.responseText);
+						//window.addEventListener('keydown', whatKey, true);
+					}	
+	  	});
+	 }
 	if(what == 0)
 	{
 		this.arr = new Array();

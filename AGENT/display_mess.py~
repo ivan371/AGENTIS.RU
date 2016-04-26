@@ -35,9 +35,7 @@ class display_mess:
 				
 	
 		for messs in self.nm:
-			print(messs.name)
 			messs.ammount = self.count_self_mess(messs.name)
-			print(messs.ammount)
 	
 	def is_mes(self):
 		for messs in self.nm:
@@ -46,11 +44,11 @@ class display_mess:
 					return 0
 					
 		return 1
-	def count_mess(self):
+	def count_mess(self, who):
 		num = 0
 		for messs in self.nm:
 			for messagez in messs.mess:
-				if(messagez.status == 0):
+				if(messagez.status == 0 and messagez.author == who - 1):
 					num = num + 1
 		return num
 	
@@ -59,9 +57,12 @@ class display_mess:
 		for messs in self.nm:
 			if(messs.name == author):
 				for messagez in messs.mess:
-					count = count + 1
-				print(messs.name)
-				print(count)
-				
+					count = count + 1				
 		return count	
 			
+			
+	def clear_status(self, name):
+		for messs in self.nm:
+			if(messs.name == name):
+				for messagez in messs.mess:
+					messagez.status = 1

@@ -7,7 +7,17 @@
 	 <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
-	<div id="switch_region">
+	<div class="switch_region">
+	<div class="user_switch switched" id="right">
+	<a>
+	<div class="valign">Заказчик</div>
+	</a>
+	</div>
+	<div class="user_switch" id="left">
+	<a href="profile">
+	<div class="valign">Исполнитель</div>
+	</a>
+	</div> 
 	<form action="/filter/" method="post">{% csrf_token %}
 	<select name="region" class="user" placeholder="Регион" >
 			<option value="1">Выберите регион</option>
@@ -16,11 +26,12 @@
 		</select>
 	<br>
 	<input type="submit" class="user" value="Отфильтровать"> 
-	</form>
+	</form> 
 	</div>
-	<div id="new_offerz">
+	<div id="list">
 	{% for offers in offs %}
-	<div class="new_offers">
+	<div class="list">
+		<div class="text_align">
 		<div id="your_offer{{forloop.counter}}" >
 		<h2>
 			Предложение: {{offers.name_mess}}
@@ -50,6 +61,7 @@
 		<input type="hidden" name="name" value="{{offers.user_m.login}}">
 		<input type="hidden" name="name_mess" value="{{offers.name_mess}}">
 		</form>
+		</div>
 		</div>
 	</div>
 	{% endfor %}

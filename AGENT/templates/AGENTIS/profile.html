@@ -8,7 +8,23 @@
 	{% endblock %}
 {% block content %}
 	<div class="switch_region">
-	<div class="button_switch">
+	<div class="user_switch" id="right">
+	{% if user.is_authenticated %}
+		{% if p.who == 2 %}
+		<a href="list">
+		{% else %}
+		<a href="list_rieltors_order">
+		{% endif %}
+		{% else %}
+		<a href="list">
+		{% endif %}
+	<div class="valign">Заказчик</div>
+	</a>
+	</div>
+	<div class="user_switch switched" id="left">
+	<div class="valign">Исполнитель</div>
+	</a>
+	</div> 
 	<form action="/filter_profil/" method="post">{% csrf_token %}
 	<select name="region" class="user" placeholder="Регион" >
 			<option value="1">Выберите регион</option>
@@ -19,11 +35,10 @@
 	<input type="submit" class="user" value="Отфильтровать"> 
 	</form>
 	</div>
-	</div>
 	<div id="list">
 	{% for p in ps %}
-	<div class="list">
-	<div class="text_align">
+	<div class="list_small">
+	<div class="text_align_small">
 			<h3>Логин: {{p.login}}</h3>
 			<h3>ФИО: {{p.surname}} {{p.forename}} {{p.partronyname}}</h3>
 			<h3>e-mail: {{p.email}}</h3>

@@ -6,15 +6,8 @@
 	</h2>
 	{% endblock %}
 {% block content %}
-	<a href="for_rieltors">
-	<div class="slides rieltors animated" id="rie" onmouseover="animationz('rie', 'pulseto')" onmouseout="animationzr('rie', 'pulseout', 'pulceto')">
-		<div class="hc">
-		<img src="{%static "img/r1.png" %}"></div>
-		<div class="rect">
-		<h2>
-			Риелторские услуги
-		</h2>	
-		</div>
+	<a href="profile">
+	<img src="{%static "img/back1.png" %}" class="slides rieltors animated"><div  id="rie" onmouseover="animationz('rie', 'pulseto')" onmouseout="animationzr('rie', 'pulseout', 'pulceto')">
 		<!--<a href="for_rieltors">
 		<img src="{%static "img/e1.png" %}" id="p1" width="150px" onmouseover="animation('p1', 'pulse')" class="animated"> 
 		</a>
@@ -24,10 +17,11 @@
 		</a>
 		</h3>-->
 	</div>
+	</img>
 	</a>
 	<div class="slides insurance animated" id="ins" onmouseover="animationz('ins', 'pulseto')" onmouseout="animationzr('ins', 'pulseout', 'pulceto')">
-		<div class="hc"></div>
-		<img src="{%static "img/r2.png" %}">
+		<div class="hc">
+		<img src="{%static "img/r2.png" %}"></div>
 		<div class="rect">
 		<h2>
 			Страховые услуги
@@ -39,8 +33,8 @@
 		</a></h3>-->
 	</div>
 	<div class="slides ritual animated" id="rit" onmouseover="animationz('rit', 'pulseto')" onmouseout="animationzr('rit', 'pulseout', 'pulceto')">
-		<div class="hc"></div>
-		<img src="{%static "img/r3.png" %}">
+		<div class="hc">
+		<img src="{%static "img/r3.png" %}"></div>
 		<div class="rect">
 		<h2>
 			Ритуальные услуги
@@ -50,8 +44,8 @@
 		<h3>Узнать подробнее</h3>-->
 	</div>
 	<div class="slides tourists animated" id="tour" onmouseover="animationz('tour', 'pulseto')" onmouseout="animationzr('tour', 'pulseout', 'pulceto')">
-		<div class="hc"></div>
-		<img src="{%static "img/r4.png" %}">
+		<div class="hc">
+		<img src="{%static "img/r4.png" %}"></div>
 		<div class="rect">
 		<h2>
 			Туристические услуги
@@ -61,8 +55,8 @@
 		<h3>Узнать подробнее</h3>-->
 	</div>
 	<div class="slides other animated" id="oth" onmouseover="animationz('oth', 'pulseto')" onmouseout="animationzr('oth', 'pulseout', 'pulceto')">
-		<div class="hc"></div>
-		<img src="{%static "img/r5.png" %}">
+		<div class="hc">
+		<img src="{%static "img/r5.png" %}"></div>
 		<div class="rect">
 		<h2>
 			Прочие услуги
