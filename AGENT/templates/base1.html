@@ -1,0 +1,84 @@
+{% load staticfiles %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="RU">
+<head>
+	<link rel="stylesheet" href="{% static "css/stylel.css" %}" type="text/css" />
+	<link rel="stylesheet" href="{% static "css/back.css" %}" type="text/css" />
+	<link rel="stylesheet" href="{% static "css/animate.css" %}" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:700,400&subset=latin,cyrillic'rel='stylesheet' type='text/css'>
+	 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src='{% static 'js/img.js' %}'></script>
+	<script src='{% static 'js/change_data.js' %}'></script>
+</head>
+<body id="all" class="animated">
+	<div class="title"> 
+		<h1>
+		"AGENTIS.RU" Первый в России портал по подбору агентов 
+		</h1>
+		<h2>
+			{% block title %}{% endblock %}
+		</h2>
+	</div>
+	<div class="slogan"><a href="index">
+		<img src="{% static "img/title.png" %}" width="100px">
+	</a></div>
+	<div class ="links">
+		<div id="about" onmouseover="animation('about', 'jello')" onclick="animation_delay('all', 'flip', 'about')" class="animated">
+			<p>
+				О нас
+			</p>
+		</div>
+		<div id="how_work" onclick="animation_delay('all', 'flip', 'how_work')" onmouseover="animation('how_work', 'jello')" class="animated">
+			<p>
+				Как это работает 
+			</p>
+		</div>
+		<div id="connection" onclick="animation_delay('all', 'flip', 'connection')">
+			<p>
+				Обратная связь
+			</p>
+		</div>
+		{% if user.is_authenticated %}
+		<div id="enter" onclick="animation_delay('all', 'flip', 'exit')" onmouseover="animation('enter', 'jello')" class="animated">
+			<p>
+				Выйти
+			</p>
+		</div>
+		<div id="registration" onclick="animation_delay('all', 'flip', 'self_room')" onmouseover="animation('registration', 'jello')" class="animated">
+			<p>
+				Личный кабинет
+			</p>
+		</div>
+		{% else %}
+		<div id="enter" onclick="animation_delay('all', 'flip', 'enter')" onmouseover="animation('enter', 'jello')" class="animated">
+			<p>
+				Войти
+			</p>
+		</div>
+		<div id="registration" onclick="animation_delay('all', 'flip', 'registration')" onmouseover="animation('registration', 'jello')" class="animated">
+			<p>
+				Регистрация
+			</p>
+		</div>
+		{% endif %}
+		{% if is_mess == 0 %}
+		<div id="mymess" class="animated">
+		<a href="messagers">
+			<img src="{% static "img/message.png" %}" width="50vw">
+			<script src='{% static 'js/interval.js' %}'></script>
+		</a>
+		</div>
+		{% endif %}
+		{% if is_mess == 1 %}
+		<div id="mymess" class="animated">
+		<a href="messagers">
+			<img src="{% static "img/message.png" %}" width="50vw">
+		</a>
+		</div>
+		{% endif %}
+	</div>
+	<div class="content">
+		{% block content %} {% endblock %}
+</body>
+</html>

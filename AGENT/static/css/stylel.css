@@ -15,9 +15,9 @@ body
 	position:absolute;
 	width:100vw;
 	height:9vw;
-	background: linear-gradient(to right, black, gray);
+	background: white;
 	text-align:  center;
-	border-radius: 1vw;
+	z-index: 1;
 }
 .slogan
 {
@@ -25,6 +25,12 @@ body
 	z-index: 2;
 	top: 2vh;
 	left: 2vw;
+}
+.newslogan
+{
+	position: absolute;
+	z-index: 2;
+	left: 10vw;
 }
 .slogan img
 {
@@ -51,16 +57,7 @@ body
 	text-align:  center;
 	border-radius: 10px;
 }
-.title h1
-{
-	color: #FFFFFF;
-	font-size: 2.5vw;
-}
-.title h2
-{
-	color: #FFFFFF;
-	font-size: 1.5vw;
-}
+
 h2
 {
 	font-size: 2vw;
@@ -69,21 +66,77 @@ a
 {
 	text-decoration: none;
 }
+#newlow
+{	
+	width: 100%;
+	height: 15vh;
+	top: 85vh;
+	margin-bottom: 0px;
+	background-color: gray;
+	position: fixed;
+	display: block;
+}
+#low
+{	
+	width: 100%;
+	height: 13vw;
+	margin-bottom: 0px;
+	background-color: gray;
+	position: relative;
+	display: block;
+}
+.menu
+{
+	top: 5vw;
+	height: 10vw;
+	width:100vw;
+	z-index: 0;
+	display: block;
+}
+.menu img
+{
+	width:21.3vw;
+}
+#picture
+{
+	position: relative;
+	display: block;
+	height: 49.5vw;
+	z-index: 0;
+}
 .links
 {
 	position:absolute;
 	top: 9vw;
 	width:100vw;
-	height:6vw;
-	background: linear-gradient(to right, black, gray);
+	height:4vw;
+	background: #054F87;
+	opacity: 0.85;
 	text-align:  center;
-	border-radius: 1vw;
 	z-index: 1;
+}
+.newlinks
+{
+	position:absolute;
+	width:100vw;
+	height:4vw;
+	background: #054F87;
+	opacity: 0.85;
+	text-align:  center;
+	z-index: 1;
+}
+.content
+{
+	position:absolute;
+	top: 9vw;
+	width:100vw;
+	height:6vw;
+	text-align:  center;
 }
 .links p
 {
 	color: #FFFFFF;
-	font-size: 1.7vw;
+	font-size: 1.2vw;
 }
 #orders
 {
@@ -103,6 +156,12 @@ a
 	left: 1vw;
 	width:15vw;
 	cursor: pointer;
+}
+#agintis
+{
+	position: inherit;
+	left: 10vw;
+	width:15vw;
 }
 #how_work
 {
@@ -219,68 +278,77 @@ a
 	max-width: 5vw;
 	max-height: 5vw
 }
+.newrieltors
+{
+	top: 4vw;
+	left: 0vw;
+	width: 22vw;
+	height: 5vw;
+}
+.newinsurance
+{
+	top: 4vw;
+	left: 19.7vw;
+	width: 24vw;
+	height: 5vw;
+}
+.newritual
+{
+	top: 4vw;
+	left: 39.5vw;
+	width: 24vw;
+	height: 5vw;
+}
+.newtourists
+{
+	top: 4vw;
+	left: 59.2vw;
+	width: 24vw;
+	height: 5vw;
+}
+.newother
+{
+	top: 4vw;
+	left: 78.8vw;
+	width: 24vw;
+	height: 5vw;
+}
 .slides
 {
 	position:absolute;	
-	top: 10vw;
 	width:19.8vw;
-	height:60vh;
 	text-align:  center;
 	color: white;
 }
 .rieltors
 {
 	left: 0vw;
-}
-.rieltors img
-{
-	height: 11vw;
-	width: 11vw;
+	width: 22vw;
+	height: 50vw;
 }
 .insurance
 {
-	background: url(back2.png)no-repeat;
-	background-size: 100%;
-	left: 20vw;
-}
-.insurance img
-{
-	height: 11vw;
-	width: 11vw;
+	left: 8.5vw;
+	width: 34.5vw;
+	height: 50vw;
 }
 .ritual
 {
-	background: url(back3.png) no-repeat;
-	background-size: 100%;
-	left: 60vw;
+	left: 28.5vw;
+	width: 35vw;
+	height: 50vw;
 }
-.ritual img
-{
-	height: 11vw;
-	width: 11vw;
-}
-
 .tourists
 {
-	background: url(back4.png) no-repeat;
-	background-size: 100%;
-	left: 40vw;
-}
-.tourists img
-{
-	height: 11vw;
-	width: 11vw;
+	left: 49.5vw;
+	width: 34vw;
+	height: 50vw;
 }
 .other
 {
-	background: url(back5.png) no-repeat;
-	background-size: 100%;
-	left: 80vw;
-}
-.other img
-{
-	height: 11vw;
-	width: 11vw;
+	left: 69vw;
+	width: 31vw;
+	height: 50vw;
 }
 .main_enters
 {
@@ -610,10 +678,11 @@ a
 	left: 25vw;
 	width:50vw;
 	height:1100px;
-	background: url(back.jpg);
+	background-color: #fbceb1;
 	background-size: cover;
 	text-align:  center;
 	color: black;
+	border-radius: 10px;
 }
 .self_room
 {

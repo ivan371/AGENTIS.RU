@@ -3,6 +3,7 @@
 <html lang="RU">
 <head>
 	<link rel="stylesheet" href="{% static "css/stylel.css" %}" type="text/css" />
+	<link rel="stylesheet" href="{% static "css/back.css" %}" type="text/css" />
 	<link rel="stylesheet" href="{% static "css/animate.css" %}" type="text/css" />
 	<link href='http://fonts.googleapis.com/css?family=Roboto:700,400&subset=latin,cyrillic'rel='stylesheet' type='text/css'>
 	 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -11,26 +12,13 @@
 	<script src='{% static 'js/change_data.js' %}'></script>
 </head>
 <body id="all" class="animated">
-	<div class="title"> 
-		<h1>
-		"AGENTIS.RU" Первый в России портал по подбору агентов 
-		</h1>
-		<h2>
-			{% block title %}{% endblock %}
-		</h2>
-	</div>
-	<div class="slogan"><a href="index">
-		<img src="{% static "img/slogan.jpg" %}" width="100px">
-	</a></div>
-	<div class ="links">
-		<div id="about" onmouseover="animation('about', 'jello')" onclick="animation_delay('all', 'flip', 'about')" class="animated">
+	<div class ="newlinks">
+	<div class="newslogan"><a href="index">
+		<img src="{% static "img/title1.png" %}" width="50px">
+		</a></div>
+		<div id="agintis" style="color: white"  >
 			<p>
-				О нас
-			</p>
-		</div>
-		<div id="how_work" onclick="animation_delay('all', 'flip', 'how_work')" onmouseover="animation('how_work', 'jello')" class="animated">
-			<p>
-				Как это работает 
+				AGENTIS.RU 
 			</p>
 		</div>
 		<div id="connection" onclick="animation_delay('all', 'flip', 'connection')">
@@ -39,23 +27,23 @@
 			</p>
 		</div>
 		{% if user.is_authenticated %}
-		<div id="enter" onclick="animation_delay('all', 'flip', 'exit')" onmouseover="animation('enter', 'jello')" class="animated">
+		<div style="color: white" id="enter" onclick="animation_delay('all', 'flip', 'exit')" onmouseover="animation('enter', 'jello')" class="animated">
 			<p>
 				Выйти
 			</p>
 		</div>
-		<div id="registration" onclick="animation_delay('all', 'flip', 'self_room')" onmouseover="animation('registration', 'jello')" class="animated">
+		<div id="registration" style="color: white"  onclick="animation_delay('all', 'flip', 'self_room')" onmouseover="animation('registration', 'jello')" class="animated">
 			<p>
 				Личный кабинет
 			</p>
 		</div>
 		{% else %}
-		<div id="enter" onclick="animation_delay('all', 'flip', 'enter')" onmouseover="animation('enter', 'jello')" class="animated">
+		<div id="enter" style="color: white"  onclick="animation_delay('all', 'flip', 'enter')" onmouseover="animation('enter', 'jello')" class="animated">
 			<p>
 				Войти
 			</p>
 		</div>
-		<div id="registration" onclick="animation_delay('all', 'flip', 'registration')" onmouseover="animation('registration', 'jello')" class="animated">
+		<div style="color: white"  id="registration" onclick="animation_delay('all', 'flip', 'registration')" onmouseover="animation('registration', 'jello')" class="animated">
 			<p>
 				Регистрация
 			</p>
@@ -64,7 +52,7 @@
 		{% if is_mess == 0 %}
 		<div id="mymess" class="animated">
 		<a href="messagers">
-			<img src="{% static "img/message.png" %}" width="70vw">
+			<img src="{% static "img/message.png" %}" width="50vw">
 			<script src='{% static 'js/interval.js' %}'></script>
 		</a>
 		</div>
@@ -72,10 +60,49 @@
 		{% if is_mess == 1 %}
 		<div id="mymess" class="animated">
 		<a href="messagers">
-			<img src="{% static "img/message.png" %}" width="70vw">
+			<img src="{% static "img/message.png" %}" width="50vw">
 		</a>
 		</div>
 		{% endif %}
+	</div>
+	<div class="menu"><a href="profile">
+	<img src="{%static "img/top1.png" %}" class="slides newrieltors animated" id="rie" onmouseover="animationz('rie', 'pulseto')" onmouseout="animationzr('rie', 'pulseout', 'pulceto')" >	
+		
+	</img>
+	</a>
+	<img src="{%static "img/top2.png" %}" class="slides newinsurance animated" id="ins" onmouseover="animationz('ins', 'pulseto')" onmouseout="animationzr('ins', 'pulseout', 'pulceto')">
+		</img>
+	<img src="{%static "img/top3.png" %}" class="slides newritual animated" id="rit" onmouseover="animationz('rit', 'pulseto')" onmouseout="animationzr('rit', 'pulseout', 'pulceto')">
+		</img>
+	<img src="{%static "img/top4.png" %}" class="slides newtourists animated" id="tour" onmouseover="animationz('tour', 'pulseto')" onmouseout="animationzr('tour', 'pulseout', 'pulceto')">
+		</img>
+	<img src="{%static "img/top5.png" %}" class="slides newother animated" id="oth" onmouseover="animationz('oth', 'pulseto')" onmouseout="animationzr('oth', 'pulseout', 'pulceto')">
+		</img>
+	</div>
+	<div class="content">
 		{% block content %} {% endblock %}
+	<div id="low"> 
+	<div class="support">
+	Ваши пожелания
+	</div>
+	<div class="time_work">
+	Горячая линия с 9:00 до 23:00
+	</div>
+	<div class="holl_work">
+	в выходные с 9:00 до 21:00
+	</div>
+	<div class="moscow">
+	в Москве:
+	</div>
+	<div class="phone">
+	8(495) 668 65 33
+	</div>
+	<div class="email_our">
+	Эл. почта: privet@youdo.com
+	</div>
+	<div class="copyright">
+	Copyright 2016. All Rights Reserves
+	</div>
+	</div>
 </body>
 </html>

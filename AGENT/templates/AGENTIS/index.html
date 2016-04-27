@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base1.html" %}
 {% load staticfiles %}
 	{% block title %} 
 	<h2>
@@ -6,55 +6,40 @@
 	</h2>
 	{% endblock %}
 {% block content %}
-	<a href="profile">
+	<div id="picture"><a href="profile">
 	<img src="{%static "img/back1.png" %}" class="slides rieltors animated" id="rie" onmouseover="animationz('rie', 'pulseto')" onmouseout="animationzr('rie', 'pulseout', 'pulceto')">	
 		
 	</img>
 	</a>
-	<div class="slides insurance animated" id="ins" onmouseover="animationz('ins', 'pulseto')" onmouseout="animationzr('ins', 'pulseout', 'pulceto')">
-		<div class="hc">
-		<img src="{%static "img/r2.png" %}"></div>
-		<div class="rect">
-		<h2>
-			Страховые услуги
-		</h2>
-		</div>
-		<!--<img src="{%static "img/e1.png" %}" id="p2" width="150px" onmouseover="animation('p2', 'pulse')" class="animated"> 
-		<h3><a href="how_insurance">
-			Узнать подробнее
-		</a></h3>-->
+	<img src="{%static "img/back2.png" %}" class="slides insurance animated" id="ins" onmouseover="animationz('ins', 'pulseto')" onmouseout="animationzr('ins', 'pulseout', 'pulceto')">
+		</img>
+	<img src="{%static "img/back3.png" %}" class="slides ritual animated" id="rit" onmouseover="animationz('rit', 'pulseto')" onmouseout="animationzr('rit', 'pulseout', 'pulceto')">
+		</img>
+	<img src="{%static "img/back4.png" %}" class="slides tourists animated" id="tour" onmouseover="animationz('tour', 'pulseto')" onmouseout="animationzr('tour', 'pulseout', 'pulceto')">
+		</img>
+	<img src="{%static "img/back5.png" %}" class="slides other animated" id="oth" onmouseover="animationz('oth', 'pulseto')" onmouseout="animationzr('oth', 'pulseout', 'pulceto')">
+		</img></div>
+	<div id="low"> 
+	<div class="support">
+	Ваши пожелания
 	</div>
-	<div class="slides ritual animated" id="rit" onmouseover="animationz('rit', 'pulseto')" onmouseout="animationzr('rit', 'pulseout', 'pulceto')">
-		<div class="hc">
-		<img src="{%static "img/r3.png" %}"></div>
-		<div class="rect">
-		<h2>
-			Ритуальные услуги
-		</h2>
-		</div>
-		<!--<img src="{%static "img/e1.png" %}" width="150px"> 
-		<h3>Узнать подробнее</h3>-->
+	<div class="time_work">
+	Горячая линия с 9:00 до 23:00
 	</div>
-	<div class="slides tourists animated" id="tour" onmouseover="animationz('tour', 'pulseto')" onmouseout="animationzr('tour', 'pulseout', 'pulceto')">
-		<div class="hc">
-		<img src="{%static "img/r4.png" %}"></div>
-		<div class="rect">
-		<h2>
-			Туристические услуги
-		</h2>
-		</div>
-		<!--<img src="{%static "img/e1.png" %}" width="150px"> 
-		<h3>Узнать подробнее</h3>-->
+	<div class="holl_work">
+	в выходные с 9:00 до 21:00
 	</div>
-	<div class="slides other animated" id="oth" onmouseover="animationz('oth', 'pulseto')" onmouseout="animationzr('oth', 'pulseout', 'pulceto')">
-		<div class="hc">
-		<img src="{%static "img/r5.png" %}"></div>
-		<div class="rect">
-		<h2>
-			Прочие услуги
-		</h2>
-		</div>
-		<!--<img src="{%static "img/e1.png" %}" width="150px"> 
-		<h3>Узнать подробнее</h3>-->
+	<div class="moscow">
+	в Москве:
+	</div>
+	<div class="phone">
+	8(495) 668 65 33
+	</div>
+	<div class="email_our">
+	Эл. почта: privet@youdo.com
+	</div>
+	<div class="copyright">
+	Copyright 2016. All Rights Reserves
+	</div>
 	</div>
 {% endblock %}
