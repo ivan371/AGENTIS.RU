@@ -4,7 +4,7 @@ body
 {
 	margin: 0.1vw;
 	font-family: 'Roboto', sans-serif;
-	background: url(grey_wash_wall.png);
+	/*background: url(grey_wash_wall.png);
 	/*background: url(bg.jpg);*/
 	background-attachment:fixed;
 	background-repeat:cover;
@@ -596,15 +596,19 @@ a
  {
  	color: #000000;
  }
+ .long
+ {
+ 	width: 325px;
+ }
+ .short
+ {
+ 	width: 300px;
+ }
 .user {
-    width: 300px; /* Ширина поля с учетом padding */
     height: 46px; /* Высота */
-    background: #000000;
     padding: 0 10px; /* Поля */
-    border: 2px solid #FFFFFF;
     font-size: 1em; /* Размер текста */
-	border-radius: 10px;
-	color: #FFFFFF;
+	
  }
  .mess {
     background: #000000;
@@ -613,6 +617,19 @@ a
     font-size: 1em; /* Размер текста */
 	border-radius: 10px;
 	color: #FFFFFF;
+ }
+ .howwork img
+ {
+ 	margin-top: 10vw;
+ 	width: 100vw;
+ }
+
+ .tip
+ {
+ 	color: white;
+ 	padding: 29px;
+ 	margin-right: 300px;
+ 	text-align: right;
  }
  .offer {
     width: 500px; /* Ширина поля с учетом padding */
@@ -632,7 +649,7 @@ a
     width: 100px; /* Ширина поля с учетом padding */
     height: 30px; /* Высота */
     background: #000000;
-    padding: 0 10px; /* Поля */
+    : 0 10px; /* Поля */
     border: 2px solid #FFFFFF;
     font-size: 0.8em; /* Размер текста */
 	border-radius: 10px;
@@ -671,10 +688,22 @@ a
  {
  	float:right;
  }
+ .name_reg
+ {
+ 	margin-left: 25vw;
+ 	text-align: left;
+ }
+ .blank
+ {
+ 	margin: 1vw;
+ 	display: block;
+ 	float:right;
+ 	
+ }
  .registration
 {
 	position:absolute;
-	top: 250px;
+	top: 5vw;
 	left: 25vw;
 	width:50vw;
 	height:1100px;
@@ -682,6 +711,7 @@ a
 	background-size: cover;
 	text-align:  center;
 	color: black;
+	border-radius: 10px;
 }
 .self_room
 {
@@ -791,25 +821,21 @@ option
 }
 
 .file_upload{
-	left: 145px;
 	width: 300px; /* Ширина поля с учетом padding */
     height: 46px;
     position: relative;
     overflow: hidden;
-    background: #000000;
+    background: white;
     padding: 0 10px; /* Поля */
     border: 2px solid #FFFFFF;
-    border-radius: 10px;
-	color: #FFFFFF;
     font-size: 1em;        /* example */
-    height: 2em;           /* example */
-    line-height: 2em       /* the same as height */
+    line-height: 46px;       /* the same as height */
 }
 .file_upload > button{
     float: right;
     width: 8em;            /* example */
     height: 100%;
-    border-radius: 10px;
+    border-radius: 1px;
 }
 .file_upload > div{
     padding-left: 1em      /* example */

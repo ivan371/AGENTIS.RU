@@ -2,7 +2,7 @@
 {% load staticfiles %}
 	{% block title %} 
 	<h2>
-	 О нас
+	 Рћ РЅР°СЃ
 	 </h2>
 	{% endblock %}
 {% block content %}

@@ -1,47 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content="text/html; charset=windows-1251" http-equiv="Content-Type">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-  </head>
-  <body>
-    <div class="title">
-		<h1>
-		"AGENTIS.RU" Первый в России портал по подбору агентов 
-		</h1>
-		<h2>
-		 Как это работает
-		</h2>
-	</div>
-	<div class="slogan"><a href="index.html">
-		<img src="img/slogan.jpg" width="100px">
-	</a></div>
-	<div class ="links">
-		<div id="about" ><a href="about.html">
-			<p>
-				О нас
-			</p>
-		</a></div>
-		<div id="how_work"><a href="how_work.html">
-			<p>
-				Как это работает 
-			</p>
-		</a></div>
-		<div id="connection"><a href="connection.html">
-			<p>
-				Обратная связь
-			</p>
-		</a></div>
-		<div id="enter"><a href="enter.html">
-			<p>
-				Войти
-			</p>
-		</a></div>
-		<div id="registration"><a href="registration.html">
-			<p>
-				Регистрация
-			</p>
-		</a></div>
-	</div>
-  </body>
-</html>
+{% extends "base.html" %}
+{% load staticfiles %}
+	{% block title %} 
+	<h2>
+	 Как это работает
+	 </h2>
+	{% endblock %}
+{% block content %}
+<div class="howwork">
+</div>
+{% endblock %}

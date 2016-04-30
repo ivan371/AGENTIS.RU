@@ -6,37 +6,75 @@
 	 </h2>
 	{% endblock %}
 	{% block content %}
+	<div class="name_reg">
+	<h3>
+		Регистрация заказчика/исполнителя
+	</h3>
+	</div>
 	<div class="registration">
-		<h2>
-			Регистрация
-		</h2>
 		<form action="/registration_result/" method="post" enctype="multipart/form-data">
 		<p>{% csrf_token %}</p>
-		<p><select name="who" class="user" >
-			<option selected value="1">Заказчик</option>
-			<option value="2">Исполнитель</option>
+		<p><select name="who" class="long user blank" >
+			<option selected value="2">Заказчик</option>
+			<option value="1">Исполнитель</option>
 		</select></p>
-		<p><input type="text" class="user" name="login" placeholder="Логин" size="40" ></p> 			
-		<p><input type="password" class="user" name="password" placeholder="Пароль" size="40" ></p> 
-		<p><input type="password" class="user" name="password_repiate" placeholder="Повторите пароль" size="40" ></p> 
-		<p><input type="text" class="user" name="surname" placeholder="Фамилия" size="40" ></p> 
-		<p><input type="text" class="user" name="forename" placeholder="Имя" size="40" ></p> 
-		<p><input type="text" class="user" name="patronyname" placeholder="Отчество" size="40" ></p>
-		<p><div class="file_upload">
+		<p><input type="text" class="user blank short" name="login" placeholder="Логин" size="40" ></p>			
+		<p><input type="password" class="user blank short" name="password" placeholder="Пароль" size="40" ></p> 
+		<p><input type="password" class="user blank short" name="password_repiate" placeholder="Повторите пароль" size="40" ></p> 
+		<p><input type="text" class="user blank short" name="surname" placeholder="Фамилия" size="40" ></p> 
+		<p><input type="text" class="user blank short" name="forename" placeholder="Имя" size="40" ></p> 
+		<p><input type="text" class="user blank short" name="patronyname" placeholder="Отчество" size="40" ></p>
+		<p><div class="file_upload blank">
         	<button type="button" >Загрузить</button>
         		<div>Файл не выбран</div>
         	<input type="file" name="img" multiple="true">
     	</div></p>
-		<p><select name="region" class="user" placeholder="Регион" >
+		<p><select name="region" class="user blank long" placeholder="Регион" >
 			<option value="1">Выберите регион</option>
 			<option value="2">Москва</option>
 			<option value="3">Санкт-Петербург</option>
 		</select></p>		
-		<p><input type="text" class="user" name="email" placeholder="e-mail" size="40" ></p> 
-		<p><input type="text" class="user" name="number" placeholder="Телефон" size="40" ></p> 
-		<p><textarea name="message" rows="4" cols="55" wrap="virtual" class="user" placeholder="О себе"></textarea> </p>
-		<p><input type="submit" class="user" value="Регистрация"></p>
+		<p><input type="text" class="user blank short" name="email" placeholder="e-mail" size="40" ></p> 
+		<p><input type="text" class="user blank short" name="number" placeholder="Телефон" size="40" ></p> 
+		<p><textarea name="message" rows="4" cols="55" wrap="virtual" class="user blank short" placeholder="О себе"></textarea> </p>
+		<p><input type="submit" class="user blank long" style="margin-bottom: 20vw;" value="Регистрация"></p>
 		</form>
+		<div class="tip">
+		Исполнитель/заказчик
+		</div>
+		<div class="tip">
+		Логин
+		</div>
+		<div class="tip">
+		Пароль
+		</div>
+		<div class="tip">
+		Повторите пароль
+		</div>
+		<div class="tip">
+		Имя
+		</div>
+		<div class="tip">
+		Фамилия
+		</div>
+		<div class="tip">
+		Отчество
+		</div>
+		<div class="tip">
+		Выберите файл
+		</div>
+		<div class="tip">
+		Выберите регион
+		</div>
+		<div class="tip">
+		e-mail
+		</div>
+		<div class="tip">
+		телефон
+		</div>
+		<div class="tip">
+		О себе
+		</div>
 	</div>
 	<div class="err">
 		{% if errors %}
