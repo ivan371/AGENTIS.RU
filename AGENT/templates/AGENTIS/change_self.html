@@ -7,21 +7,27 @@
 	 <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
-<div class="enters ch animated">
+<h2>Личный кабинет</h2>	 
+<div class="left_room">
+<h3>Логин</h3>
+<h3>ФИО</h3>
+<h3>e-mail</h3>
+<h3>Телефон</h3>
+<h3>Должность</h3>
+</div>
+<div class="room ch animated">
 <div class="self_text animated">
 	<div id="photo"> <img src="/media{{p.img.img}}/" id="img">
 	 <script src='{% static 'js/ch_image.js' %}'></script></div>
-	 <h3>Здравствуйте, {{user.username}} 
+	<h3>{{user.username}} 
 	</h3>
-	<h3>Ваши контактные данные:</h3>
-	<h3 id="initials">ФИО: {{p.surname}} {{p.forename}} {{p.partronyname}}
+	<h3 id="initials">{{p.surname}} {{p.forename}} {{p.partronyname}}
 		<span>
 		<input type="submit" class="change" value="изменить" onclick="Change_initial()">
 		</span>
 	</h3>
 	<h3 id="new_initials" style="display: none;">
-		<form action="/ch_initial/" method="post">{% csrf_token %}
-		ФИО:  
+		<form action="/ch_initial/" method="post">{% csrf_token %} 
 		<input type="text" name="surname" class="change" id="init" placeholder="Фамилия" value="{{p.surname}}"size="40" >
 		<input type="text"  name="forename" class="change" id="init" placeholder="Имя" value="{{p.forename}}"size="40" >
 		<input type="text" name="partronyname" class="change" id="init" placeholder="Отчество" value="{{p.partronyname}}" >
@@ -32,7 +38,7 @@
 	</h3>
 	
 	<h3 id="email">
-		e-mail: {{p.email}}
+		{{p.email}}
 		<span>
 			<input type="submit" class="change" value="изменить" onclick="Change_email()">
 		</span>
@@ -47,21 +53,20 @@
 			</form>
 		</h3>
 	<h3 id="phone">
-		Телефон: {{p.number}}
+		{{p.number}}
 		<span>
 			<input type="submit" class="change" value="изменить" onclick="Change_number()">
 		</span>
 	</h3>
 	<h3 id="new_phone" style="display: none;">
 		<form action="/ch_number/" method="post">{% csrf_token %}
-		Телефон:
 		<input type="text" value="{{p.number}}" class="secret_change" name="number" placeholder="телефон" >
 		<span>
 			<input type="submit" class="change" value="сохранить" >
 		</span>
 		</form>
 	</h3>
-	<h3 id="prof">Должность: {% if p.who == 2 %} Исполнитель {% else %} Заказчик {% endif %}<span><input type="submit" class="change" value="изменить" onclick="Change_prof()"></span></h3>
+	<h3 id="prof"> {% if p.who == 2 %} Исполнитель {% else %} Заказчик {% endif %}<span><input type="submit" class="change" value="изменить" onclick="Change_prof()"></span></h3>
 	<h3 id="new_prof" style="display: none;">
 	<form action="/ch_prof/" method="post">{% csrf_token %}
 	Должность:

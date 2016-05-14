@@ -33,14 +33,11 @@
 	<div class="list">
 		<div class="text_align">
 		<div id="your_offer{{forloop.counter}}" >
-		<h2>
-			Предложение: {{offers.name_mess}}
-		</h2>
 		<h3>
-			Сумма предложения {{offers.sum_mess}}
+		{{offers.name_mess}} Цена:  {{offers.sum_mess}}
 		</h3>
 		<h3>
-			Имя исполнителя: {{offers.user_m.login}}
+			{{offers.user_m.login}}
 		</h3>
 		<h3>
 			<input id='deploy{{forloop.counter}}'  style="  margin: 0 auto;" type="submit" class="user" value="узнать подробнее" onclick="deploy_offer('deploy{{forloop.counter}}', 'collapce{{forloop.counter}}')">

@@ -32,10 +32,6 @@ _PATH = os.path.abspath(os.path.dirname(__file__))
 MEDIA_ROOT = os.path.join(_PATH, 'files', 'media')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(_PATH, 'files', 'static')
-STATICFILES_DIRS = (
-    os.path.join(_PATH, 'static'),
-)
 
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
@@ -48,9 +44,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'AGENTIS',
     'AGENT',
 )
+SITE_ID = 1
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',

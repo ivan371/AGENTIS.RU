@@ -39,12 +39,15 @@
 	{% for p in ps %}
 	<div class="list_small">
 	<div class="text_align_small">
-			<h3>Логин: {{p.login}}</h3>
-			<h3>ФИО: {{p.surname}} {{p.forename}} {{p.partronyname}}</h3>
-			<h3>e-mail: {{p.email}}</h3>
-			<h3>регион: {{p.region}}</h3>
-			<h3>Телефон: {{p.number}}</h3>
-			<h3></h3>
+			<img src="/media{{p.img.img}}/" id="img">
+			<p>{{p.surname}} {{p.forename}} {{p.partronyname}}</p>
+			{% if p.region == 2 %}
+			<p> Москва </p>
+			{% elif p.region == 3 %}
+			<p> Санкт-Петербург </p>
+			{% endif %}
+			<p>Специализация:{{p.profile}}</p>
+			<p>Рейтинг:</p>
 	</div>
 	</div>
 	{% endfor %}

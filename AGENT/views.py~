@@ -106,7 +106,10 @@ def change_status(request):
 		POST = request.POST
 		print(POST['name'])
 		p = User_AGENTIS.objects.get(login = POST['name'])
-		m = message.objects.filter(mess_from = p)
+		if(p.who == 1):
+			m = message.objects.filter(mess_from = p)
+		else:
+			m = message.objects.filter(mess_to = p)
 		for mess in m:
 			mess.status = 1
 			mess.save()
@@ -318,6 +321,8 @@ def lists(request):
 
 def profile(request):
 	ps = User_AGENTIS.objects.filter(who = 1)
+	for pss in ps:
+		pss.img.img = pss.img.goodname()
 	try:
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)

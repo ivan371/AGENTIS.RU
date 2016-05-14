@@ -216,17 +216,19 @@ a
 {
 	width: 9vw;
 	height:9vw;
+	border-radius: 4.5vw;
 }
 #photo
 {
 	position: absolute;
-	right: 1vw;
-	top: 1vw;
+	right: 10vw;
+	top: 10vw;
 }
 #photo img
 {
-	height: 6vw;
-	width: 7vw;
+	height: 15vw;
+	width: 15vw;
+	border-radius:10vw;
 }
 .switch
 {
@@ -372,6 +374,16 @@ a
 	text-align:  center;
 	color: black;
 }
+.left_room
+{	
+	display: inline-block;
+	text-align: right;
+}
+.room
+{
+	display: inline-block;	
+	margin:auto;
+}
 .ch
 {
 	top:12vw;
@@ -441,9 +453,9 @@ a
 }
 #list
 {
-	margin: 3vw;
+	margin-top: 1vw;
+	margin-left: 10vw;
 	position: absolute;
-	top: 4vw;
 	width:70vw;
 	border-radius: 10px;
 	color: black;
@@ -452,9 +464,9 @@ a
 {
 	margin-top: 1vw;
 	margin-bottom: 0vw;
-	width:65vw;
+	width:50vw;
 	/*background: linear-gradient(to top, #CEECF5, #58D3F7, #CEECF5);*/
-	background: url(back.jpg);
+	background: #E7E7DC;
 	background-size: cover;
 	text-align:  left;
 	color: black;
@@ -464,11 +476,15 @@ a
 {
 	margin-top: 1vw;
 	margin-bottom: 0vw;
-	width:33vw;
+	margin-right: 1vw;
+	margin-left: 0vw;
+	width:25vw;
+	height:21vw;
 	/*background: linear-gradient(to top, #CEECF5, #58D3F7, #CEECF5);*/
-	background: url(back.jpg);
+	background: linear-gradient(to bottom, SandyBrown, #F4A060);
 	background-size: cover;
-	text-align:  left;
+	text-align:  center;
+	border-radius: 5px;
 	color: black;
 	float:left;
 }
@@ -520,6 +536,7 @@ a
 }
 .self_text
 {
+	width: 30vw;
 	text-align: left;
 	margin-left:2vw;
 }
@@ -620,7 +637,7 @@ a
  }
  .howwork img
  {
- 	margin-top: 10vw;
+ 	margin-top: -10vw;
  	width: 100vw;
  }
 

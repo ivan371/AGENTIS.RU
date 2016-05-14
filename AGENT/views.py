@@ -16,7 +16,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.forms import forms
 from django.template import RequestContext
 from django.conf import settings
-from django.contrib.sites.models import RequestSite
 from django.contrib.sites.models import Site
 from django.contrib import auth
 from django.views.generic.edit import FormView
@@ -321,6 +320,8 @@ def lists(request):
 
 def profile(request):
 	ps = User_AGENTIS.objects.filter(who = 1)
+	for pss in ps:
+		pss.img.img = pss.img.goodname()
 	try:
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
