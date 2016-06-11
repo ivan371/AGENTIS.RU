@@ -37,7 +37,8 @@ function collapce_offer(a, b)
 deploy_mess(0, 0, 0, 0);
 function deploy_mess(res, what, num, name)
 {
-	alert(name);
+	if(num != 0)
+	{
 	$.ajax({
 	  		type: 'POST',
 	  		url: "/change_status/",
@@ -48,6 +49,7 @@ function deploy_mess(res, what, num, name)
 						//window.addEventListener('keydown', whatKey, true);
 					}	
 	  	});
+	 }
 	if(what == 0)
 	{
 		this.arr = new Array();
@@ -59,12 +61,14 @@ function deploy_mess(res, what, num, name)
 			animation("sleep" +res, "bounceOut");
 			setTimeout(function(){document.getElementById("sleep" + res).style.display = "none"
 			this.arr[res] = 1;}, 1000)
+			document.getElementById("sleep_name" + name).style.background = "color: orange";
 		}
 		else
 		{
 			document.getElementById("sleep" +res).style.display = "block"
 			this.arr[res] = 0;
 			animation("sleep" +res, "fadeInDown");
+			document.getElementById("sleep_name" + name).style.backgroundColor = "orange";
 		}
 	}
 }

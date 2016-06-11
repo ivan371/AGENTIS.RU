@@ -61,12 +61,14 @@ function deploy_mess(res, what, num, name)
 			animation("sleep" +res, "bounceOut");
 			setTimeout(function(){document.getElementById("sleep" + res).style.display = "none"
 			this.arr[res] = 1;}, 1000)
+			document.getElementById("sleep_name" + name).style.backgroundColor = "#fbceb1";
 		}
 		else
 		{
 			document.getElementById("sleep" +res).style.display = "block"
 			this.arr[res] = 0;
 			animation("sleep" +res, "fadeInDown");
+			document.getElementById("sleep_name" + name).style.backgroundColor = "orange";
 		}
 	}
 }

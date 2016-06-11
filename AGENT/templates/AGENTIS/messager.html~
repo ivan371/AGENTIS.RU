@@ -7,57 +7,33 @@
 	  <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
-<div class="oppotunity">
-		<div id="orders" onmouseover="animation('orders', 'jello')" class="animated"><a href="orders">
-			<p>
-				Предложения
-			</p>
-		</a></div>
-		{% if p.who == 1%}
-		<div id="self" onmouseover="animation('self', 'jello')" class="animated" ><a href="self_room">
-			<p>
-				Личный кабинет 
-			</p>
-		{% else %}
-		<div id="self" onmouseover="animation('self', 'jello')" class="animated" ><a href="list_rieltors">
-			<p>
-				Мои заказы 
-			</p>	
-		{% endif %}
-		</a></div>
-	
-</div>
 <div class="message">
-	<p>
-		Сообщения 
-	</p>
+<div class="mess_back">
 	{% for mess in m%}
-	<div class="messeger_name" onclick="deploy_mess({{forloop.counter}}, 1, {{mess.ammount}}, '{{mess.name}}')"> <p>{{mess.name}} {{mess.ammount}}</p></div>
+	<div class="messeger_name" id="sleep_name{{mess.name}}" onclick="deploy_mess({{forloop.counter}}, 1, {{mess.ammount}}, '{{mess.name}}')"> 
+	<img src="/media{{mess.img.img}}/" id="img">	
+	<p>{{mess.name}} </p></div>
+<div class="display_mess">
 	<div id="sleep{{forloop.counter}}" class="messs animated" style="display: none">
-	{% for messages in mess.mess %}
-	{% if not messages.author %}
-	<div class="self_mess"><p>{{messages.message}}</p></div>
-	{% else %}
-	<div class="alien_mess"><p>{{messages.message}}</p></div>
-	{% endif %}			
-	{% endfor %}
+		<div class="dis_mess">
+			{% for messages in mess.mess %}
+			{% if not messages.author %}
+			<div class="self_mess"><p>{{messages.message}}</p></div>
+			{% else %}
+			<div class="alien_mess"><p>{{messages.message}}</p></div>
+			{% endif %}			
+			{% endfor %}
+		</div>
+	<div class="send_mess">
 	<form action="/chat/" method="post">{% csrf_token %}
-	<textarea name="message" autofocus rows="4" cols="55" wrap="virtual" class="mess_request" placeholder="Введите сообщение"></textarea>
+	<textarea name="message" autofocus rows="4" cols="40" wrap="virtual" class="mess_request" placeholder="Введите сообщение"></textarea>
 	<input type="hidden" name="name" value="{{mess.name}}">
 	<input type="submit" class="mess_submit" value="Отправить">	
 	</form>
 	</div>
+	</div>
+	</div>
 	{% endfor %}
-</div>
-<div class="right_enters">
-<div class="self_text">
-	<h3>Здравствуйте, {{user.username}}</h3>
-	<h3>Ваши контактные данные:</h3>
-	<h3>ФИО: {{p.surname}} {{p.forename}} {{p.partronyname}}</h3>
-	<h3>e-mail: {{p.email}}</h3>
-	<h3>Телефон: {{p.number}}</h3>
-	<h3>Должность: {% if p.who == 1 %} Риелтор {% else %} Страховщик {% endif %}</h3>
-	<h3></h3>
 </div>
 </div>
 {% endblock %}

@@ -45,21 +45,21 @@
 				Выйти
 			</a></p>
 		</div>
-		<div id="registration" onmouseover="animation('registration', 'jello')" class="animated">
-			<p><a href="self_room">
+		<div id="registration" onclick="animation_delay('all', 'flip', 'self_room')" onmouseover="animation('registration', 'jello')" class="animated">
+			<p>
 				Личный кабинет
-			</a></p>
+			</p>
 		</div>
 		{% else %}
-		<div id="enter" onmouseover="animation('enter', 'jello')" class="animated">
-			<p><a href="enter">
+		<div id="enter" onclick="animation_delay('all', 'flip', 'enter')" onmouseover="animation('enter', 'jello')" class="animated">
+			<p>
 				Войти
-			</a></p>
+			</p>
 		</div>
-		<div id="registration" onmouseover="animation('registration', 'jello')" class="animated">
-			<p><a href="registration">
+		<div id="registration" onclick="animation_delay('all', 'flip', 'registration')" onmouseover="animation('registration', 'jello')" class="animated">
+			<p>
 				Регистрация
-			</a></p>
+			</p>
 		</div>
 		{% endif %}
 		{% if is_mess == 0 %}

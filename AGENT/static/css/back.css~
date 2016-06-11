@@ -1,6 +1,6 @@
 .support{
 	position: relative;
-	top: 3vw;
+	top: 1vw;
 	background: linear-gradient(to bottom, NavajoWhite, orange);
 	height: 3vw;
 	width: 15vw;
@@ -9,21 +9,22 @@
 	color: white;
 	line-height: 3vw;
 	}
-.time_work{top: 3vw;
+.time_work{top: 1vw;
 	position: absolute;
 	left: 45vw;
 	}
-.holl_work{top: 5vw;
+.holl_work{top: 3vw;
 	position: absolute;
 	left: 45vw;}
-.moscow{top: 3vw;
+.moscow{top: 1vw;
 	position: absolute;
 	left: 65vw;}
-.phone{top: 5vw;
+.phone{top: 3vw;
 	position: absolute;
 	left: 65vw;}
 .email_our{top: 3vw;
 	left: 75vw;
 	position: absolute;}
-.copyright{top: 8vw;
+.copyright{top: 6vw;
+	left: 25vw;
 	position: absolute;}

@@ -6,7 +6,7 @@
 	 </h2>
 	{% endblock %}
 {% block content %}
-<div class="enters">
+<div class="main_enters">
 	<h2>
 		Войти
 	</h2>

@@ -94,6 +94,10 @@ def messagers(request):
 	p = User_AGENTIS.objects.get(login = request.session['member_id'])
 	mess = display_mess(p)
 	is_mess = mess.is_mes()
+	ps = mess.nm
+	for pss in ps:
+		print(pss)
+		
 	return render_to_response('AGENTIS/messager.html',{'p': p, 'm': mess.nm, 'who': p.who, 'is_mess': is_mess}, RequestContext(request))
 
 

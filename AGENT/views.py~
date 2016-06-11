@@ -16,7 +16,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.forms import forms
 from django.template import RequestContext
 from django.conf import settings
-from django.contrib.sites.models import RequestSite
 from django.contrib.sites.models import Site
 from django.contrib import auth
 from django.views.generic.edit import FormView
@@ -95,7 +94,11 @@ def messagers(request):
 	p = User_AGENTIS.objects.get(login = request.session['member_id'])
 	mess = display_mess(p)
 	is_mess = mess.is_mes()
-	return render_to_response('AGENTIS/messager.html',{'p': p, 'm': mess.nm, 'who': p.who, 'is_mess': is_mess}, RequestContext(request))
+	ps = mess.nm
+	for pss in ps:
+		print(pss)
+		
+	return render_to_response('AGENTIS/messager.html',{'p': p, 'm': mess.nm, 'who': p.who, 'is_mess': is_mess, 'list': newlist}, RequestContext(request))
 
 
 @csrf_exempt

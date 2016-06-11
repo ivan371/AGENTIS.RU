@@ -14,7 +14,7 @@ body
 {
 	position:absolute;
 	width:100vw;
-	height:9vw;
+	height:16vh;
 	background: white;
 	text-align:  center;
 	z-index: 1;
@@ -69,17 +69,18 @@ a
 #newlow
 {	
 	width: 100%;
-	height: 15vh;
-	top: 85vh;
+	height: 8vw;
+	top: 50vw;
 	margin-bottom: 0px;
 	background-color: gray;
 	position: fixed;
 	display: block;
+	font-size: 1vw;
 }
 #low
 {	
 	width: 100%;
-	height: 13vw;
+	height: 14vh;
 	margin-bottom: 0px;
 	background-color: gray;
 	position: relative;
@@ -101,19 +102,23 @@ a
 {
 	position: relative;
 	display: block;
-	height: 49.5vw;
+	height: 69vh;
 	z-index: 0;
 }
 .links
 {
 	position:absolute;
-	top: 9vw;
+	top: 16vh;
 	width:100vw;
-	height:4vw;
+	height: 7vh;
 	background: #054F87;
 	opacity: 0.85;
 	text-align:  center;
 	z-index: 1;
+}
+.links a
+{
+	color: white;
 }
 .newlinks
 {
@@ -124,6 +129,10 @@ a
 	opacity: 0.85;
 	text-align:  center;
 	z-index: 1;
+}
+.newlinks a
+{
+	color: white;
 }
 .content
 {
@@ -200,8 +209,8 @@ a
 #mymess
 {
 	position: inherit;
-	left: 90vw;
-	top: -8vw;
+	left: 40vw;
+	top: 2vh;
 	width:5vw;
 	cursor: pointer;
 }
@@ -217,6 +226,14 @@ a
 	width: 9vw;
 	height:9vw;
 	border-radius: 4.5vw;
+}
+#img_mess
+{
+	left: 1vw;
+	position: absolute;
+	width: 4vw;
+	height:4vw;
+	border-radius: 2vw;
 }
 #photo
 {
@@ -321,36 +338,37 @@ a
 	width:19.8vw;
 	text-align:  center;
 	color: white;
+	bottom:-1vh;
 }
 .rieltors
 {
 	left: 0vw;
 	width: 22vw;
-	height: 50vw;
+	height: 70vh;
 }
 .insurance
 {
 	left: 8.5vw;
 	width: 34.5vw;
-	height: 50vw;
+	height: 70vh;
 }
 .ritual
 {
 	left: 28.5vw;
 	width: 35vw;
-	height: 50vw;
+	height: 70vh;
 }
 .tourists
 {
 	left: 49.5vw;
 	width: 34vw;
-	height: 50vw;
+	height: 70vh;
 }
 .other
 {
 	left: 69vw;
 	width: 31vw;
-	height: 50vw;
+	height: 70vh;
 }
 .main_enters
 {
@@ -359,10 +377,12 @@ a
 	width:40vw;
 	left: 30vw;
 	height:27vw;
-	background: url(back.jpg);
-	background-size: cover;
 	text-align:  center;
 	color: black;
+	background-color: #fbceb1;
+	background-size: cover;
+	text-align:  center;
+	border-radius: 10px;
 }
 .enters
 {
@@ -464,7 +484,7 @@ a
 {
 	margin-top: 1vw;
 	margin-bottom: 0vw;
-	width:50vw;
+	width:55vw;
 	/*background: linear-gradient(to top, #CEECF5, #58D3F7, #CEECF5);*/
 	background: #E7E7DC;
 	background-size: cover;
@@ -543,13 +563,19 @@ a
 .message
 {
 	position: absolute;
-	left: 60vw;
+	left: 30vw;
 	top: 67px;
-	width: 39vw;
-	height: 90vh;
-	border-radius: 10px;
-	border: 2px solid #00BFFF;
+	width: 40vw;
+	height: 50vh;
 	background: linear-gradient(to right, #4F4F4F, gray);
+	overflow: auto;
+}
+.mess_back
+{
+	background-color: #fbceb1;
+	width: 15vw;
+	height: 50vh;
+
 }
 .left_enters
 {
@@ -623,7 +649,7 @@ a
  }
 .user {
     height: 46px; /* Высота */
-    padding: 0 10px; /* Поля */
+    padding: 0 0; /* Поля */
     font-size: 1em; /* Размер текста */
 	
  }
@@ -795,48 +821,55 @@ option
 
 .messeger_name
 {
-	background: linear-gradient(to bottom right, #00BFFF, #FF7F24);
-	border: 5px solid #000000;
-	border-radius: 10px;
+	height: 30px;
+	width: 13vw;
+	margin-top: 1vw;
+	padding: 1vw 1vw 1vw 1vw;
+	color: white;
 	cursor: pointer;
 }
 .alien_mess
 {
 	background: linear-gradient(to bottom right, #CAB44F, #EE7FAA);
 	border: 1px solid #000000;
-	margin-left: 10%;
 }
 .self_mess
 {
 	background: linear-gradient(to bottom right, #2AB77F, #187FAA);
 	border: 1px solid #000000;
-	margin-right: 10%;
 }
 .messs
 {
-	background: linear-gradient(to bottom right, #AABAFF, #FF7F24);
-	border: 5px solid #000000;
-	border-radius: 10px;
+	position: absolute;
+	left: 15vw;
+	width: 25vw;
+	height: 50vh;
+	top: 0vh;
 }
 .mess_request {
-	width: 33.5vw;
-    height: 200px; /* Высота */
-    background: #000000;
-    border: 2px solid #FFFFFF;
-    font-size: 1em; /* Размер текста */
+	height: 50px; /* Высота */
+    	background: #000000;
+    	border: 2px solid #FFFFFF;
+    	font-size: 1em; /* Размер текста */
 	color: #FFFFFF;
-	margin-right: 10%;
 }
 .mess_submit {
-	width: 34vw;
-    height: 50px; /* Высота */
-    background: #000000;
-    border: 2px solid #FFFFFF;
-    font-size: 1em; /* Размер текста */
+	width: 25vw;
+   	height: 50px; /* Высота */
+    	background: #000000;
+    	border: 2px solid #FFFFFF;
+    	font-size: 1em; /* Размер текста */
 	color: #FFFFFF;
-	margin-right: 10%;
 }
-
+.dis_mess
+{
+	overflow: auto;
+	height: 35vh;
+}
+.self_mess
+{
+	top: 35vh;
+}
 .file_upload{
 	width: 300px; /* Ширина поля с учетом padding */
     height: 46px;

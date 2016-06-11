@@ -15,7 +15,8 @@ class display_mess:
 						flag = 1
 						messagez.add_data(mess.status, mess.author, mess.message)
 				if flag == 0:
-					newmess = messages(mess.mess_to.login)
+					mess.mess_to.img.img = mess.mess_from.img.goodname()
+					newmess = messages(mess.mess_to.login, mess.mess_to.img)
 					self.nm.append(newmess)
 					self.nm[-1].add_data(mess.status, mess.author, mess.message)
 	
@@ -29,7 +30,8 @@ class display_mess:
 						flag = 1
 						messagez.add_data(mess.status, mess.author, mess.message)
 				if flag == 0:
-					newmess = messages(mess.mess_from.login)
+					mess.mess_from.img.img = mess.mess_from.img.goodname()
+					newmess = messages(mess.mess_from.login, mess.mess_from.img)
 					self.nm.append(newmess)
 					self.nm[-1].add_data(mess.status, mess.author, mess.message)
 				

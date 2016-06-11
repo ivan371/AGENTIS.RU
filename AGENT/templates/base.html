@@ -32,27 +32,27 @@
 				Выйти
 			</p>
 		</div>
-		<div id="registration" style="color: white"  onclick="animation_delay('all', 'flip', 'self_room')" onmouseover="animation('registration', 'jello')" class="animated">
-			<p>
+		<div id="registration" style="color: white"  onmouseover="animation('registration', 'jello')" class="animated">
+			<p><a href="self_room">
 				Личный кабинет
-			</p>
+			</a></p>
 		</div>
 		{% else %}
-		<div id="enter" style="color: white"  onclick="animation_delay('all', 'flip', 'enter')" onmouseover="animation('enter', 'jello')" class="animated">
-			<p>
+		<div id="enter" style="color: white"  onmouseover="animation('enter', 'jello')" class="animated">
+			<p><a href="enter">
 				Войти
-			</p>
+			</a></p>
 		</div>
-		<div style="color: white"  id="registration" onclick="animation_delay('all', 'flip', 'registration')" onmouseover="animation('registration', 'jello')" class="animated">
-			<p>
+		<div style="color: white"  id="registration" onmouseover="animation('registration', 'jello')" class="animated">
+			<p><a href="registration">
 				Регистрация
-			</p>
+			</a></p>
 		</div>
 		{% endif %}
 		{% if is_mess == 0 %}
 		<div id="mymess" class="animated">
 		<a href="messagers">
-			<img src="{% static "img/message.png" %}" width="50vw">
+			<img src="{% static "img/message.png" %}" width="30vw">
 			<script src='{% static 'js/interval.js' %}'></script>
 		</a>
 		</div>
@@ -60,7 +60,7 @@
 		{% if is_mess == 1 %}
 		<div id="mymess" class="animated">
 		<a href="messagers">
-			<img src="{% static "img/message.png" %}" width="50vw">
+			<img src="{% static "img/message.png" %}" width="30vw">
 		</a>
 		</div>
 		{% endif %}
