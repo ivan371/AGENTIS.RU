@@ -6,57 +6,22 @@
 	 </h2>
 	{% endblock %}
 {% block content %}
-<div class="oppotunity">
-		{% if p.who == 1%}
-		<div id="self" onmouseover="animation('self', 'jello')" class="animated" ><a href="self_room">
-			<p>
-				Личный кабинет 
-			</p>
-		{% else %}
-		<div id="self" onmouseover="animation('self', 'jello')" class="animated" ><a href="list_rieltors">
-			<p>
-				Мои заказы 
-			</p>	
-		{% endif %}
-		</a></div>
-		<div id="messegers" onmouseover="animation('messegers', 'jello')" class="animated" ><a href="messagers">
-			<p>
-				Сообщения 
-			</p>
-		</a></div>
-	
-</div>
 <div class="order">
-	<p>
-		Предложения
-	</p>
 	{% for order in o %}
+	<div class="alien_off">
 	{% if p.who == 2 %}
-	<div class="self_mess">
-	<a><div class="ok">
-	<p></p>
-	</div></a>
-	<a><div class="off">
-	<img src="{%static "img/close.png" %}" id="p1" width="40vw" onmouseover="animation('p1', 'pulse')" class="animated"> 
-	</div></a>
-	<p> Имя заказчика:  {{order.order_from.login}}</p>
+	<img src="/media{{order.img.img}}/" id="order_mess">		
+	<div class="name_orders"><p>{{order.order_from.login}}</p></div>
+	<img src="/media{{order.order_to.img.img}}/" id="order_off">	
 	{% else %}
-	<div class="alien_mess">
-	<p> Имя исполнителя: {{order.order_to.login}}</p>
+	<img src="/media{{order.img.img}}/" id="order_mess">	
+	<p>{{order.order_to.login}}</p></div>
+	<img src="/media{{order.order_to.img.img}}/" id="order_off">
 	{% endif %}
-	<p> Предложение: {{order.href_order}}</p>
+	<div class="name_order"><p> {{order.href_order}}</p></div>
+	<div class="price_orders"><p> Цена: {{order.price}}</p></div>
 	</div>
 	{% endfor %}
-</div>
-<div class="left_enters">
-<div class="self_text">
-	<h3>Здравствуйте, {{user.username}}</h3>
-	<h3>Ваши контактные данные:</h3>
-	<h3>ФИО: {{p.surname}} {{p.forename}} {{p.partronyname}}</h3>
-	<h3>e-mail: {{p.email}}</h3>
-	<h3>Телефон: {{p.number}}</h3>
-	<h3>Должность: {% if p.who == 2 %} Исполнитель {% else %} Заказчик {% endif %}</h3>
-	<h3></h3>
-</div>
+	</div>
 </div>
 {% endblock %}

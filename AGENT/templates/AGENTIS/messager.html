@@ -7,6 +7,12 @@
 	  <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
+<div id="mess_off">
+<div class="mess_top">
+<div class="mess_off">
+	<img src="{%static "img/close.png" %}" width='20vw'  style="cursor: pointer" onclick="deploy_message()"> 
+	</div>
+</div>
 <div class="message">
 <div class="mess_back">
 	{% for mess in m%}
@@ -34,6 +40,7 @@
 	</div>
 	</div>
 	{% endfor %}
+</div>
 </div>
 </div>
 {% endblock %}

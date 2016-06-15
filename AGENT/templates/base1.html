@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="{% static "css/stylel.css" %}" type="text/css" />
 	<link rel="stylesheet" href="{% static "css/back.css" %}" type="text/css" />
 	<link rel="stylesheet" href="{% static "css/animate.css" %}" type="text/css" />
+	<link rel="stylesheet" href="{% static "css/mess_style.css" %}" type="text/css" />	
 	<link href='http://fonts.googleapis.com/css?family=Roboto:700,400&subset=latin,cyrillic'rel='stylesheet' type='text/css'>
 	 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -64,20 +65,52 @@
 		{% endif %}
 		{% if is_mess == 0 %}
 		<div id="mymess" class="animated">
-		<a href="messagers">
-			<img src="{% static "img/message.png" %}" width="50vw">
+			<img src="{% static "img/message.png" %}" width="30vw" onclick="appear_message()">
 			<script src='{% static 'js/interval.js' %}'></script>
-		</a>
 		</div>
 		{% endif %}
 		{% if is_mess == 1 %}
 		<div id="mymess" class="animated">
-		<a href="messagers">
-			<img src="{% static "img/message.png" %}" width="50vw">
-		</a>
+			<img src="{% static "img/message.png" %}" width="30vw" onclick="appear_message()"></img>
 		</div>
 		{% endif %}
 	</div>
+	<div class="mess_all" id="mess_off">
+		<div class="mess_top">
+			<div class="mess_off">
+				<img src="{%static "img/close.png" %}" width='20vw'  style="cursor: pointer" onclick="deploy_message()"> 
+			</div>
+		</div>
+	<div class="message">
+		<div class="mess_back">
+			{% for mess in m%}
+		<div class="messeger_name" id="sleep_name{{mess.name}}" onclick="deploy_mess({{forloop.counter}}, 1, {{mess.ammount}}, '{{mess.name}}')"> 
+	<img src="/media{{mess.img.img}}/" id="img_mess">	
+	<p>{{mess.name}} </p></div>
+<div class="display_mess">
+	<div id="sleep{{forloop.counter}}" class="messs animated" style="display: none">
+		<div class="dis_mess">
+			{% for messages in mess.mess %}
+			{% if not messages.author %}
+			<div class="self_mess"><p>{{messages.message}}</p></div>
+			{% else %}
+			<div class="alien_mess"><p>{{messages.message}}</p></div>
+			{% endif %}			
+			{% endfor %}
+		</div>
+	<div class="send_mess">
+	<form action="/chat/" method="post">{% csrf_token %}
+	<textarea name="message" autofocus rows="4" cols="40" wrap="virtual" class="mess_request" placeholder="Введите сообщение"></textarea>
+	<input type="hidden" name="name" value="{{mess.name}}">
+	<input type="submit" class="mess_submit" value="Отправить">	
+	</form>
+	</div>
+	</div>
+	</div>
+	{% endfor %}
+</div>
+</div>
+</div>
 	<div class="content">
 		{% block content %} {% endblock %}
 </body>

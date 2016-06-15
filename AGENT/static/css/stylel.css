@@ -85,13 +85,14 @@ a
 	background-color: gray;
 	position: relative;
 	display: block;
+	font-size: 1vw;
 }
 .menu
 {
 	top: 5vw;
 	height: 10vw;
 	width:100vw;
-	z-index: 0;
+	z-index: 1;
 	display: block;
 }
 .menu img
@@ -180,6 +181,13 @@ a
 	border-radius: 10px;
 	cursor: pointer;
 }
+#order_developer
+{
+	position: inherit;
+	left: 40vw;
+	width:20vw;
+	color: white;
+}
 #connection
 {
 	position: fixed;
@@ -206,14 +214,6 @@ a
 	width:15vw;
 	cursor: pointer;
 }
-#mymess
-{
-	position: inherit;
-	left: 40vw;
-	top: 2vh;
-	width:5vw;
-	cursor: pointer;
-}
 #registration
 {
 	position: inherit;
@@ -227,9 +227,17 @@ a
 	height:9vw;
 	border-radius: 4.5vw;
 }
-#img_mess
+#order_mess
 {
 	left: 1vw;
+	position: absolute;
+	width: 4vw;
+	height:4vw;
+	border-radius: 2vw;
+}
+#order_off
+{
+	left: 40vw;
 	position: absolute;
 	width: 4vw;
 	height:4vw;
@@ -389,7 +397,7 @@ a
 	position:absolute;
 	width:40vw;
 	height:23vw;
-	background: url(back.jpg);
+	background-color: #fbceb1;
 	background-size: cover;
 	text-align:  center;
 	color: black;
@@ -414,16 +422,6 @@ a
 {
 	top: 12vw;
 	left: 5vw;
-}
-.mes
-{
-	top: 12vw;
-	left: 55vw;
-}
-.mes img
-{
-	max-width: 8vw;
-	max-height: 6vw;
 }
 .ords
 {
@@ -463,7 +461,8 @@ a
 }
 .text_align
 {
-	margin-left: 5vw;
+	margin-left: 1vw;
+	margin-top: 1vw;
 	margin-right: 20vw;
 }
 .text_align_small
@@ -471,34 +470,39 @@ a
 	margin-left: 3vw;
 	margin-right: 3vw;
 }
+
 #list
 {
 	margin-top: 1vw;
-	margin-left: 10vw;
+	margin-left: 1vw;
 	position: absolute;
 	width:70vw;
 	border-radius: 10px;
 	color: black;
+	overflow: auto;
+	height: 70vh;
 }
 .list
 {
 	margin-top: 1vw;
 	margin-bottom: 0vw;
-	width:55vw;
+	width:65vw;
+	height: 11vw;
 	/*background: linear-gradient(to top, #CEECF5, #58D3F7, #CEECF5);*/
 	background: #E7E7DC;
 	background-size: cover;
 	text-align:  left;
 	color: black;
 	float:left;
+	cursor: pointer;
 }
 .list_small
 {
-	margin-top: 1vw;
-	margin-bottom: 0vw;
+	margin-top: 0vw;
+	margin-bottom: 1vw;
 	margin-right: 1vw;
 	margin-left: 0vw;
-	width:25vw;
+	width:21vw;
 	height:21vw;
 	/*background: linear-gradient(to top, #CEECF5, #58D3F7, #CEECF5);*/
 	background: linear-gradient(to bottom, SandyBrown, #F4A060);
@@ -545,37 +549,16 @@ a
 }
 .order
 {
+	margin-left: 10vw;
 	position: absolute;
-	left: 1vw;
-	top: 67px;
-	width: 39vw;
-	height: 90vh;
-	border-radius: 10px;
-	border: 2px solid #00BFFF;
-	background: linear-gradient(to right, black, #363636);
+	width: 80vw;
+	top: 10vh;
 }
 .self_text
 {
 	width: 30vw;
 	text-align: left;
 	margin-left:2vw;
-}
-.message
-{
-	position: absolute;
-	left: 30vw;
-	top: 67px;
-	width: 40vw;
-	height: 50vh;
-	background: linear-gradient(to right, #4F4F4F, gray);
-	overflow: auto;
-}
-.mess_back
-{
-	background-color: #fbceb1;
-	width: 15vw;
-	height: 50vh;
-
 }
 .left_enters
 {
@@ -601,19 +584,25 @@ a
 	text-align:  center;
 	color: black;
 }
+.user_support
+{
+	height: 3vw;
+	width: 15vw;
+	background: linear-gradient(to bottom, NavajoWhite, orange);
+	border-radius: 0.4vw;
+}
 .user_switch {
     width: 135px; /* Ширина поля с учетом padding */
     height: 40px; /* Высота */
-    background: #000000;
+    background: linear-gradient(to bottom, NavajoWhite, orange);
     border: 2px solid #FFFFFF;
     font-size: 1em; /* Размер текста */
-	color: #FFFFFF;
 	padding:0 5px;
 	display: inline-block;
  }
  .user_switch a
  {
- 	color: #FFFFFF;
+ 	color: #000000;
  }
  .valign
  {
@@ -631,10 +620,10 @@ a
  }
  .switched 
  {
- 	border: 2px solid #000000;
+ 	border: 2px solid #FFFFFF;
  	color: #000000;
- 	background: #FFFFFF;
- }
+ 	background: linear-gradient(to bottom, NavajoWhite, orange);
+}
   .switched a
  {
  	color: #000000;
@@ -653,14 +642,7 @@ a
     font-size: 1em; /* Размер текста */
 	
  }
- .mess {
-    background: #000000;
-    padding: 0 10px; /* Поля */
-    border: 2px solid #FFFFFF;
-    font-size: 1em; /* Размер текста */
-	border-radius: 10px;
-	color: #FFFFFF;
- }
+
  .howwork img
  {
  	margin-top: -10vw;
@@ -709,12 +691,10 @@ a
  .switch_region
  {
  	position: absolute;
-	top: 8vw;
+	top: 1vw;
 	left: 70vw;
 	width: 28vw;
 	height: 36vw;
-	background: url(back.jpg);
-	background-size: cover;
  }
 
  .secret_change {
@@ -819,56 +799,13 @@ option
 	text-align:  center;	
 }
 
-.messeger_name
+.alien_off
 {
-	height: 30px;
-	width: 13vw;
-	margin-bottom: 1vw;
-	padding: 1vw 1vw 1vw 1vw;
-	color: white;
-	cursor: pointer;
-}
-.alien_mess
-{
-	background: linear-gradient(to bottom right, #CAB44F, #EE7FAA);
-	border: 1px solid #000000;
-}
-.self_mess
-{
-	background: linear-gradient(to bottom right, #2AB77F, #187FAA);
-	border: 1px solid #000000;
-}
-.messs
-{
-	position: absolute;
-	left: 15vw;
-	width: 25vw;
-	height: 50vh;
-	top: 0vh;
-}
-.mess_request {
-	height: 50px; /* Высота */
-    	background: #000000;
-    	border: 2px solid #FFFFFF;
-    	font-size: 1em; /* Размер текста */
-	color: #FFFFFF;
-}
-.mess_submit {
-	width: 25vw;
-   	height: 50px; /* Высота */
-    	background: #000000;
-    	border: 2px solid #FFFFFF;
-    	font-size: 1em; /* Размер текста */
-	color: #FFFFFF;
-}
-.dis_mess
-{
-	overflow: auto;
-	height: 35vh;
-}
-.self_mess
-{
-	top: 35vh;
+	background-color: #F0F0F0;
+	height: 5vw;
+	padding: 10px;
+	margin-bottom: 1vh;
+	box-shadow: 0 0 5px;
 }
 .file_upload{
 	width: 300px; /* Ширина поля с учетом padding */
@@ -921,4 +858,19 @@ option
 	left: 32vw;
 	position: absolute;
 	width: 1vw;
+}	
+.name_order
+{
+	left: 6vw;
+	position: absolute;
+}
+.name_orders
+{
+	left: 30vw;
+	position: absolute;
+}
+.price_orders
+{
+	left: 50vw;
+	position: absolute;
 }

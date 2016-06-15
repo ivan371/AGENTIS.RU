@@ -31,6 +31,8 @@ class order(models.Model):
 	order_from = models.ForeignKey(User_AGENTIS, related_name='order_from')
 	order_to = models.ForeignKey(User_AGENTIS, related_name='order_to')
 	href_order = models.CharField(default=0, max_length=100)
+	img = models.ForeignKey(image)
+	price = models.IntegerField(default=0)
 	status = models.IntegerField(default=0)
 
 

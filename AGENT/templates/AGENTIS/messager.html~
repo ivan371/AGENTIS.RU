@@ -7,11 +7,16 @@
 	  <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
+<div class="mess_top">
+<div class="mess_off" id="mess_off">
+	<img src="{%static "img/close.png" %}" width='20vw'  style="cursor: pointer" onclick="deploy_message()"> 
+	</div>
+</div>
 <div class="message">
 <div class="mess_back">
 	{% for mess in m%}
 	<div class="messeger_name" id="sleep_name{{mess.name}}" onclick="deploy_mess({{forloop.counter}}, 1, {{mess.ammount}}, '{{mess.name}}')"> 
-	<img src="/media{{mess.img.img}}/" id="img">	
+	<img src="/media{{mess.img.img}}/" id="img_mess">	
 	<p>{{mess.name}} </p></div>
 <div class="display_mess">
 	<div id="sleep{{forloop.counter}}" class="messs animated" style="display: none">

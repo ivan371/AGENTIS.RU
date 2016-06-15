@@ -7,14 +7,14 @@
 	 <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
-<a href="list_rieltors"><div class="enters offs animated" id="offs" onmouseover="animationz('offs', 'pulseto')" onmouseout="animationzr('offs', 'pulseout', 'pulceto')">
+<a href="orders"><div class="enters mes animated" id="offs" onmouseover="animationz('offs', 'pulseto')" onmouseout="animationzr('offs', 'pulseout', 'pulceto')">
 <h2>
 Мои предложения
 </h2>
 <img src="{%static "img/offs.png" %}">
 <h1> 5</h1>
 </div></a>
-<a href="orders"><div class="enters ords animated" id="ord" onmouseover="animationz('ord', 'pulseto')" onmouseout="animationzr('ord', 'pulseout', 'pulceto')">
+<!--<a href="list_rieltors"><div class="enters ords animated" id="ord" onmouseover="animationz('ord', 'pulseto')" onmouseout="animationzr('ord', 'pulseout', 'pulceto')">
 <h2>
 Мои заказы
 </h2>
@@ -22,13 +22,13 @@
 <h3>{{offers.name_mess}}
 {% endfor %}
 </div></a>
-<a href="messagers"><div class="enters mes animated" id="mes" onmouseover="animationz('mes', 'pulseto')" onmouseout="animationzr('mes', 'pulseout', 'pulceto')">
+<!--<a href="messagers"><div class="enters mes animated" id="mes" onmouseover="animationz('mes', 'pulseto')" onmouseout="animationzr('mes', 'pulseout', 'pulceto')">
 <h2>
 Мои сообщения
 </h2>
 <img src="{%static "img/sms.png" %}">
 <h1> {{count}}</h1>
-</div></a>
+</div></a>-->
 <a href="change_self"><div class="enters ch_inf animated" id="inf" onmouseover="animationz('inf', 'pulseto')" onmouseout="animationzr('inf', 'pulseout', 'pulceto')">
 	<h2>
 		Мои данные

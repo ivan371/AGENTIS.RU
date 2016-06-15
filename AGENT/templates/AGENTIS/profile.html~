@@ -32,7 +32,7 @@
 			<option value="3">Санкт-Петербург</option>
 		</select>
 	<br>
-	<input type="submit" class="user" value="Отфильтровать"> 
+	<input type="submit" class="user_support" value="Отфильтровать"> 
 	</form>
 	</div>
 	<div id="list">
@@ -43,7 +43,7 @@
 			<p>{{p.surname}} {{p.forename}} {{p.partronyname}}</p>
 			{% if p.region == 2 %}
 			<p> Москва </p>
-			{% elif p.region == 3} %}
+			{% elif p.region == 3 %}
 			<p> Санкт-Петербург </p>
 			{% endif %}
 			<p>Специализация:{{p.profile}}</p>

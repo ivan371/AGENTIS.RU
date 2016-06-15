@@ -1,0 +1,124 @@
+.alien_mess
+{
+	background: linear-gradient(to bottom right, #CAB44F, #EE7FAA);
+	border: 1px solid #000000;
+}
+.messs
+{
+	position: absolute;
+	left: 15vw;
+	width: 25vw;
+	height: 50vh;
+	top: 0vh;
+}
+.mess_request {
+	height: 50px; /* Высота */
+    	background: #000000;
+    	border: 2px solid #FFFFFF;
+    	font-size: 1em; /* Размер текста */
+	color: #FFFFFF;
+}
+.mess_submit {
+	width: 25vw;
+   	height: 50px; /* Высота */
+    	background: #000000;
+    	border: 2px solid #FFFFFF;
+    	font-size: 1em; /* Размер текста */
+	color: #FFFFFF;
+}
+.dis_mess
+{
+	overflow: auto;
+	height: 35vh;
+}
+.self_mess
+{
+	top: 35vh;
+}
+ .mess {
+    background: #000000;
+    padding: 0 10px; /* Поля */
+    border: 2px solid #FFFFFF;
+    font-size: 1em; /* Размер текста */
+	border-radius: 10px;
+	color: #FFFFFF;
+ }
+.mess_back
+{
+	background-color: #fbceb1;
+	width: 15vw;
+	height: 50vh;
+
+}
+.mess_top
+{
+	position: absolute;
+	left: 30vw;
+	top: 7vh;
+	background-color: #fbceb1;
+	width: 40vw;
+	height: 3vh;
+}
+.mess_off
+{
+	position: absolute;
+	left: 38vw;
+}
+.mess_all
+{
+	top: 15vh;
+	position: absolute;
+	z-index: 2;
+	display: none;
+}
+.message
+{
+	position: absolute;
+	left: 30vw;
+	top: 10vh;
+	width: 40vw;
+	height: 50vh;
+	background: linear-gradient(to right, #4F4F4F, gray);
+	overflow: auto;
+}
+.self_mess
+{
+	background: linear-gradient(to bottom right, #2AB77F, #187FAA);
+	border: 1px solid #000000;
+}
+.messeger_name
+{
+	text-align: center;
+	height: 30px;
+	width: 13vw;
+	margin-bottom: 1vw;
+	padding: 1vw 1vw 1vw 1vw;
+	color: white;
+	cursor: pointer;
+}
+.mes
+{
+	top: 12vw;
+	left: 55vw;
+}
+.mes img
+{
+	max-width: 8vw;
+	max-height: 6vw;
+}
+#img_mess
+{
+	left: 1vw;
+	position: absolute;
+	width: 4vw;
+	height:4vw;
+	border-radius: 2vw;
+}
+#mymess
+{
+	position: inherit;
+	left: 40vw;
+	top: 2vh;
+	width:5vw;
+	cursor: pointer;
+}

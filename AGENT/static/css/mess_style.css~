@@ -1,0 +1,15 @@
+.messeger_name
+{
+	text-align: center;
+	height: 30px;
+	width: 13vw;
+	margin-bottom: 1vw;
+	padding: 1vw 1vw 1vw 1vw;
+	color: white;
+	cursor: pointer;
+}
+.alien_mess
+{
+	background: linear-gradient(to bottom right, #CAB44F, #EE7FAA);
+	border: 1px solid #000000;
+}

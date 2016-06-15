@@ -7,41 +7,99 @@
 	 <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
+	<div id="all_list">
 	<div class="switch_region">
-	<div class="user_switch switched" id="right">
-	<a>
-	<div class="valign">Заказчик</div>
-	</a>
-	</div>
-	<div class="user_switch" id="left">
-	<a href="profile">
-	<div class="valign">Исполнитель</div>
-	</a>
-	</div> 
-	<form action="/filter/" method="post">{% csrf_token %}
-	<select name="region" class="user" placeholder="Регион" >
-			<option value="1">Выберите регион</option>
-			<option value="2">Москва</option>
-			<option value="3">Санкт-Петербург</option>
-		</select>
-	<br>
-	<input type="submit" class="user" value="Отфильтровать"> 
-	</form> 
+		<div class="user_switch switched" id="right">
+			<a>
+				<div class="valign">Заказчик</div>
+			</a>
+		</div>
+		<div class="user_switch" id="left">
+			<a href="profile">
+				<div class="valign">Исполнитель</div>
+			</a>
+		</div> 
+		<form action="/filter/" method="post">{% csrf_token %}
+			<select name="region" class="user_support" placeholder="Регион" >
+				<option value="1">Выберите регион</option>
+				<option value="2">Москва</option>
+				<option value="3">Санкт-Петербург</option>
+			</select>
+			<br>
+			<input type="submit" class="user_support" value="Отфильтровать"> 
+		</form> 
 	</div>
 	<div id="list">
 	{% for offers in offs %}
-	<div class="list">
-		<div class="text_align">
-		<div id="your_offer{{forloop.counter}}" >
-		<h3>
-		{{offers.name_mess}} Цена:  {{offers.sum_mess}}
-		</h3>
-		<h3>
-			{{offers.user_m.login}}
-		</h3>
-		<h3>
+		<div class="list" onclick="deploy_offer('all_list', 'deploy{{forloop.counter}}')">
+			<div class="text_align">
+				<div id="your_offer{{forloop.counter}}" >
+					<img src="/media{{offers.img.img}}/" id="img" style="position: absolute">
+					<div id="name">
+						<h3>
+							{{offers.name_mess}}
+						</h3>
+					</div>
+ 					<div id="price">
+						<h3> Цена:  {{offers.sum_mess}}
+						</h3>
+					</div>	
+					<div id="login">
+					<h3>
+						{{offers.user_m.login}}
+					</h3>		
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+	</div>
+	{% for offers in offs %}
+	<div id="deploy{{forloop.counter}}" class="description" style="display: none;">
+		<div id="return"><input style=" margin: 0 auto;" type="submit" class="return" value="Назад" onclick="deploy_offer('deploy{{forloop.counter}}', 'all_list')"></div>	
+		<div id="return_off">	
+		<div id="name_descr">
+			<h3>
+				{{offers.name_mess}}
+			</h3>
+		</div>
+ 		<div id="price_descr">
+			<h3> Цена:  {{offers.sum_mess}}
+			</h3>
+		</div>	
+		<div id="descr">
+			<p>{{offers.message}}<p>
+		</div>
+		<div id="to_mess">
+		<form action="/send_mess/" method="post">{% csrf_token %}
+		<input style=" margin: 0 auto;" type="submit" class="user_support" value="Написать сообщение">
+		<input type="hidden" name="name" value="{{offers.user_m.login}}">
+		</form>
+		</div>
+		<div id="to_off">
+		<form action="/make_offer/" method="post">{% csrf_token %}
+		<input style=" margin: 0 auto;" type="submit" class="user_support" value="Взять заказ">
+		<input type="hidden" name="name" value="{{offers.user_m.login}}">
+		<input type="hidden" name="name_mess" value="{{offers.name_mess}}">
+		</form>
+		</div>
+		</div>
+		<div class="orderer">
+		<p>
+			Заказчик этого задания
+		</p>
+		<img src="/media{{offers.user_m.img.img}}/" id="img">
+		<p>{{offers.user_m.login}}</p>
+		</div>
+	</div>
+	{% endfor %}
+	
+
+<!--		<h3>
 			<input id='deploy{{forloop.counter}}'  style="  margin: 0 auto;" type="submit" class="user" value="узнать подробнее" onclick="deploy_offer('deploy{{forloop.counter}}', 'collapce{{forloop.counter}}')">
 		</h3>
+
 		<div id='collapce{{forloop.counter}}' style="display: none;">
 		<h3>
 			<input style=" margin: 0 auto;" type="submit" class="user" value="свернуть описание" onclick="collapce_offer('deploy{{forloop.counter}}', 'collapce{{forloop.counter}}')">
@@ -57,12 +115,7 @@
 		<input style=" margin: 0 auto;" type="submit" class="user" value="Сделать заказ">
 		<input type="hidden" name="name" value="{{offers.user_m.login}}">
 		<input type="hidden" name="name_mess" value="{{offers.name_mess}}">
-		</form>
-		</div>
-		</div>
-	</div>
-	{% endfor %}
-	</div>
+		</form>-->
 	<div class="errz">
 		{% if errors %}
 		<h3>

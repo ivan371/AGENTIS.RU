@@ -1,0 +1,76 @@
+#name
+{
+	position: absolute;
+	left: 12vw;
+	width: 20vw;
+}
+#price
+{
+	position: absolute;
+	right: 12vw;
+	width: 20vw;
+}
+#login
+{
+	position: absolute;
+	color: orange;
+	left: 50vw;
+	width: 20vw;
+}
+#name_descr
+{
+	position: absolute;
+	left: 5vw;
+	width: 20vw;
+}
+#price_descr
+{
+	position: absolute;
+	left: 20vw;
+	width: 20vw;
+}
+#return
+{
+	position: absolute;
+}
+#descr
+{
+	position: absolute;
+	width: 30vw;
+	left: 10vw;
+	top: 5vh;
+}
+#to_mess
+{
+	position: absolute;
+	top: 20vh;
+	left: 10vw;
+}
+#to_off
+{
+	position: absolute;
+	top: 20vh;
+	right: 10vw;
+}
+.description
+{
+	margin-top: 1vw;
+	margin-left: 10vw;
+	position: absolute;
+	width:80vw;
+	height: 50vh;
+}
+#return_off
+{
+	background: #E7E7DC;
+	left: 15vw;
+	position: absolute;
+	width:50vw;
+	height: 30vh;
+}
+.orderer
+{
+	position: absolute;
+	width: 20vw;
+	left: 70vw;
+}

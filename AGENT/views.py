@@ -23,6 +23,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms.models import modelform_factory
 from django.core.files import File
+from django.template import Context, Template
 
 from .models import User_AGENTIS
 from .models import orders_data
@@ -37,7 +38,7 @@ def index(request):
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/index.html', {'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/index.html', {'p': p, 'm': mess.nm, 'who': p.who, 'is_mess': is_mess}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/index.html', RequestContext(request))	
 
@@ -46,7 +47,7 @@ def for_rieltors(request):
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/for_rieltors.html',{'p': p, 'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/for_rieltors.html',{'p': p, 'is_mess': is_mess, 'm': mess.nm, 'who': p.who}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/for_rieltors.html', RequestContext(request))
 	
@@ -61,7 +62,11 @@ def orders(request):
 		o = order.objects.filter(order_from = p)
 	mess = display_mess(p)
 	is_mess = mess.is_mes()
-	return render_to_response('AGENTIS/orders.html',{'p': p, 'o': o, 'is_mess': is_mess}, RequestContext(request))
+	for offers in o:
+		offers.order_from.img.img = offers.order_from.img.goodname()
+		offers.order_to.img.img = offers.order_to.img.goodname()
+		offers.img.img = offers.img.goodname()
+	return render_to_response('AGENTIS/orders.html',{'p': p, 'm': mess.nm, 'who': p.who, 'o': o, 'is_mess': is_mess}, RequestContext(request))
 
 def chat(request):
 	c = {}
@@ -100,6 +105,12 @@ def messagers(request):
 		
 	return render_to_response('AGENTIS/messager.html',{'p': p, 'm': mess.nm, 'who': p.who, 'is_mess': is_mess}, RequestContext(request))
 
+def messagers_all(request):
+	p = User_AGENTIS.objects.get(login = request.session['member_id'])
+	mess = display_mess(p)
+	is_mess = mess.is_mes()
+		
+	return Context({'p': p, 'm': mess.nm, 'who': p.who})
 
 @csrf_exempt
 def change_status(request):
@@ -140,7 +151,7 @@ def filter_region(request):
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
 		offs = orders_data.objects.filter(user_m = p)
-		return render_to_response('AGENTIS/list_rieltors_order.html',{'offs': offs, 'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/list_rieltors_order.html',{'p': p, 'm': mess.nm, 'who': p.who, 'offs': offs, 'is_mess': is_mess}, RequestContext(request))
 
 def filter_profil(request):
 	c = {}
@@ -154,11 +165,11 @@ def filter_profil(request):
 			p = User_AGENTIS.objects.filter(who = 1)
 			mess = display_mess(p)
 			is_mess = mess.is_mes()
-			return render_to_response('AGENTIS/profile.html',{'errors': errors[0], 'ps': p, 'is_mess': is_mess}, RequestContext(request))
+			return render_to_response('AGENTIS/profile.html',{'errors': errors[0],'p': p, 'm': mess.nm, 'who': p.who, 'ps': p, 'is_mess': is_mess}, RequestContext(request))
 		p = User_AGENTIS.objects.filter(region = POST['region'], who = 1)
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/profile.html',{'ps': p, 'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/profile.html',{'p': p, 'm': mess.nm, 'who': p.who, 'ps': p, 'is_mess': is_mess}, RequestContext(request))
 	
 def ch_off_name(request):
 	c = {}
@@ -175,7 +186,7 @@ def ch_off_name(request):
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
 		offs = orders_data.objects.filter(user_m = p)
-		return render_to_response('AGENTIS/list_rieltors.html',{'offs': offs, 'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/list_rieltors.html',{'p': p, 'm': mess.nm, 'who': p.who, 'offs': offs, 'is_mess': is_mess}, RequestContext(request))
 	
 def ch_off_sum(request):
 	c = {}
@@ -226,7 +237,7 @@ def ch_email(request):
 			return render_to_response('AGENTIS/self_room.html', {'errors': errors[0], 'p': p,'is_mess': is_mess}, RequestContext(request))
 		p.email	= POST['email']
 		p.save()
-	return render_to_response('AGENTIS/self_room.html',{'p': p ,'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/self_room.html',{'p': p, 'm': mess.nm, 'who': p.who,'is_mess': is_mess}, RequestContext(request))
 
 def ch_number(request):
 	c = {}
@@ -242,7 +253,7 @@ def ch_number(request):
 			return render_to_response('AGENTIS/self_room.html',{'errors': errors[0], 'p': p,'is_mess': is_mess}, RequestContext(request))
 		p.number = POST['number']
 		p.save()
-	return render_to_response('AGENTIS/self_room.html',{'p': p,'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/self_room.html',{'p': p,'m': mess.nm, 'who': p.who,'is_mess': is_mess}, RequestContext(request))
 
 def ch_prof(request):
 	c = {}
@@ -255,7 +266,7 @@ def ch_prof(request):
 		p.save()
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-	return render_to_response('AGENTIS/self_room.html',{'p': p,'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/self_room.html',{'p': p,'m': mess.nm, 'who': p.who,'is_mess': is_mess}, RequestContext(request))
 
 def ch_initial(request):
 	c = {}
@@ -273,7 +284,7 @@ def ch_initial(request):
 		p.save()
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-	return render_to_response('AGENTIS/self_room.html',{'p': p,'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/self_room.html',{'p': p,'m': mess.nm, 'who': p.who,'is_mess': is_mess}, RequestContext(request))
 
 def self_room(request):
 	p = User_AGENTIS.objects.get(login = request.session['member_id'])
@@ -281,13 +292,13 @@ def self_room(request):
 	mess = display_mess(p)
 	is_mess = mess.is_mes()
 	count = mess.count_mess(p.who)
-	return render_to_response('AGENTIS/self_room.html',{'p': p, 'offs': offs,'is_mess': is_mess, 'count': count}, RequestContext(request))
+	return render_to_response('AGENTIS/self_room.html',{'p': p, 'm': mess.nm, 'who': p.who,'offs': offs,'is_mess': is_mess, 'count': count}, RequestContext(request))
 	
 def change_self(request):
 	p = User_AGENTIS.objects.get(login = request.session['member_id'])
 	mess = display_mess(p)
 	is_mess = mess.is_mes()
-	return render_to_response('AGENTIS/change_self.html',{'p': p,'is_mess': is_mess}, RequestContext(request))
+	return render_to_response('AGENTIS/change_self.html',{'p': p,'m': mess.nm, 'who': p.who,'is_mess': is_mess}, RequestContext(request))
 
 def registration(request):
 	return render(request, 'AGENTIS/registration.html')
@@ -300,25 +311,37 @@ def list_rieltors(request):
 	offs = orders_data.objects.filter(user_m = p)
 	for offers in offs:
 		offers.img.img = offers.img.goodname()
-	return render_to_response('AGENTIS/list_rieltors.html',{'offs': offs,'is_mess': is_mess}, RequestContext(request))
+	return render_to_response('AGENTIS/list_rieltors.html',{'p': p, 'm': mess.nm, 'who': p.who,'offs': offs,'is_mess': is_mess}, RequestContext(request))
 	
 def list_rieltors_order(request):
 	offs = orders_data.objects.all()
+	for offers in offs:
+		offers.img.img = offers.img.goodname()
+		offers.user_m.img.img = offers.user_m.img.goodname()
 	try:
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/list_rieltors_order.html',{'offs': offs,'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/list_rieltors_order.html',{'p': p, 'm': mess.nm, 'who': p.who,'offs': offs,'is_mess': is_mess}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/list_rieltors_order.html',{'offs': offs}, RequestContext(request))
-
+def more(request):
+	c = {}
+	c.update(csrf(request))
+	if request.method == 'POST':
+		POST = request.POST
+		offers = orders_data.objects.get(name_mess=POST['user'])
+		return render_to_response('AGENTIS/more.html',{'offer': offers}, RequestContext(request))
 def lists(request):
 	offs = orders_data.objects.all()
 	try:
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/list.html',{'offs': offs, 'is_mess': is_mess}, RequestContext(request))
+		for offers in offs:
+			offers.img.img = offers.img.goodname()
+			offers.user_m.img.img = offers.user_m.img.goodname()
+		return render_to_response('AGENTIS/list.html',{'p': p, 'm': mess.nm, 'who': p.who,'offs': offs, 'is_mess': is_mess}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/list.html',{'offs': offs}, RequestContext(request))
 
@@ -330,7 +353,7 @@ def profile(request):
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/profile.html',{'ps': ps, 'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/profile.html',{'p': p, 'm': mess.nm, 'who': p.who,'ps': ps, 'is_mess': is_mess}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/profile.html',{'ps': ps}, RequestContext(request))
 
@@ -340,7 +363,7 @@ def mess_success(request):
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/mess_success.html',{'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/mess_success.html',{'p': p, 'm': mess.nm, 'who': p.who,'is_mess': is_mess}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/mess_success.html', RequestContext(request))
 
@@ -350,15 +373,18 @@ def make_offer(request):
 	if request.method == 'POST':
 		POST = request.POST
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
+		href = orders_data.objects.get(name_mess = POST['name_mess'])
 		o = order(order_from = User_AGENTIS.objects.get(login = request.session['member_id']),
 					order_to = User_AGENTIS.objects.get(login = POST['name']),
 					status = 0,
-					href_order = POST['name_mess']
+					href_order = POST['name_mess'],
+					price = href.sum_mess,
+					img = href.img
 				)
 		o.save()
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/make_offer.html', {'p': p, 'name': POST['name'], 'is_mess': is_mess},  RequestContext(request))
+		return render_to_response('AGENTIS/make_offer.html', {'p': p, 'm': mess.nm, 'who': p.who,'name': POST['name'], 'is_mess': is_mess},  RequestContext(request))
 
 def send_mess(request):
 	c = {}
@@ -371,7 +397,7 @@ def send_mess(request):
 			p = User_AGENTIS.objects.get(login = request.session['member_id'])
 			mess = display_mess(p)
 			is_mess = mess.is_mes()
-			return render_to_response('AGENTIS/send_mess.html', {'name': POST['name'], 'is_mess': is_mess},  RequestContext(request))
+			return render_to_response('AGENTIS/send_mess.html', {'name': POST['name'], 'p': p, 'm': mess.nm, 'who': p.who,'is_mess': is_mess},  RequestContext(request))
 		except:
 			return render_to_response('AGENTIS/send_mess.html', {'name': POST['name']},  RequestContext(request))
 
@@ -393,7 +419,7 @@ def save_mess(request):
 			p = User_AGENTIS.objects.get(login = request.session['member_id'])
 			mess = display_mess(p)
 			is_mess = mess.is_mes()
-			return render_to_response('AGENTIS/mess_success.html', {'is_mess': is_mess}, RequestContext(request))
+			return render_to_response('AGENTIS/mess_success.html', {'p': p, 'm': mess.nm, 'who': p.who,'is_mess': is_mess}, RequestContext(request))
 		except:
 			return render_to_response('AGENTIS/mess_success.html',  RequestContext(request))
 
@@ -402,7 +428,7 @@ def about(request):
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/about.html', {'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/about.html', {'p': p, 'm': mess.nm, 'who': p.who, 'is_mess': is_mess}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/about.html',  RequestContext(request))
 
@@ -411,7 +437,7 @@ def connection(request):
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/connection.html', {'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/connection.html', {'p': p, 'm': mess.nm, 'who': p.who,'is_mess': is_mess}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/connection.html',  RequestContext(request))
 	
@@ -420,7 +446,7 @@ def how_work(request):
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/how_work.html', {'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/how_work.html', {'p': p, 'm': mess.nm, 'who': p.who,'is_mess': is_mess}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/how_work.html',  RequestContext(request))
 
@@ -429,7 +455,7 @@ def how_rieltors(request):
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/how_work.html', {'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/how_work.html', {'p': p, 'm': mess.nm, 'who': p.who,'is_mess': is_mess}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/how_work.html',  RequestContext(request))
 	
@@ -438,7 +464,7 @@ def how_insurance(request):
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/how_work.html', {'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/how_work.html', {'p': p, 'm': mess.nm, 'who': p.who,'is_mess': is_mess}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/how_work.html',  RequestContext(request))
 	
@@ -447,7 +473,7 @@ def registration_complete(request):
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/registration_complete.html', {'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/registration_complete.html', {'p': p, 'm': mess.nm, 'who': p.who,'is_mess': is_mess}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/registration_complete.html',  RequestContext(request))
 
@@ -456,7 +482,7 @@ def enter_success(request):
 		p = User_AGENTIS.objects.get(login = request.session['member_id'])
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/enter_success.html', {'is_mess': is_mess}, RequestContext(request))
+		return render_to_response('AGENTIS/enter_success.html', {'p': p, 'm': mess.nm, 'who': p.who,'is_mess': is_mess}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/enter_success.html',  RequestContext(request))
 

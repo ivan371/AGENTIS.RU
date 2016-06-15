@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base1.html" %}
 {% load staticfiles %}
 	{% block title %} 
 	<h2>
@@ -19,7 +19,7 @@
 		</img>
 	<img src="{%static "img/back5.png" %}" class="slides other animated" id="oth" onmouseover="animationz('oth', 'pulseto')" onmouseout="animationzr('oth', 'pulseout', 'pulceto')">
 		</img></div>
-	<div id="low"> 
+	<div id="newlow"> 
 	<div class="support">
 	Ваши пожелания
 	</div>
