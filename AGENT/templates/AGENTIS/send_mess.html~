@@ -7,11 +7,11 @@
 	 <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
-<div class="registration">
+<div class="Ы_MESS">
 	<form action="/save_mess/" method="post">{% csrf_token %}
-	<p><textarea name="message" rows="20" cols="45" wrap="virtual" class="mess" placeholder="Введите ваше сообщение"> </textarea> </p>
+	<p><textarea name="message" rows="20" cols="45" wrap="virtual" class="mess" placeholder="Введите ваше сообщение"></textarea></p>
 	<p><input type="submit" class="user" value="Отправить сообщение"></p>
-	<p><input type="hidden" name="name" value="'{{name}}'"></p>
+	<p><input type="hidden" name="name" value="{{name}}"></p>
 	</form>
 </div>	
 {% endblock %}

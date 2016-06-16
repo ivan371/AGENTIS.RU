@@ -167,9 +167,12 @@ def filter_profil(request):
 			is_mess = mess.is_mes()
 			return render_to_response('AGENTIS/profile.html',{'errors': errors[0],'p': p, 'm': mess.nm, 'who': p.who, 'ps': p, 'is_mess': is_mess}, RequestContext(request))
 		p = User_AGENTIS.objects.filter(region = POST['region'], who = 1)
-		mess = display_mess(p)
+		o = User_AGENTIS.objects.get(login = request.session['member_id'])
+		mess = display_mess(o)
 		is_mess = mess.is_mes()
-		return render_to_response('AGENTIS/profile.html',{'p': p, 'm': mess.nm, 'who': p.who, 'ps': p, 'is_mess': is_mess}, RequestContext(request))
+		for offers in p:
+			offers.img.img = offers.img.goodname()
+		return render_to_response('AGENTIS/profile.html',{'p': o, 'm': mess.nm, 'who': o.who, 'ps': p, 'is_mess': is_mess}, RequestContext(request))
 	
 def ch_off_name(request):
 	c = {}
@@ -186,6 +189,8 @@ def ch_off_name(request):
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
 		offs = orders_data.objects.filter(user_m = p)
+		for offers in offs:
+			offers.img.img = offers.img.goodname()
 		return render_to_response('AGENTIS/list_rieltors.html',{'p': p, 'm': mess.nm, 'who': p.who, 'offs': offs, 'is_mess': is_mess}, RequestContext(request))
 	
 def ch_off_sum(request):
@@ -204,6 +209,8 @@ def ch_off_sum(request):
 		offs = orders_data.objects.filter(user_m = p)
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
+		for offers in offs:
+			offers.img.img = offers.img.goodname()
 		return render_to_response('AGENTIS/list_rieltors.html',{'offs': offs, 'is_mess': is_mess}, RequestContext(request))
 
 def ch_off_mess(request):
@@ -221,6 +228,8 @@ def ch_off_mess(request):
 		offs = orders_data.objects.filter(user_m = p)
 		mess = display_mess(p)
 		is_mess = mess.is_mes()
+		for offers in offs:
+			offers.img.img = offers.img.goodname()
 		return render_to_response('AGENTIS/list_rieltors.html',{'offs': offs, 'is_mess': is_mess}, RequestContext(request))
 
 def ch_email(request):
@@ -340,6 +349,7 @@ def lists(request):
 		is_mess = mess.is_mes()
 		for offers in offs:
 			offers.img.img = offers.img.goodname()
+			offers.user_m.img.img = offers.user_m.img.goodname()
 		return render_to_response('AGENTIS/list.html',{'p': p, 'm': mess.nm, 'who': p.who,'offs': offs, 'is_mess': is_mess}, RequestContext(request))
 	except:
 		return render_to_response('AGENTIS/list.html',{'offs': offs}, RequestContext(request))
@@ -525,6 +535,8 @@ def registration_result(request):
 			errors.append('Введите ваше e-mail')
 		if request.POST['region'] == 's1':
 			errors.append('Введите ваш регион')
+		if request.POST['region'] == 's1':
+			errors.append('Введите вашу специализацию')
 		if not request.POST.get('number', ''):
 			errors.append('Введите ваш телефон')
 		if not request.POST.get('password', ''):

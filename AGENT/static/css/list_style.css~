@@ -46,6 +46,12 @@
 	top: 20vh;
 	left: 10vw;
 }
+#to_mess_off
+{	
+	top: -3vw;
+	left: 8vw;
+	position: relative;
+}
 #to_off
 {
 	position: absolute;
@@ -72,5 +78,34 @@
 {
 	position: absolute;
 	width: 20vw;
-	left: 60vw;
+	left: 70vw;
 }
+.first_change
+{
+	position: relative;
+	width: 10vw;
+	display: inline-block;
+	left: 55vw;
+}
+.second_change
+{
+	position: relative;
+	width: 10vw;
+	display: inline-block;
+	left: 55vw;
+}
+.third_change
+{
+	position: relative;
+	width: 10vw;
+	display: inline-block;
+	left: 55vw;
+}
+.text
+{
+	left: 0vw;
+	width: 50vw;
+	position: relative;
+	display: inline-block;
+}
+

@@ -18,25 +18,25 @@
 			<option selected value="2">Заказчик</option>
 			<option value="1">Исполнитель</option>
 		</select></p>
-		<p><input type="text" class="user blank short" name="login" placeholder="Логин" size="40" ></p>			
-		<p><input type="password" class="user blank short" name="password" placeholder="Пароль" size="40" ></p> 
-		<p><input type="password" class="user blank short" name="password_repiate" placeholder="Повторите пароль" size="40" ></p> 
-		<p><input type="text" class="user blank short" name="surname" placeholder="Фамилия" size="40" ></p> 
-		<p><input type="text" class="user blank short" name="forename" placeholder="Имя" size="40" ></p> 
-		<p><input type="text" class="user blank short" name="patronyname" placeholder="Отчество" size="40" ></p>
+		<p><input type="text" class="user blank short" name="login" placeholder="Login" size="40" ></p>			
+		<p><input type="password" class="user blank short" name="password"  size="40" ></p> 
+		<p><input type="password" class="user blank short" name="password_repiate" size="40" ></p> 
+		<p><input type="text" class="user blank short" name="surname" placeholder="Иванов" size="40" ></p> 
+		<p><input type="text" class="user blank short" name="forename" placeholder="Иван" size="40" ></p> 
+		<p><input type="text" class="user blank short" name="patronyname" placeholder="Иванович" size="40" ></p>
 		<p><div class="file_upload blank">
         	<button type="button" >Загрузить</button>
         		<div>Файл не выбран</div>
         	<input type="file" name="img" multiple="true">
     	</div></p>
 		<p><select name="region" class="user blank long" placeholder="Регион" >
-			<option value="1">Выберите регион</option>
+			<option value="1">Регион не выбран</option>
 			<option value="2">Москва</option>
 			<option value="3">Санкт-Петербург</option>
 		</select></p>		
-		<p><input type="text" class="user blank short" name="email" placeholder="e-mail" size="40" ></p> 
-		<p><input type="text" class="user blank short" name="number" placeholder="Телефон" size="40" ></p> 
-		<p><textarea name="message" rows="4" cols="55" wrap="virtual" class="user blank short" placeholder="О себе"></textarea> </p>
+		<p><input type="text" class="user blank short" name="email" placeholder="agentis@agentis.ru" size="40" ></p> 
+		<p><input type="text" class="user blank short" name="number" placeholder="8 123 4567" size="40" ></p> 
+		<p><textarea name="message" rows="4" cols="55" wrap="virtual" class="user blank short"></textarea> </p>
 		<p><input type="submit" class="user blank long" style="margin-bottom: 20vw;" value="Регистрация"></p>
 		</form>
 		<div class="tip">

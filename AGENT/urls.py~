@@ -48,6 +48,7 @@ urlpatterns = [
 	url(r'change_self/$', views.change_self, name='change_self'),
 	url(r'change_status/$', views.change_status, name='change_status'),
 	url(r'messagers_all/$', views.messagers_all, name='messagers_all'),
+	url(r'more/$', views.more, name='more'),
 	]
 	
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns

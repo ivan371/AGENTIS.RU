@@ -41,6 +41,7 @@ urlpatterns = [
 	url(r'mess_success/$', views.mess_success, name='mess_success'),	
 	url(r'chat/$', views.chat, name='chat'),	
 	url(r'filter/$', views.filter_region, name='filter_region'),
+	url(r'filter_spec/$', views.filter_spec, name='filter_spec'),
 	url(r'for_rieltors/$', views.for_rieltors, name='for_rieltors'),
 	url(r'list/$', views.lists, name='lists'),
 	url(r'profile/$', views.profile, name='profile'),

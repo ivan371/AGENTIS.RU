@@ -450,20 +450,20 @@ a
 .offers
 {
 	position: absolute;
-	top: 150px;
+	top: 50px;
 	left: 25vw;
 	width:50vw;
-	height:850px;
-	background: url(back.jpg);
+	height:650px;
+	background-color: #fbceb1;
 	background-size: cover;
 	text-align:  center;
-	color: black;
+	color: #FFFFFF;
 }
 .text_align
 {
 	margin-left: 1vw;
 	margin-top: 1vw;
-	margin-right: 20vw;
+	margin-right: 30vw;
 }
 .text_align_small
 {
@@ -480,7 +480,7 @@ a
 	border-radius: 10px;
 	color: black;
 	overflow: auto;
-	height: 70vh;
+	height: 75vh;
 }
 .list
 {
@@ -517,7 +517,7 @@ a
 	margin-top: 1vw;
 	margin-bottom: 0vw;
 	width:90vw;
-	background: url(back.jpg);
+	background: #E7E7DC;
 	background-size: cover;
 	text-align:  left;
 	color: black;
@@ -542,8 +542,10 @@ a
 {
 	margin: 3vw;
 	position: absolute;
-	top: 15vw;
-	width:100vw;
+	top: 4vw;
+	height: 60vh;
+	overflow: auto;
+	width:96vw;
 	border-radius: 10px;
 	color: black;
 }
@@ -659,16 +661,15 @@ a
  .offer {
     width: 500px; /* Ширина поля с учетом padding */
     height: 40px; /* Высота */
-    background: #000000;
     padding: 0 10px; /* Поля */
     border: 2px solid #FFFFFF;
     font-size: 1em; /* Размер текста */
 	border-radius: 10px;
-	color: #FFFFFF;
+	color: #000000;
  }
  #textarea
  {
- 	height: 400px;
+ 	height: 40px;
  }
  .change {
     width: 100px; /* Ширина поля с учетом padding */
@@ -698,14 +699,14 @@ a
  }
 
  .secret_change {
-    width: 250px; /* Ширина поля с учетом padding */
+    	position: relative;
+	width: 250px; /* Ширина поля с учетом padding */
     height: 30px; /* Высота */
-    background: #000000;
     padding: 0 10px; /* Поля */
     border: 2px solid #FFFFFF;
     font-size: 0.8em; /* Размер текста */
 	border-radius: 10px;
-	color: #FFFFFF;
+	color: #000000;
  }
  .self_text span
  {
@@ -735,6 +736,25 @@ a
 	text-align:  center;
 	color: black;
 	border-radius: 10px;
+}
+ .s_mess
+{
+	position:absolute;
+	left: 25vw;
+	width:50vw;
+	top: 1vw;
+	height:20vw;
+	background-color: #fbceb1;
+	background-size: cover;
+	text-align:  center;
+	color: black;
+	border-radius: 10px;
+}
+.s_mess textarea
+{
+	background-color: white;
+	color: black;
+	height: 10vw;
 }
 .self_room
 {
@@ -770,7 +790,7 @@ a
 {
 	position:absolute;
 	left: 3vw;
-	top: 8vw;
+	top: 0vw;
 	text-align:  center;
 }
 .new_err
@@ -807,6 +827,25 @@ option
 	margin-bottom: 1vh;
 	box-shadow: 0 0 5px;
 }
+.upload
+{
+	width: 100px; /* Ширина поля с учетом padding */
+    height: 46px;    
+	color: black;
+	margin: auto;
+	position: relative;
+    	overflow: hidden;
+}
+.upload > button{
+    float: right;
+    width: 8em;            /* example */
+    height: 100%;
+    border-radius: 1px;
+}
+.upload > div{
+    padding-left: 1em      /* example */
+}
+
 .file_upload{
 	width: 300px; /* Ширина поля с учетом padding */
     height: 46px;
@@ -831,11 +870,31 @@ option
     .file_upload > div{
         display: none
     }
+	
     .file_upload > button{
+        width: 100%
+    }
+	.upload > div{
+        display: none
+    }
+	
+    .upload > button{
         width: 100%
     }
 }
 .file_upload input[type=file]{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(20);
+    letter-spacing: 10em;     /* IE 9 fix */
+    -ms-transform: scale(20); /* IE 9 fix */
+    opacity: 0;
+    cursor: pointer
+}
+.upload input[type=file]{
     position: absolute;
     left: 0;
     top: 0;

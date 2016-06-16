@@ -7,58 +7,49 @@
 	 <script src='{% static 'js/change_data.js' %}'></script>
 	{% endblock %}
 {% block content %}
-	
 	<div id="new_offerz">
 	{% for offers in offs %}
 	<div class="new_offers">
-		<div class="photo"> <img src="/media{{offers.img.img}}/" class="img">
-	 	<script src='{% static 'js/ch_image.js' %}'></script></div>
+		<div class="photo"> <img src="/media{{offers.img.img}}/" id="img"></div>
 		<div class="text_align">
 		<div id="your_offer{{forloop.counter}}" >
-		<h3>
-			<input type="submit" class="change" value="изменить" onclick="deploy_offer('your_offer{{forloop.counter}}', 'yournew_offer{{forloop.counter}}')">{{offers.name_mess}}
-		</h3>
+		<div class="first_change"><input type="submit" class="user_support" value="изменить" onclick="deploy_offer('your_offer{{forloop.counter}}', 'yournew_offer{{forloop.counter}}')"></div>	
+		<div class="text">
+			 {{offers.name_mess}}
+		</div>
 		</div>
 		<div id="yournew_offer{{forloop.counter}}" style="display: none;">
-		<form action="/ch_off_name/" method="post">{% csrf_token %}
-		<h3>
-			
-			<input type="text" value="{{offers.name_mess}}" class="secret_change" name="off_name" placeholder="Введите ваше предложение" >
-			<input type="hidden" value="{{offers.name_mess}}" name="off_name_old" >
-			<input type="submit" class="change" value="сохранить">
-		</h3>
+		<form action="/ch_off_name/" method="post">{% csrf_token %}	
+		<div class="text"><input type="text" value="{{offers.name_mess}}" class="secret_change" name="off_name" placeholder="Введите ваше предложение" ></div>
+		<div class="first_change"><input type="submit" class="user_support" value="сохранить">
+		<input type="hidden" value="{{offers.name_mess}}" name="off_name_old" ></div>
 		</form>
 		</div>
 		<div id="your_sum{{forloop.counter}}">
-		<h3>
-			<input type="submit" class="change" value="изменить" onclick="deploy_offer('your_sum{{forloop.counter}}', 'yournew_sum{{forloop.counter}}')">{{offers.sum_mess}}
-		</h3>
+		<div class="second_change"><input type="submit" class="user_support" value="изменить" onclick="deploy_offer('your_sum{{forloop.counter}}', 'yournew_sum{{forloop.counter}}')"></div>
+		<div class="text">
+			 {{offers.sum_mess}}
+		</div>
 		</div>
 		<div id="yournew_sum{{forloop.counter}}" style="display: none;">
-		<h3>
-			<form action="/ch_off_sum/" method="post">{% csrf_token %}
-			<input type="text" value="{{offers.sum_mess}}" class="secret_change" name="off_sum" placeholder="Введите сумму вашего предложения" >
-			<input type="submit" class="change" value="сохранить">
+		<form action="/ch_off_sum/" method="post">{% csrf_token %}
+			<div class="text"><input type="text" value="{{offers.sum_mess}}" class="secret_change" name="off_sum" placeholder="Введите сумму вашего предложения" ></div>
 			<input type="hidden" value="{{offers.sum_mess}}" name="off_sum_old" >
-			
-			</form>
-		</h3>
+		<div class="second_change"><input type="submit" class="user_support" value="сохранить"></div>
+		</form>
 		</div>
 		<div id='collapce{{forloop.counter}}'>
-		<h3>
-			<input type="submit" class="change" value="изменить" onclick="deploy_offer('collapce{{forloop.counter}}', 'newcollapce{{forloop.counter}}')">{{offers.message}}
-		</h3>
+		<div class="third_change"><input type="submit" class="user_support" value="изменить" onclick="deploy_offer('collapce{{forloop.counter}}', 'newcollapce{{forloop.counter}}')"></div>
+		<div class="text">
+		 	{{offers.message}}
+		</div>
 		</div>
 		<div id='newcollapce{{forloop.counter}}' style="display: none;">
-		<h3>
 		<form action="/ch_off_mess/" method="post">{% csrf_token %}
-		<textarea  rows="4" cols="55" wrap="virtual" name="off_mess" class="offer" id="textarea" placeholder="Описание">{{offers.message}}</textarea>
+		<div class="text"><textarea  rows="4" cols="10" wrap="virtual" name="off_mess" class="offer" id="textarea" placeholder="Описание">{{offers.message}}</textarea></div>
 		<input type="hidden" value="{{offers.message}}" name="off_mess_old" >
-		<span>
-				<input type="submit" class="change" value="сохранить">
-			</span>
+		<div class="third_change"><input type="submit" class="user_support" value="сохранить"></div>
 		</form>
-		</h3>
 		</div>
 	</div>
 	</div>
@@ -78,11 +69,11 @@
 		<h4>
 		Выберите картинку
 		</h4>
-		<p><div class="file_upload">
+		<div class="upload">
         	<button type="button" >Загрузить</button>
         		<div>Файл не выбран</div>
         	<input type="file" name="img" multiple="true">
-    	</div></p>
+    		</div>
 		<h4>
 		Введите сумму, которую вы хотите получить за ваше предложение
 		</h4>

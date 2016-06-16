@@ -26,10 +26,19 @@
 	</a>
 	</div> 
 	<form action="/filter_profil/" method="post">{% csrf_token %}
-	<select name="region" class="user" placeholder="Регион" >
+	<select name="region" class="user_support" placeholder="Регион" >
 			<option value="1">Выберите регион</option>
 			<option value="2">Москва</option>
 			<option value="3">Санкт-Петербург</option>
+		</select>
+	<br>
+	<input type="submit" class="user_support" value="Отфильтровать"> 
+	</form>
+	<form action="/filter_spec/" method="post">{% csrf_token %}
+	<select name="spec" class="user_support" placeholder="Регион" >
+			<option value="1">Выберите специализацию</option>
+			<option value="2">Жилищный агент</option>
+			<option value="3">Риелтор</option>
 		</select>
 	<br>
 	<input type="submit" class="user_support" value="Отфильтровать"> 
@@ -38,7 +47,7 @@
 	<div id="list">
 	{% for p in ps %}
 	<div class="list_small">
-	<div class="text_align_small">
+		<div class="text_align_small">
 			<img src="/media{{p.img.img}}/" id="img">
 			<p>{{p.surname}} {{p.forename}} {{p.partronyname}}</p>
 			{% if p.region == 2 %}
@@ -46,9 +55,20 @@
 			{% elif p.region == 3 %}
 			<p> Санкт-Петербург </p>
 			{% endif %}
-			<p>Специализация:{{p.profile}}</p>
+			{% if p.specialization == 2 %}
+			<p> Жилищный агент </p>
+			{% elif p.specialization == 3 %}
+			<p> Риелтор </p>
+			{% endif %}
 			<p>Рейтинг:</p>
-	</div>
+		</div>
+		<div id="to_mess_off">
+			<form action="/send_mess/" method="post">{% csrf_token %}
+				<input type="image" name="picture" src="{% static "img/message.png" %}" width="30vw">
+				<input type="submit" class="user_img">
+				<input type="hidden" name="name" value="{{p.login}}">
+			</form>
+		</div>
 	</div>
 	{% endfor %}
 	</div>
